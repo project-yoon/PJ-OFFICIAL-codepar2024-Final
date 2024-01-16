@@ -1,0 +1,15 @@
+/*.header-empty {position:relative;width:100%;border:solid 1px red;height:88px;display:none;}
+.header.is-sticky .header-empty {position:relative;display:none;}*/
+
+.img_blog > img {width:100%;}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+.board_bottom {margin-top:250px;}
+.gallery_inner {margin-top:100px;}
+
+
+}
+
+.accordion .card-header h4 {font-family: "Work Sans", 'NanumSquareR';}
+.faq-content-accordion .card-body {font-size:15px;}
