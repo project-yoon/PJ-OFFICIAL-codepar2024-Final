@@ -152,3 +152,54 @@
 @media screen and (max-width:960px){
 
 }
+/* 문의하기 부분 */
+#qucik-menu {z-index:1001;position: fixed;bottom: 15px;right: 20px;transition:all 0.5s;}
+#qucik-menu a {position: static;display: block;height:50px;width:50px;border-radius:5px;text-align: center;}
+#qucik-menu a + a {margin-top: 10px;}
+#qucik-menu a i {color: #fff;line-height: 48px;}
+.btn-contact {background-color: #e96a23; animation: bounce 2s infinite;}
+#qucik-menu .btn-contact i {font-size: 25px;}
+.btn-contact.active {animation: unset;}
+.btn-contact.active:after {
+	content:"\F156";
+	display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	color: #fff;
+	font-size: 25px;
+	line-height: 46px;
+}
+.btn-contact.active i {display: none;}
+#qucik-menu .btn-contact.active + .back_top {display: none !important;}
+
+section.section#contact {z-index: unset;}
+
+#popupContact {display: none;z-index:1000;position: fixed;background-color: #2E3135;}
+#popupContact.row {margin-top: unset;margin-right: unset;}
+
+/* pc */
+@media screen and (min-width:961px){
+#popupContact {bottom: 65px;right: 20px;padding: 30px;width: 30%;border-radius: 20px;}
+#popupContact .tbl_formmail_sub {margin: 0 0 20px;}
+}
+/* mobile */
+@media screen and (max-width:960px){
+#popupContact {bottom: 0;right: 0;padding: 15px;width: 100%;height: 100vh;border-radius: 10px;box-sizing: border-box;}
+#popupContact .tbl_formmail_sub {margin: 0 0 20px;}
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(-10px);
+	}
+}
