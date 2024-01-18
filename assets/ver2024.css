@@ -25,9 +25,6 @@
 	border-radius: 24px;
 	background: #eee;
 }
-/* .services .serviceList dl + dl {
-	margin-left: 30px;
-} */
 .services .serviceList dl:nth-child(4n) {
 	margin-left: 0;
 }
@@ -37,9 +34,15 @@
 .services .serviceList dt {
 	color: #000;
 	font-weight: 700;
+	text-align: center;
+}
+.services .serviceList dt::before {
+	left: 50%;
+	transform: translateX(-50%);
 }
 .services .serviceList dd {
 	color: #000;
+	text-align: center;
 }
 
 /* cta */
@@ -93,19 +96,28 @@
 	border-radius: 24px;
 	background: #2E3135;
 }
+.client .client-logo .client-logo-list li img {
+	width: 175px;
+}
 
 /* work */
 #work .contents {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 130px;
 	height: auto;
+	padding-right: 0 !important;
 	overflow: unset;
-	/* padding-right: 0 !important; */
 }
 #work .titArea {
-	/* position: static !important; */
+	position: sticky !important;
+	top: 232px !important;
+	right: 0;
+	flex-shrink: 0;
+	height: 232px !important;
 }
 .work {}
 .work .workList li {
-	/* width: calc((100% - 50px) / 3); */
 	margin: 200px 0 0 50px
 }
 .work .workList a {
@@ -118,11 +130,9 @@
 	height: 500px;
 }
 .story .storyTxt {
+	position:absolute;
 	top: -100px;
 	left: 0;
-}
-.story .storyTxt li {
-	/* text-align: left; */
 }
 #story .contents {
 	height: auto;
@@ -148,10 +158,7 @@
 	height: auto;
 }
 
-/* mobile */
-@media screen and (max-width:960px){
 
-}
 /* 문의하기 부분 */
 #quick-menu {
 	z-index:1000;
@@ -219,31 +226,97 @@ section.section#contact {z-index: unset;}
 
 /* pc */
 @media screen and (min-width:961px){
-#popupContact {
-	bottom: 65px;
-	right: 20px;
-	padding: 30px;
-	width: 30%;
-	border-radius: 20px;
-}
-#popupContact .tbl_formmail_sub {
-	margin: 0 0 20px;
-}
+	#popupContact {
+		bottom: 65px;
+		right: 20px;
+		padding: 30px;
+		width: 30%;
+		border-radius: 20px;
+	}
+	#popupContact .tbl_formmail_sub {
+		margin: 0 0 20px;
+	}
 }
 /* mobile */
 @media screen and (max-width:960px){
-#popupContact {
-	bottom: 0;
-	right: 0;
-	padding: 15px;
-	width: 100%;
-	height: 100vh;
-	border-radius: 10px;
-	box-sizing: border-box;
+	/* service */
+	.services .serviceList dl {
+		width: calc((100% - 30px) / 2);
+	}
+	.services .serviceList dl:nth-child(4n) {
+		margin-left: 30px;
+	}
+
+	/* client */
+	.client .client-logo {
+		height: 120px;
+	}
+	.client .client-logo .client-logo-list li {
+		width: 240px;
+		height: 120px;
+	}
+	.client .client-logo .client-logo-list li img {
+		width: 98px;
+	}
+	/* work */
+	#work .contents {
+		flex-direction: column;
+		gap: 0;
+		padding-right: 30px !important;
+	}
+	#work .titArea {
+		position: static !important;
+		height: auto !important;
+	}
+	.work .workList li {
+		margin: 100px 0 0 20px;
+	}
+	/* story */
+	#story .slideArea {
+		margin-top: 160px;
+	}
+	#story .btnArea {
+		top: -50px !important;
+	}
+	.story .storyList li {
+		width: 100%;
+		margin-right: 0;
+	}
+	/* popupContact */
+	#popupContact {
+		bottom: 0;
+		right: 0;
+		padding: 15px;
+		width: 100%;
+		height: 100vh;
+		border-radius: 10px;
+		box-sizing: border-box;
+	}
+	#popupContact .tbl_formmail_sub {
+		margin: 0 0 20px;
+	}
 }
-#popupContact .tbl_formmail_sub {
-	margin: 0 0 20px;
-}
+
+/* mobile 2 */
+@media screen and (max-width:560px){
+	/* service */
+	.services .serviceList dl {
+		width: 100%;
+		margin-left: 0;
+	}
+	.services .serviceList dl:nth-child(2) {
+		margin-top: 30px;
+	}
+	.services .serviceList dl:nth-child(4n) {
+		margin-left: 0;
+	}
+	/* work */
+	.work .workList li {
+		margin: 40px 0 0 0;
+	}
+	.work .workList li:nth-child(2) {
+		margin-top: 40px;
+	}
 }
 
 @keyframes bounce {

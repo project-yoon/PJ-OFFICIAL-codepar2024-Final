@@ -68,31 +68,27 @@ $(document).ready(function () {
 
     // work
     if ($('#work').length) {
-        $(window).on("scroll", function () {
-            var sTop = $(window).scrollTop(),
-                winW = $(window).width(),
-                workTop = $("#work")
-                    .offset()
-                    .top,
-                workLast = $(".workList li:last-child")
-                    .offset()
-                    .top;
-            workTit = $("#work .titArea");
+        // $(window).on("scroll", function () {
+        //     var sTop = $(window).scrollTop(),
+        //         winW = $(window).width(),
+        //         workTop = $("#work").offset().top,
+        //         workLast = $(".workList li:last-child").offset().top;
+        //         workTit = $("#work .titArea");
 
-            if (winW > 961) {
-                if (sTop >= workTop - 100 && sTop <= workLast - 100) {
-                    $(workTit).css({
-                        'top': sTop - workTop + 100 + "px"
-                    });
-                } else if (sTop < workTop) {
-                    $(workTit).css({
-                        'top': 0 + "px"
-                    });
-                }
-            } else {
-                $(workTit).css({'top': 0});
-            }
-        });
+        //     if (winW > 961) {
+        //         if (sTop >= workTop - 100 && sTop <= workLast - 100) {
+        //             $(workTit).css({
+        //                 'top': sTop - workTop + 100 + "px"
+        //             });
+        //         } else if (sTop < workTop) {
+        //             $(workTit).css({
+        //                 'top': 0 + "px"
+        //             });
+        //         }
+        //     } else {
+        //         $(workTit).css({'top': 0});
+        //     }
+        // });
 
         $('#work')
             .find('.more a')
@@ -117,18 +113,19 @@ $(document).ready(function () {
                 {
                     breakpoint: 961,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1,
                         slidesToScroll: 1
                     }
-                }, {
-                    breakpoint: 761,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                        variableWidth: true
-                    }
-                }
+                },
+                // {
+                //     breakpoint: 761,
+                //     settings: {
+                //         slidesToShow: 1,
+                //         slidesToScroll: 1,
+                //         centerMode: true,
+                //         variableWidth: true
+                //     }
+                // }
             ]
         });
     }
