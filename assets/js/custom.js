@@ -138,6 +138,7 @@
                 $('#quick-menu').fadeIn();
             } else {
                 $('#quick-menu').fadeOut();
+                $('#popupContact').hide();
             }
         }); 
         $('.back_top').click(function(){
