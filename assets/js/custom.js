@@ -135,9 +135,9 @@
     KerriApp.prototype.initBackToTop = function() {
         $(window).on('scroll',function(){
             if ($(this).scrollTop() > 100) {
-                $('.back_top').fadeIn();
+                $('#quick-menu').fadeIn();
             } else {
-                $('.back_top').fadeOut();
+                $('#quick-menu').fadeOut();
             }
         }); 
         $('.back_top').click(function(){
