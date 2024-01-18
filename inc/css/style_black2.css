@@ -720,7 +720,8 @@ section.section {z-index:0;}
 
 
 /*  ====  Main Visual  ====  */
-#home {position:relative; height:100vh; background:url('/bizdemo122704/img/images/new/main_visual.png') no-repeat center top / cover;}
+/* #home {position:relative; height:100vh; background:url('/bizdemo122704/img/images/new/main_visual.png') no-repeat center top / cover;} */
+#home {position:relative; height:100vh; background:url('/assets/img/main_visual.png') no-repeat center top / cover;}
 
 
 .mainInfo, .mainInfo dt, .mainInfo dd {margin:0; padding:0;}
@@ -760,7 +761,8 @@ section.section {z-index:0;}
 }
 
 /*  ====  About Us  ====  */
-#about {position:relative; background:url('/bizdemo122704/img/images/new/about_bg.png') no-repeat center top; background-size:cover;}
+/* #about {position:relative; background:url('/bizdemo122704/img/images/new/about_bg.png') no-repeat center top; background-size:cover;} */
+#about {position:relative; background:url('/assets/img/about_bg.png') no-repeat center top; background-size:cover;}
 
 
 /* pc */
@@ -825,7 +827,8 @@ section.section {z-index:0;}
 
 
 /*  ====  CTA  ====  */
-#cta {position:relative; background:url('/bizdemo122704/img/images/new/cta_bg.png') no-repeat center top; background-size:cover;}
+/* #cta {position:relative; background:url('/bizdemo122704/img/images/new/cta_bg.png') no-repeat center top; background-size:cover;} */
+#cta {position:relative; background:url('/assets/img/cta_bg.png') no-repeat center top; background-size:cover;}
 #cta .contents {display:flex; flex-direction:column; align-items:center; justify-content:center;}
 #cta h2 {margin:0; font-family:'Noto Sans KR',sans-serif; color:#fff; font-weight:400; text-align:center;}
 #cta h2 span {display:block; font-weight:300; color:rgba(255 255 255 / 50%);}
@@ -1094,8 +1097,9 @@ section.section {z-index:0;}
 
 
 /*  ====  footer  ====  */
-.footer  {background-color:##26282B; font-family:'Noto Sans KR',sans-serif; font-weight:300; line-height:1.7; color:rgba(255 255 255 / 80%);}
-.footer:after {content:''; display:block; margin:0 auto; background:url('/bizdemo122704/img/images/new/footer_logo.png') no-repeat center; background-size:cover;}
+.footer  {background-color:#26282B; font-family:'Noto Sans KR',sans-serif; font-weight:300; line-height:1.7; color:rgba(255 255 255 / 80%);}
+/* .footer:after {content:''; display:block; margin:0 auto; background:url('/bizdemo122704/img/images/new/footer_logo.png') no-repeat center; background-size:cover;} */
+.footer:after {content:''; display:block; margin:0 auto; background:url('/assets/img/footer_logo.png') no-repeat center; background-size:cover;}
 
 
 .footer ul, .footer li, .footer a {margin:0; padding:0; color:inherit; list-style:none;}
