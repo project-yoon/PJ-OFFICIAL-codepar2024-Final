@@ -48,6 +48,7 @@
 /* cta */
 #cta {
 	height: 100vh !important;
+	background-attachment: fixed !important;
 }
 
 /* client */
