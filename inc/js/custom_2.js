@@ -197,3 +197,39 @@ $(document).ready(function () {
 //         currentLeftValue--;
 //     }
 // });
+
+let servicesCard = document.querySelectorAll('.services-card');
+let stackArea = document.querySelector('.stack-area');
+
+function rotateCards() {
+	let rotateData = 0;
+
+	servicesCard.forEach((el) => {
+		if (el.classList.contains('active')) {
+			el.style.transform = 'translate(-50%, -120vh) rotate(-48deg)';
+		} else {
+			el.style.transform = `translate(-50%, -50%) rotate(${rotateData}deg)`;
+			rotateData = rotateData - 10;
+		}
+	});
+}
+rotateCards();
+
+window.addEventListener('scroll', () => {
+	let proportion = stackArea.getBoundingClientRect().top / window.innerHeight;
+
+	if (proportion <= 0) {
+		let n = servicesCard.length;
+		let indexCeil = Math.ceil((proportion * n) / 2); // 소수점 제외하고 반올림
+
+		indexCeil = Math.abs(indexCeil) - 1; // 마이너스 절대값이 나올것을 대비해 예외
+		for (let i = 0; i < n; i++) {
+			if (i <= indexCeil) {
+				servicesCard[i].classList.add('active');
+			} else {
+				servicesCard[i].classList.remove('active');
+			}
+		}
+		rotateCards();
+	}
+});
