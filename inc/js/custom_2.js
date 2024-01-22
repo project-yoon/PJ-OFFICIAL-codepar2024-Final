@@ -174,26 +174,26 @@ $(document).ready(function () {
 //     Marquee('.client-logo-list', 1, false);
 // });
 
-window.addEventListener('load', function(){
-    const items = [...document.querySelectorAll('.client-logo-list li')];
-    let containerElem = document.querySelector('.client-logo');
-    let leftSideOfContainer = containerElem.getBoundingClientRect().left;
-    let listElem = document.querySelector('.client-logo-list');
-    let currentLeftValue = 0;
-
-    window.setInterval(marquee, 10);
-
-    function marquee() {
-        const firstListItem = listElem.querySelector('.client-logo-list li:first-child');
-
-        let rightSideOfFirstItem = firstListItem.getBoundingClientRect().right;
-
-        if(rightSideOfFirstItem == leftSideOfContainer){
-        currentLeftValue = -1;
-        listElem.appendChild(firstListItem);
-        }
-
-        listElem.style.transform = `translateX(${currentLeftValue}px)`;
-        currentLeftValue--;
-    }
-});
+// window.addEventListener('load', function(){
+//     const items = [...document.querySelectorAll('.client-logo-list li')];
+//     let containerElem = document.querySelector('.client-logo');
+//     let leftSideOfContainer = containerElem.getBoundingClientRect().left;
+//     let listElem = document.querySelector('.client-logo-list');
+//     let currentLeftValue = 0;
+//
+//     window.setInterval(marquee, 10);
+//
+//     function marquee() {
+//         const firstListItem = listElem.querySelector('.client-logo-list li:first-child');
+//
+//         let rightSideOfFirstItem = firstListItem.getBoundingClientRect().right;
+//
+//         if(rightSideOfFirstItem == leftSideOfContainer){
+//         currentLeftValue = -1;
+//         listElem.appendChild(firstListItem);
+//         }
+//
+//         listElem.style.transform = `translateX(${currentLeftValue}px)`;
+//         currentLeftValue--;
+//     }
+// });

@@ -71,20 +71,14 @@
 }
 .client .client-logo {
 	position: relative;
-	overflow: hidden;
-	height: 220px;
 }
 .client .client-logo + .client-logo {
 	margin-top: 40px;
 }
 .client .client-logo .client-logo-list {
-	position: absolute;
-	left: 0;
-	top: 0;
 	display: flex;
 	gap:  15px;
 	width: 100%;
-	transform: translateX(0);
 }
 .client .client-logo .client-logo-list li {
 	flex-grow: 0;
@@ -99,6 +93,58 @@
 }
 .client .client-logo .client-logo-list li img {
 	width: 175px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-group {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+}
+@-webkit-keyframes scroll-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
+    }
+}
+@keyframes scroll-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
+    }
+}
+@-webkit-keyframes scroll-y {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
+    }
+}
+@keyframes scroll-y {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
+    }
+}
+.marquee-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.marquee-group {
+    -webkit-animation: scroll-x 50s linear infinite;
+    animation: scroll-x 50s linear infinite;
+}
+.marquee--reverse .marquee-group {
+    animation-direction: reverse;
+    -webkit-animation-delay: -10s;
+    animation-delay: -10s;
 }
 
 /* work */
