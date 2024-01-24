@@ -122,6 +122,50 @@
     flex-direction: column;
 }
 
+.section.services.new .contents {
+	position: relative;
+	max-width: unset;
+	height: 400vh;
+	box-sizing: border-box;
+}
+.servicesCardWrap .titArea {
+	max-width: 1110px;
+	margin: 0 auto;
+}
+.servicesWrap {
+	overflow: hidden;
+	position: sticky;
+	top: 105px;
+	bottom: 0;
+	width: 100%;
+	height: calc(100vh - 105px)
+}
+.serviceCardList {
+	display: flex;
+	gap: 41px;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 330px);
+	transform: translateX(100vw);
+}
+.servicesCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-width: 330px;
+	min-height: 320px;
+	padding: 30px;
+	border-radius: 24px;
+	background: #eee;
+	color: #000;
+}
+
+/* mobile */
+@media screen and (max-width:960px){
+	
+}
+
 /* cta */
 #cta {
 	height: 100vh !important;
