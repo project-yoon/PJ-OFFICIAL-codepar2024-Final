@@ -1382,7 +1382,7 @@ button:focus {
 .workList {
     overflow: hidden;
     width: 65%;
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 .workList a {

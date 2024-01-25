@@ -175,7 +175,7 @@ gsap.timeline({
 
 gsap.to(".work .titArea", {
 	duration: 0.5,
-	scale: 0.8,
+	//scale: 0.8,
 	transformOrigin: "top left",
 	ease: "none",
 	scrollTrigger: {
