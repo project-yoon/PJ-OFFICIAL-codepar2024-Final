@@ -1,10 +1,32 @@
 @charset "UTF-8";
-/* Reset        */*{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{overflow-x:auto;line-height:1;background-color:#fff;word-break:break-all;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}
+/* Reset */
+*{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{overflow-x:auto;line-height:1;background-color:#fff;word-break:break-all;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}
 
+/* 메일 폼 */
+.tbl_formmail_sub {position:relative;width:100%;margin-top:50px;margin-bottom:40px}
+.tbl_formmail_sub input[type=file] {width:100%}
+.tbl_formmail_sub input[name^=phone] {width:80px !important}
+.tbl_formmail_sub select {height:40px; line-height:38px; padding:0 10px; border:1px solid #e0e0e0; cursor:pointer}
+.tbl_formmail_sub select:focus, .tbl_formmail select:hover {border-color:#d8d8d8}
+.tbl_formmail_sub tbody td {/*font:inherit !important;*/ font-size:0;padding:3px 0;background:none;}
+.tbl_formmail_sub tbody td br {display:none}
+.tbl_formmail_sub tbody td font, .tbl_formmail tbody td span, .tbl_formmail tbody td a {font:inherit !important; font-size:14px !important}
+.formmail_title_bgcolor {display:none}
+.input-item textarea {margin-top:30px;}
+.formmail_cell_bgcolor {margin-top:10px;display:block;width:100%;}
+td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
+.formmail_cell_bgcolor > table {background:#fff !important;}
+.formmail_cell_bgcolor > table td {font-size:12px !important;}
+.formmail_cell_bgcolor > table td.input-item textarea {margin-top:0px;}
+.formmail_cell_bgcolor > table td.input-item input {width:auto !important;position:relative;top:3px;display:inline-block;}
 
 /* about */
 #about {
-	height: 100vh !important;
+    position: relative;
+    z-index: 1;
+    height: 720px;
+    background: url('/assets/img/about_bg.png') no-repeat center top;
+    background-size: cover;
 }
 
 /* services */
@@ -44,112 +66,7 @@
 	color: #000;
 	text-align: center;
 }
-
-/* service new ver */
-.stack-area {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 300vh;
-}
-.services-card-r,
-.services-card-l {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 60%;
-    height: 100vh;
-}
-.services-card-r {
-    flex-basis: 40%;
-}
-.services-card-wrap {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
 .services-card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 400px;
-    padding: 24px;
-    background: #f5f5f5;
-    border-radius: 20px;
-    border: 1px solid #dddddd;
-    transition: 0.5s ease-in-out;
-}
-.services-card img {
-    width: 200px;
-    height: 200px;
-}
-.services-card:nth-child(1) {
-    z-index: 6;
-}
-.services-card:nth-child(2) {
-    z-index: 5;
-}
-.services-card:nth-child(3) {
-    z-index: 4;
-}
-.services-card:nth-child(4) {
-    z-index: 3;
-}
-.services-card:nth-child(5) {
-    z-index: 2;
-}
-.services-card:nth-child(6) {
-    z-index: 1;
-}
-.card-title {
-    color: #000000;
-    font-size: 20px;
-}
-.card-info {
-    color: #000000;
-}
-.services-card.active {
-    transform-origin: bottom left;
-}
-.services-card-l {
-    align-items: center;
-    flex-direction: column;
-}
-
-.section.services.new .contents {
-	position: relative;
-	max-width: unset;
-	height: 400vh;
-	box-sizing: border-box;
-}
-.servicesCardWrap .titArea {
-	max-width: 1110px;
-	margin: 0 auto;
-}
-.servicesWrap {
-	overflow: hidden;
-	position: sticky;
-	top: 105px;
-	bottom: 0;
-	width: 100%;
-	height: calc(100vh - 105px)
-}
-.serviceCardList {
-	display: flex;
-	gap: 41px;
-	align-items: center;
-	position: absolute;
-	width: 100%;
-	height: calc(100% - 330px);
-	transform: translateX(100vw);
-}
-.servicesCard {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -163,7 +80,7 @@
 
 /* mobile */
 @media screen and (max-width:960px){
-	
+
 }
 
 /* cta */
@@ -280,9 +197,6 @@
 	float: right;
 }
 .work {}
-.work .workList {
-	padding-right: 114px;
-}
 .work .workList li {
 	width: calc(50% - 37.5px);
 	margin: 150px 0 0 75px;

@@ -64,70 +64,12 @@
         });
     },
 
-    //Work
-    KerriApp.prototype.initWork = function() {
-        $(window).on('load', function () {
-            var $container = $('.work-filter');
-            var $filter = $('#menu-filter');
-            $container.isotope({
-                filter: '*',
-                layoutMode: 'masonry',
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear'
-                }
-            });
-
-            $filter.find('a').on("click",function() {
-                var selector = $(this).attr('data-filter');
-                $filter.find('a').removeClass('active');
-                $(this).addClass('active');
-                $container.isotope({
-                    filter: selector,
-                    animationOptions: {
-                        animationDuration: 750,
-                        easing: 'linear',
-                        queue: false,
-                    }
-                });
-                return false;
-            });
-        });
-    },
-
-    //Magnificpop
-    KerriApp.prototype.initMagnificPopup = function() {
-        $('.img-zoom').magnificPopup({
-            type: 'image',
-            closeOnContentClick: true,
-            mainClass: 'mfp-fade',
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0, 1]
-            }
-        });
-    },
-
-    //Client
-    KerriApp.prototype.initTestimonial = function() {
-        $("#owl-demo").owlCarousel({
-            autoPlay: 7000,
-            stopOnHover: true,
-            navigation: false,
-            paginationSpeed: 1000,
-            goToFirstSpeed: 2000,
-            singleItem: true,
-            autoHeight: true,
-        });
-    },
-
     //PRELOADER
     KerriApp.prototype.initPreloader = function() {
         $('#status').fadeOut();
         $('#preloader').delay(350).fadeOut('slow');
         $('body').delay(350).css({
-            'overflow': 'visible'
+            // 'overflow': 'visible'
         });
     },
 
@@ -167,10 +109,7 @@
         this.initCollapseHide();
         this.initScrollspy();
         this.initTextType();
-        this.initWork();
-        this.initMagnificPopup();
         this.initPreloader();
-        this.initTestimonial();
         this.initBackToTop();
         this.initWave();
     },

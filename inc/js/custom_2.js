@@ -68,28 +68,6 @@ $(document).ready(function () {
 
     // work
     if ($('#work').length) {
-        // $(window).on("scroll", function () {
-        //     var sTop = $(window).scrollTop(),
-        //         winW = $(window).width(),
-        //         workTop = $("#work").offset().top,
-        //         workLast = $(".workList li:last-child").offset().top;
-        //         workTit = $("#work .titArea");
-
-        //     if (winW > 961) {
-        //         if (sTop >= workTop - 100 && sTop <= workLast - 100) {
-        //             $(workTit).css({
-        //                 'top': sTop - workTop + 100 + "px"
-        //             });
-        //         } else if (sTop < workTop) {
-        //             $(workTit).css({
-        //                 'top': 0 + "px"
-        //             });
-        //         }
-        //     } else {
-        //         $(workTit).css({'top': 0});
-        //     }
-        // });
-
         $('#work')
             .find('.more a')
             .click(function () {
@@ -117,15 +95,6 @@ $(document).ready(function () {
                         slidesToScroll: 1
                     }
                 },
-                // {
-                //     breakpoint: 761,
-                //     settings: {
-                //         slidesToShow: 1,
-                //         slidesToScroll: 1,
-                //         centerMode: true,
-                //         variableWidth: true
-                //     }
-                // }
             ]
         });
     }
@@ -142,114 +111,91 @@ $(document).ready(function () {
             arrows: false
         });
     }
-
     AOS.init();
-
 });
 
-// function Marquee(selector, speed, reverse) {
-//     const parentSelector = document.querySelector(selector); // 클래스명을 인자로 받은 매개변수
-//     const clone = parentSelector.innerHTML; // 해당 클래스 엘리먼트의 html 값을 clone으로 선언
-//     const firstElement = parentSelector.firstElementChild;
-//     let i = 0;
-//     // console.log(firstElement);
-//     parentSelector.insertAdjacentHTML('beforeend', clone);
-//     parentSelector.insertAdjacentHTML('beforeend', clone);
-    
-//     if (reverse) parentSelector.classList.add('reverse');
-    
-//     const moveItem = () => {
-//         if (reverse) {
-//         firstElement.style.marginRight = `-${i}px`;
-//         } else {
-//         firstElement.style.marginLeft = `-${i}px`;
-//         }
-//         if (i > firstElement.clientWidth) i = 0;
-//         i += speed;
-//         requestAnimationFrame(moveItem);
-//     }
-//     requestAnimationFrame(moveItem); // 움직임을 계속해서 주기 위해 requestAnimationFrame 사용
-// }
-// window.addEventListener('load', function(){
-//     Marquee('.client-logo-list', 1, false);
-// });
+const btnContact = $('.btn-contact')
+const contactWrap = $('#popupContact')
+let isActive
 
-// window.addEventListener('load', function(){
-//     const items = [...document.querySelectorAll('.client-logo-list li')];
-//     let containerElem = document.querySelector('.client-logo');
-//     let leftSideOfContainer = containerElem.getBoundingClientRect().left;
-//     let listElem = document.querySelector('.client-logo-list');
-//     let currentLeftValue = 0;
+btnContact.on("click", function(e) {
+	e.preventDefault()
 
-//     window.setInterval(marquee, 10);
+	isActive = btnContact.hasClass('active')
 
-//     function marquee() {
-//         const firstListItem = listElem.querySelector('.client-logo-list li:first-child');
+	if(isActive) {
+		btnContact.removeClass('active')
+		contactWrap.fadeOut(300)
+	} else {
+		btnContact.addClass('active')
+		contactWrap.fadeIn(300)
+	}
+})
 
-//         let rightSideOfFirstItem = firstListItem.getBoundingClientRect().right;
-
-//         if(rightSideOfFirstItem == leftSideOfContainer){
-//         currentLeftValue = -1;
-//         listElem.appendChild(firstListItem);
-//         }
-
-//         listElem.style.transform = `translateX(${currentLeftValue}px)`;
-//         currentLeftValue--;
-//     }
-// });
-
-// let servicesCard = document.querySelectorAll('.services-card');
-// let stackArea = document.querySelector('.stack-area');
-
-// function rotateCards() {
-// 	let rotateData = 0;
-
-// 	servicesCard.forEach((el) => {
-// 		if (el.classList.contains('active')) {
-// 			el.style.transform = 'translate(-50%, -120vh) rotate(-48deg)';
-// 		} else {
-// 			el.style.transform = `translate(-50%, -50%) rotate(${rotateData}deg)`;
-// 			rotateData = rotateData - 10;
-// 		}
-// 	});
-// }
-// rotateCards();
-
-// window.addEventListener('scroll', () => {
-// 	let proportion = stackArea.getBoundingClientRect().top / window.innerHeight;
-
-// 	if (proportion <= 0) {
-// 		let n = servicesCard.length;
-// 		let indexCeil = Math.ceil((proportion * n) / 2); // 소수점 제외하고 반올림
-
-// 		indexCeil = Math.abs(indexCeil) - 1; // 마이너스 절대값이 나올것을 대비해 예외
-// 		for (let i = 0; i < n; i++) {
-// 			if (i <= indexCeil) {
-// 				servicesCard[i].classList.add('active');
-// 			} else {
-// 				servicesCard[i].classList.remove('active');
-// 			}
-// 		}
-// 		rotateCards();
-// 	}
-// });
-
-window.addEventListener("scroll", () => {
-    sliding();
+/**
+ * gsap
+ * */
+gsap.registerEffect({
+	name: "textAnimation",
+	defaults: {duration: 2},
+	effect: (targets, config) => {
+		return gsap
+			.timeline()
+			.from(
+				targets,
+				{
+					duration: 0.5,
+					opacity: 0,
+					scale: 0,
+					y: 80,
+					rotationX: 180,
+					transformOrigin: "0% 50% -50",
+					ease: "back",
+					stagger: 0.01,
+					delay: config.delay / 25
+				},
+				"+=0"
+			)
+			.to(".sub-title", {opacity: 1, y: 0, duration: 1, delay: 0.1});
+	}
 });
 
-const slideContainer = document.querySelector(".servicesCardWrap")
-const containerRect = slideContainer.getBoundingClientRect()
-const cardFrame = document.querySelector(".serviceCardList")
-const containerHeight = slideContainer.offsetHeight - cardFrame.offsetHeight
-let ratio
-let winY = window.scrollY
-const containerTop = containerRect.top + winY
+document.querySelectorAll('.word').forEach(function (box, index) {
+	gsap.effects.textAnimation(box, {delay: index});
+});
 
-function sliding() {
-    winY = window.scrollY
-    if(winY >= containerTop && winY <= containerTop + containerRect.height) {
-        ratio = winY / containerHeight
-        cardFrame.style.transform = `translateX(${100 - ratio * 100}vw)`
-    }
-}
+gsap.timeline({
+		scrollTrigger: {
+			trigger: ".slide-in"
+		}
+	})
+	.to(".slide-in .left", {x: 0, duration: 0.5})
+	.to(".slide-in .right", {x: 0, duration: 0.5})
+	.to(".slide-in p", {y: 0, opacity: 1, duration: 1});
+
+gsap.to(".work .titArea", {
+	duration: 0.5,
+	scale: 0.8,
+	transformOrigin: "top left",
+	ease: "none",
+	scrollTrigger: {
+		trigger: ".work",
+		start: "top top",
+		end: "top -100%",
+		scrub: true
+	}
+})
+
+const pinedList = document.querySelector('.pined-list');
+const pinedInner = document.querySelector('.pined-inner');
+
+gsap.to(pinedList, {
+	x: -pinedList.clientWidth + pinedInner.clientWidth,
+	scrollTrigger: {
+		trigger: ".services",
+		start: "top top",
+		end: `+=${pinedList.clientWidth}`,
+		pin: true,
+		scrub: 1
+	}
+});
