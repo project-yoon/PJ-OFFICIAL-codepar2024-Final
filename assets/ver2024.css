@@ -292,9 +292,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .story .storyTxt {
 	position:absolute;
 	top: -100px;
-	left: 0;
+	left: 30px;
 }
 #story .contents {
+	max-width: unset;
 	height: auto;
 	text-align: center !important;
 }
@@ -305,7 +306,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 #story .btnArea {
 	bottom: 0 !important;
-	right: 0 !important;
+	right: 30px !important;
     top: -100px !important;
 }
 #story .titArea {
@@ -396,6 +397,52 @@ section.section#contact {z-index: unset;}
 	#popupContact .tbl_formmail_sub {
 		margin: 0 0 20px;
 	}
+	
+
+    /* 플립 카드 */
+    .card-wrap li:hover .flip-card{
+        transform: rotateY(180deg);
+    }
+    .card-wrap .flip-card {
+        position: relative;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        overflow: unset;
+    }
+    .flip-card-side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .flip-card-side.front {
+        display: block;
+    }
+    .flip-card-side.front img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .flip-card-side.back {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+        background-color: #26282b;
+        transform: rotateY(180deg);
+        font-size: 24px;
+    }
+
+    .card-wrap span.tit,
+    .card-wrap span.info {
+        opacity: 1;
+    }
 }
 /* mobile */
 @media screen and (max-width:960px){
@@ -427,12 +474,41 @@ section.section#contact {z-index: unset;}
 		width: calc(50% - 15px);
 		margin: 120px 0 0 30px;
 	}
+    /* 카드 플립 */
+	.card-wrap .flip-card {
+		display: block;
+		padding: 0;
+	}
+    .flip-card-side.front {
+        display: block;
+    }
+    .flip-card-side.front img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .flip-card-side.back {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+		height: 100%;
+        padding: 30px;
+        font-size: 24px;
+    }
 	/* story */
+	#story .contents {
+		padding: 0;
+	}
+	.story .storyTxt {
+		left: 24px;
+	}
 	#story .slideArea {
 		margin-top: 160px;
 	}
 	#story .btnArea {
 		top: -50px !important;
+		right: 24px !important;
 	}
 	.story .storyList li {
 		width: 100%;
