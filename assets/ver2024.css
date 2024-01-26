@@ -132,9 +132,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 /* cta */
 #cta {
     position: relative;
-    background: url('/assets/img/cta_bg.png') no-repeat center top;
+    /* background: url('/assets/img/cta_bg.png') no-repeat center top; */
+    background-image: url('/assets/img/main_visual.png');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+	background-blend-mode: soft-light;
 	/*background-attachment: fixed !important;*/
+	height: 500px !important;
 }
 #cta .contents {
     display: flex;
@@ -155,7 +160,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     color: rgba(255 255 255 / 50%);
 }
 #cta a {
-    display: block;
+    display: inline-block;
+	padding: 0 20px !important;
+    line-height: 40px !important;
+    font-size: 14px !important;
 }
 
 /* client */
