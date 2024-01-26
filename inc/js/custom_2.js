@@ -199,3 +199,177 @@ gsap.to(pinedList, {
 		scrub: 1
 	}
 });
+
+// 메인 비주얼 관련
+let mm = gsap.matchMedia()
+
+mm.add({
+	isMobile: "(max-width:767px)",
+	idDesktop: "(min-width:768px)",
+}, (context) => {
+	let {isMobile, isDesktop} = context.conditions;
+
+	gsap.to(".text-trans", {
+		scrollTrigger: {
+			trigger: ".text-trans",
+			start: "center center",
+			end: "+=800",
+			scrub: true,
+			pin: true,
+		},
+
+		scale: 50,
+		opacity: 0,
+		ease: "Power1.easeIn"
+	});
+
+	gsap.to(".top-image", {
+		opacity: 0,
+		ease: "Power1.easeIn",
+		scrollTrigger: {
+			trigger: ".gsap-img-container",
+			start: "center 60%",
+			end: "+=600",
+			scrub: true,
+			pin: true,
+			markers: false
+		}
+	});
+
+	gsap.fromTo(".gsap-text", {fontSize: "0", xPercent: -50, yPercent: 50},
+		{
+			fontSize: "13vw",
+			xPercent: -50,
+			yPercent: -500,
+			scrollTrigger: {
+				trigger: ".gsap-img-container",
+				start: "center 60%",
+				end: "+=600",
+				scrub: true,
+				markers: false
+			}
+		});
+})
+
+
+
+
+
+gsap.registerPlugin(SplitText)
+
+const titleList = gsap.utils.toArray('.title-effects li')
+const titlesTl = gsap.timeline({repeat: -1})
+
+gsap.registerEffect({
+	name: 'rotateIn',
+	extendTimeline: true,
+	defaults: {
+		duration: 1,
+		rotationY: 0,
+		rotationX: 0,
+		transformOrigin: '50% 50%',
+		ease: 'back',
+		parent: '.main-visual-wrap',
+	},
+
+	effect: (targets, config) => {
+		gsap.set(config.parent, {perspective: 800})
+
+		let tl = gsap.timeline()
+		tl.from(targets, {
+			duration: config.duration,
+			rotationY: config.rotationY,
+			rotationX: config.rotationX,
+			transformOrigin: config.transformOrigin,
+			ease: config.ease,
+			stagger: {
+				each: 0.06,
+			},
+		})
+
+		tl.from(
+			targets,
+			{
+				duration: 0.4,
+				autoAlpha: 0,
+				ease: 'none',
+				stagger: {
+					each: 0.05,
+				},
+			},
+			0,
+		)
+
+		return tl
+	},
+})
+
+gsap.registerEffect({
+	name: 'rotateOut',
+	extendTimeline: true,
+	defaults: {
+		duration: 0.5,
+		x: 0,
+		y: 0,
+		rotationY: 0,
+		rotationX: 0,
+		rotationZ: 0,
+		transformOrigin: '50% 50%',
+		ease: 'power1.in',
+		parent: '.main-visual-wrap',
+	},
+
+	effect: (targets, config) => {
+		gsap.set(config.parent, {perspective: 800})
+
+		let tl = gsap.timeline()
+		tl.to(targets, {
+			x: config.x,
+			y: config.y,
+			rotationY: config.rotationY,
+			rotationX: config.rotationX,
+			rotationZ: config.rotationZ,
+			transformOrigin: config.transformOrigin,
+			ease: config.ease,
+			stagger: {
+				each: 0.04,
+			},
+		})
+
+		tl.to(
+			targets,
+			{
+				duration: 0.45,
+				opacity: 0,
+				ease: 'none',
+				stagger: {
+					amount: 0.02,
+				},
+			},
+			0,
+		)
+
+		return tl
+	},
+})
+
+function splitElements() {
+	gsap.set(titleList, {autoAlpha: 1})
+	titleList.forEach((element, dex) => {
+		let split = new SplitText(element, {type: 'chars,words,lines'})
+
+		titlesTl
+			.rotateIn(split.words, {
+				rotationX: 90,
+				transformOrigin: '100% 0',
+				ease: 'back(2.3)'
+			}, dex > 0 ? '-=0.38' : 0,)
+			.rotateOut(split.words, {
+				y: 20,
+				rotationX: -100,
+				transformOrigin: '100% 100%'
+			})
+	})
+}
+
+splitElements()

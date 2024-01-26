@@ -974,7 +974,7 @@ button:focus {
 /* pc */
 @media screen and (min-width: 961px) {
     #cta {
-        height: 350px;
+        height: 100vh;
     }
 
     #cta h2 {
