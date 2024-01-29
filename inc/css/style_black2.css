@@ -1528,14 +1528,6 @@ button:focus {
         vertical-align: top;
     }
 
-
-    #story .btnArea {
-        position: absolute;
-        right: calc(100% + 290px);
-        bottom: 0;
-        width: 78px
-    }
-
     #story .btnArea a {
         margin-left: 10px;
     }
@@ -1550,15 +1542,6 @@ button:focus {
     .storyList li {
         height: 420px;
     }
-
-
-    .storyTxt {
-        position: absolute !important;
-        bottom: 54px;
-        right: calc(100% + 100px);
-        width: 265px;
-    }
-
     .storyTxt li {
         font-size: 18px;
     }
