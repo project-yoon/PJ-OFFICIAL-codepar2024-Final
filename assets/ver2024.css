@@ -319,9 +319,13 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	height: 500px;
 }
 .story .storyTxt {
-	position:absolute;
-	top: -100px;
-	left: 30px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 50px;
 }
 #story .contents {
 	max-width: unset;
@@ -334,9 +338,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	margin-left: 0 !important;
 }
 #story .btnArea {
-	bottom: 0 !important;
-	right: 30px !important;
-    top: -100px !important;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 1110px;
+    padding: 0 50px;
+    text-align: right;
 }
 #story .titArea {
 	text-align: center !important;
