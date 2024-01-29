@@ -90,9 +90,30 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #about {
     position: relative;
     z-index: 1;
-    height: 720px;
-    background: url('/assets/img/about_bg.png') no-repeat center top;
+    background: url('/assets/img/about_bg.png') no-repeat center center;
     background-size: cover;
+}
+@media screen and (min-width: 961px) {
+    #about .contents {
+        padding: 50px;
+    }
+
+    #about .titArea h3 {
+        font-size: 38px;
+    }
+
+    #about .titArea p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    #about {
+        padding: 40px 0 !important;
+    }
+    #about .contents {
+        padding: 0;
+    }
 }
 
 /* services */
