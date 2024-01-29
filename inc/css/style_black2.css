@@ -29,6 +29,7 @@
 ========================*/
 body {
     font-family: 'Nunito', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     overflow-x: hidden;
     color: #fbfbfb;
     background: #2e3135;
@@ -169,6 +170,8 @@ button:focus {
 
 .section-subtitle {
     max-width: 500px;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .btn {
@@ -549,6 +552,7 @@ button:focus {
 
 .contact_detail-title {
     font-size: 18px;
+    line-height: 2.5;
 }
 
 .error {
@@ -972,12 +976,12 @@ button:focus {
 /* pc */
 @media screen and (min-width: 961px) {
     #cta {
-        height: 350px;
+        height: 580px;
     }
 
     #cta h2 {
         margin-bottom: 40px;
-        font-size: 32px;
+        /* font-size: 32px; */
     }
 
     #cta h2 span {
@@ -995,7 +999,7 @@ button:focus {
 /* mobile */
 @media screen and (max-width: 960px) {
     #cta {
-        padding: 159px 0;
+        padding: 6em 0 12em;
     }
 
     #cta h2 {
@@ -1018,8 +1022,11 @@ button:focus {
 
 /*  ====  Client  ====  */
 #client {
+    background-color: rgb(39 38 38 / 70%);
 }
-
+#client .titArea{
+    text-align: right;
+}
 #client .titArea p {
     margin-top: 90px;
 }

@@ -199,6 +199,18 @@ gsap.to(pinedList, {
 		scrub: 1
 	}
 });
+// yyxxmm
+let pinSections = gsap.utils.toArray(".pin__item");
+let tops = pinSections.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
+pinSections.forEach((panel, i) => {
+	ScrollTrigger.create({
+		trigger: panel,
+		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+		pin: true, 
+		pinSpacing: false,
+	});
+});
+
 
 // 메인 비주얼 관련
 let mm = gsap.matchMedia()
