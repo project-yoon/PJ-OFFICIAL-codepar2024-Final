@@ -221,6 +221,31 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 }
 
+/* mobile 2 */
+@media screen and (max-width:560px){
+	/* services */
+    .services .pined-inner {
+        height: 40vh;
+    }
+    .services .pined-list li {
+        min-width: 280px;
+    }
+	.services-card {
+        min-width: auto;
+        min-height: 35vh;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .services-card dt{
+        font-size: 28px;
+    }
+    .services-card dd{
+        font-size: 16px;
+        font-weight: 100;
+        letter-spacing: -0.025em;
+    }
+}
+
 /* cta */
 #cta {
     position: relative;
