@@ -129,7 +129,7 @@ gsap.to(pinedList, {
 		start: "top top",
 		end: `+=${pinedList.clientWidth}`,
 		pin: true,
-		scrub: 1
+		scrub: 0.1
 	}
 });
 // yyxxmm

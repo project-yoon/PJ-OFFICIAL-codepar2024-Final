@@ -195,12 +195,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     gap: 60px;
 }
 .services .pined-list li {
+    list-style: none;
     overflow: hidden;
     min-width: 330px;
     /* box-shadow: 0 1px 1px #1c1f23, 0 2px 2px #1c1f23, 0 4px 4px #1c1f23, 0 6px 8px #1c1f23, 0 8px 16px #1c1f23; */
     /* box-shadow: 0 1px 1px #5b6a7d, 0 2px 2px #5b6a7d, 0 4px 4px #3f4855, 0 6px 8px #2b2f35, 0 8px 16px #5b6a7d; */
-    box-shadow: 0 1px 1px #816f62, 0 2px 2px #7f7468, 0 4px 4px #4d443a, 0 6px 8px #35302b, 0 8px 16px #4f473f;
+    box-shadow: 0 1px 3px #816f62, 0 2px 5px #7f7468, 0 4px 7px #4d443a, 0 6px 10px #35302b, 0 8px 19px #4f473f;
     border-radius: 23px;
+    will-change: all;
 }
 
 @media screen and (max-width: 960px) {
