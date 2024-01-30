@@ -1069,60 +1069,6 @@ button:focus {
     height: 100%;
 }
 
-
-.clientLogo, .clientLogo li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.clientLogo {
-    height: 100%;
-}
-
-.clientLogo li {
-    font-size: 0;
-}
-
-.clientLogo span {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-}
-
-.clientLogo img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 90%;
-    opacity: 0.3;
-    transform: translate(-50%, -50%);
-}
-
-
-.clientLogo .slick-list {
-    height: 100% !important;
-}
-
-.clientLogo .slick-track {
-    height: 100% !important;
-}
-
-
-/* 슬라이드 높이 달라서 속도 따로 줌 */
-.clientLogo.typeA .slick-track {
-    transition-duration: 40000ms !important;
-}
-
-.clientLogo.typeB .slick-track {
-    transition-duration: 21000ms !important;
-}
-
-.clientLogo.typeC .slick-track {
-    transition-duration: 30000ms !important;
-}
-
-
 /* pc */
 @media screen and (min-width: 961px) {
     #client {
@@ -1160,13 +1106,6 @@ button:focus {
         padding-bottom: 5px;
         font-size: 18px;
     }
-
-
-    .clientLogo span {
-        width: 33.33%;
-        height: 40px;
-        margin-top: 70px;
-    }
 }
 
 
@@ -1198,13 +1137,6 @@ button:focus {
     .clientList .tabMenu a {
         padding-bottom: 5px;
         font-size: 14px;
-    }
-
-
-    .clientLogo span {
-        width: 33.33%;
-        height: 40px;
-        margin-top: 45px;
     }
 }
 
