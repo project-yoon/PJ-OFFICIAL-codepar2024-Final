@@ -1882,6 +1882,10 @@ button:focus {
     color: #E96A23 !important;
 }
 
+.custom-nav .navbar-nav li a.active {
+    color: #E96A23 !important;
+}
+
 .btn-custom,
 .form-kerri .form-control:focus,
 .about-social li a:hover {

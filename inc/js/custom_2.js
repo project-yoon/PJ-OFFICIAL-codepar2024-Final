@@ -206,7 +206,7 @@ pinSections.forEach((panel, i) => {
 	ScrollTrigger.create({
 		trigger: panel,
 		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-		pin: true, 
+		pin: true,
 		pinSpacing: false,
 	});
 });
@@ -385,3 +385,46 @@ function splitElements() {
 }
 
 splitElements()
+
+/* header GNB menu */
+function headerTopPosi() {
+	let nav_UL_LI_A = document.querySelectorAll('.custom-nav ul li a');
+	let nav_UL_LI_A_NOT = document.querySelector('.custom-nav ul li a');
+
+	if (!window.pageYOffset > document.querySelector('.custom-nav').offsetTop) {
+		nav_UL_LI_A.forEach((el) => {
+			el.classList.remove('active');
+		});
+		nav_UL_LI_A_NOT.classList.add('active');
+	}
+}
+document.addEventListener('scroll', () => {
+	headerTopPosi();
+});
+
+let navLinks = gsap.utils.toArray('.custom-nav ul li a');
+navLinks.forEach(link => {
+	let navLink_href = document.querySelector(link.getAttribute("href")),
+
+		linkTarget = ScrollTrigger.create({
+			trigger: navLink_href,
+			start: "top top"
+		});
+
+	ScrollTrigger.create({
+		trigger: navLink_href,
+		start: "top center",
+		end: "bottom center",
+		onToggle: self => setActive(link)
+	});
+
+	link.addEventListener('click', e => {
+		e.preventDefault();
+		gsap.to(window, {duration: 1, scrollTo: linkTarget.start, overwrite: 'auto'});
+	});
+});
+
+function setActive(link) {
+	navLinks.forEach(el => el.classList.remove('active'));
+	link.classList.add('active');
+}
