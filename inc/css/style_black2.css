@@ -978,17 +978,10 @@ button:focus {
     #cta {
         height: 580px;
     }
-
     #cta h2 {
         margin-bottom: 40px;
         /* font-size: 32px; */
     }
-
-    #cta h2 span {
-        font-size: 16px;
-        margin-top: 10px;
-    }
-
     #cta a {
         padding: 0 20px;
         line-height: 53px;

@@ -114,7 +114,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     width: 0;
     height: 22px;
     display: inline-block;
-    background: rgb(235 104 40 / 78%);
+    background: rgb(235 104 40 / 45%);
     position: absolute;
     bottom:0;
     left:0;
@@ -282,9 +282,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     /* height: 580px; */
 }
 #cta .contents {
-    height: 580px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 580px;
 }
 #cta h2 {
     margin: 0 !important;
@@ -322,16 +324,15 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     color: #ff7f37;
     text-decoration: underline;
     vertical-align: text-bottom;
-    margin-right: 18px;
     font-weight: 900;
     font-style: italic;
 }
-#cta h2 + .quickbox{
-    position: absolute;
-    bottom: 120px;
-    right: 0;
+#cta h3 + .quickbox{
+    /*position: absolute;*/
+    /*bottom: 120px;*/
+    /*right: 0;*/
 }
-#cta h2 + .quickbox a {
+#cta h3 + .quickbox a {
     display: inline-block;
     text-align: center;
     width: 225px;
@@ -339,36 +340,47 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     line-height: 40px !important;
     font-size: 14px !important;
 }
-#cta h2 + .quickbox .btnWhite{
+#cta h3 + .quickbox .btnWhite{
     background-color: rgb(255 255 255) !important;
+}
+.text-rolling-wrap {
+    position: relative;
+    height: 0px;
+    margin: 20px 0 50px 0;
+    overflow: hidden;
+}
+.text-rolling-wrap .text-rolling {
+    position: relative;
+}
+.text-rolling-wrap .text-rolling p {
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 1em;
 }
 @media screen and (max-width: 960px) {
     #cta {
         justify-content: flex-start;
     }
     #cta .contents{
-        align-items: flex-start;
         height: 100%;
-        min-height: 350px;
     }
-    #cta h2 + .quickbox {
-        width: max-content;
+    #cta h3 + .quickbox a{
         display: block;
-        bottom: -8em;
-        left: 50%;
-        right: 50%;
-        transform: translateX(-50%);
-    }
-    #cta h2 + .quickbox a{
         width: 100%;
-        display: block;
         margin-top: 20px;
     }
     .cta .pin__item__img{
         height: 100%;
     }
     #cta h2 .tit_main{
-        font-size: 2.05em;
+        font-size: 1.2em;
+    }
+    .text-rolling-wrap {
+        margin: 0;
+    }
+    .text-rolling-wrap .text-rolling p {
+        padding: 30px 0 30px 0;
+        font-size: 0.8em;
     }
 }
 

@@ -366,3 +366,46 @@ function setActive(link) {
 	navLinks.forEach(el => el.classList.remove('active'));
 	link.classList.add('active');
 }
+
+/* 텍스트 롤링 애니메이션 */
+function initrllLst(listTag, listIdx) {
+	let hgtlst = 0
+	let boxlst = $(listTag).find('.text-rolling')
+	let boxli = $(boxlst).find('p')
+	let isAnimated = true
+	let rollTime = 1200
+	let delayTime = 800
+
+	hgtlst = $(listTag).find('p').outerHeight();
+	$(listTag).css('height', hgtlst * listIdx);
+
+	if (boxli.length === 1) { return }
+
+	function rollingList() {
+		boxlst.animate({ 'top': - hgtlst }, rollTime, function() {
+			boxlst.append($(listTag).find('p').first().clone());
+			boxlst.css('top', '0px');
+			$(listTag).find('p').first().remove();
+		});
+	}
+
+	function checkAnimationStatus() {
+		rollingList()
+
+		let intervalId = setInterval(function() {
+			if (isAnimated) {
+				rollingList()
+			}
+		}, rollTime + delayTime)
+		return intervalId
+	}
+
+	$(listTag).on('mouseenter', function() {isAnimated = false})
+	$(listTag).on('mouseleave', function() {isAnimated = true})
+
+	var rollingIntervalId = checkAnimationStatus()
+}
+
+$(document).ready(function () {
+	initrllLst($('.text-rolling-wrap'),1);
+});
