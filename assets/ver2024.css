@@ -315,7 +315,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     display: none;
 }
 #cta h2 .tit_main {
-    font-size: 50px;
+    font-size : 1.75em;
     font-size: 2.55em;
     letter-spacing: -0.05em;
 }
@@ -328,9 +328,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     font-style: italic;
 }
 #cta h3 + .quickbox{
-    /*position: absolute;*/
-    /*bottom: 120px;*/
-    /*right: 0;*/
+    position: absolute;
+    bottom: 120px;
+    right: 0;
 }
 #cta h3 + .quickbox a {
     display: inline-block;
@@ -355,7 +355,8 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .text-rolling-wrap .text-rolling p {
     padding: 20px 0 20px 0;
     text-align: center;
-    font-size: 1em;
+    font-size : 2.025em;
+    font-weight : 900;
 }
 @media screen and (max-width: 960px) {
     #cta {
