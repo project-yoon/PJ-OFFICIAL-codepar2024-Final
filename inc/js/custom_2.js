@@ -396,6 +396,11 @@ function headerTopPosi() {
 			el.classList.remove('active');
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
+		document.querySelector('#cta').style.filter = 'unset';
+		document.querySelector('#client').style.cssText = `filter: blur(2px); background-color: rgb(39 38 38 / 70%);`;
+	} else {
+		document.querySelector('#cta').style.filter = 'blur(2px)';
+		document.querySelector('#client').style.cssText = `filter: unset; background-color: rgb(39 38 38 / 100%);`;
 	}
 }
 document.addEventListener('scroll', () => {
