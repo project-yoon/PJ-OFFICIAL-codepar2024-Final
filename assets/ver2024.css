@@ -261,6 +261,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s
 }
 .pin__item__img {
     position: absolute;

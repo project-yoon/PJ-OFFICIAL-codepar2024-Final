@@ -975,9 +975,6 @@ button:focus {
 
 /* pc */
 @media screen and (min-width: 961px) {
-    #cta {
-        height: 580px;
-    }
     #cta h2 {
         margin-bottom: 40px;
         /* font-size: 32px; */
@@ -1017,6 +1014,7 @@ button:focus {
 #client {
     background-color: rgb(39 38 38 / 70%);
     filter: blur(2px);
+    transition: 0.3s;
 }
 #client .titArea{
     text-align: right;
