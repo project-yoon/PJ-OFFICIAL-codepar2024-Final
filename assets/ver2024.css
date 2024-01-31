@@ -20,72 +20,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .formmail_cell_bgcolor > table td.input-item textarea {margin-top:0px;}
 .formmail_cell_bgcolor > table td.input-item input {width:auto !important;position:relative;top:3px;display:inline-block;}
 
-/* 메인 비주얼 */
-.text-trans {
-    font-size: 65px;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #E96A23;
-}
-.text-trans-animate {
-    position: relative;
-    height: 90vh;
-    width: 100%;
-    overflow: hidden;
-}
-.main-visual-wrap {
-    min-height: 100%;
-    display: grid;
-    place-content: center;
-    transform-style: perserve-3d;
-    overflow: hidden;
-}
-.title-effects {
-    display: grid;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.title-effects li {
-    grid-area: 1 / 1;
-    margin-bottom: 75px;
-    font-size: 2.75rem;
-    user-select: none;
-    visibility: hidden;
-    text-align: center;
-    letter-spacing: -0.5px;
-    color: #040404;
-    font-weight: 700;
-}
-.title-effects li:last-child {
-    color: #E96A23;
-}
-.visual-btn-wrap {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-}
-.visual-btn-wrap a {
-    display: block;
-    padding: 0 20px;
-    line-height: 53px;
-    text-align: center;
-    transition: 0.3s;
-}
-.visual-btn-wrap a:last-child {
-    margin: 18px auto 0;
-}
-.visual-btn-wrap .btnblack:hover {
-    background-color: #e96a23 !important;
-}
-.visual-btn-wrap .btnWhite:hover {
-    background-color: rgba(255 255 255 / 100%) !important;
-}
-
 /* about */
 #about {
     position: relative;
@@ -287,27 +221,19 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 580px;
+    width: 100%;
+    height: 100vh;
+    gap: 80px;
+    padding-bottom: 200px;
 }
 #cta h2 {
-    margin: 0 !important;
     font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 !important;
     color: #fff;
     font-weight: 100;
-    /* font-weight: 600; */
-    /* text-align: center; */
-    /* font-size: 45px; */
     line-height: 1.5;
     animation: anim 1.5s infinite alternate ease-in-out;
 }
-@keyframes anim {
-    from {
-      text-shadow: 0 0 10px transparent;
-    }
-    to {
-      text-shadow: 0 14px 30px rgba(0, 0, 0, 1);
-    }
-  }
 #cta h2 .tit_sub {
     margin: 0 0 20px;
     display: block;
@@ -316,22 +242,24 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     display: none;
 }
 #cta h2 .tit_main {
-    font-size : 1.75em;
-    font-size: 2.55em;
+    font-size : 1.4em;
     letter-spacing: -0.05em;
 }
 #cta h2 .tit_main.en {
-    color: #e96a23;
     color: #ff7f37;
-    text-decoration: underline;
     vertical-align: text-bottom;
     font-weight: 900;
     font-style: italic;
 }
+#cta h3 {
+    position: relative;
+    width: 100%;
+}
 #cta h3 + .quickbox{
     position: absolute;
-    bottom: 120px;
-    right: 0;
+    bottom: 160px;
+    left: 50%;
+    transform: translate(-50%);
 }
 #cta h3 + .quickbox a {
     display: inline-block;
@@ -343,6 +271,46 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 #cta h3 + .quickbox .btnWhite{
     background-color: rgb(255 255 255) !important;
+}
+.motion-effect-2,
+.motion-effect-3 {
+    font-size: 2.6em;
+    text-align: center;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+}
+.motion-effect-2 .motion-dummy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+.motion-effect-3 .motion-dummy {
+    display: inline-block;
+    opacity: 0;
+}
+.motion-effect-1 .motion-effect-text {
+    position: relative;
+    display: inline-block;
+}
+.motion-effect-1 .motion-line {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    background-color: #ff7f37;
+    transform-origin: 100% 100%;
+}
+@keyframes anim {
+    from {
+        text-shadow: 0 0 10px transparent;
+    }
+    to {
+        text-shadow: 0 14px 30px rgba(0, 0, 0, 1);
+    }
 }
 .text-rolling-wrap {
     position: relative;

@@ -1013,8 +1013,6 @@ button:focus {
 /*  ====  Client  ====  */
 #client {
     background-color: rgb(39 38 38 / 70%);
-    filter: blur(2px);
-    transition: 0.3s;
 }
 #client .titArea{
     text-align: right;

@@ -1,52 +1,3 @@
-$(document).ready(function () {
-    // work
-    if ($('#work').length) {
-        $('#work')
-            .find('.more a')
-            .click(function () {
-                $('.workList').css('height', 'auto');
-                $(this).fadeOut();
-            });
-    }
-
-    if ($('.storyList').length) {
-        $('.storyList').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: false,
-            prevArrow: "#story .btnArea .prev",
-            nextArrow: "#story .btnArea .next",
-            asNavFor: '.storyTxt',
-            responsive: [
-                {
-                    breakpoint: 961,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-            ]
-        });
-    }
-
-    if ($('.storyTxt').length) {
-        $('.storyTxt').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            draggable: false,
-            fade: true,
-            asNavFor: '.storyList',
-            arrows: false
-        });
-    }
-    AOS.init();
-});
-
 const btnContact = $('.btn-contact')
 const contactWrap = $('#popupContact')
 let isActive
@@ -65,9 +16,6 @@ btnContact.on("click", function(e) {
 	}
 })
 
-/**
- * gsap
- * */
 gsap.registerEffect({
 	name: "textAnimation",
 	defaults: {duration: 2},
@@ -98,10 +46,10 @@ document.querySelectorAll('.word').forEach(function (box, index) {
 });
 
 gsap.timeline({
-		scrollTrigger: {
-			trigger: ".slide-in"
-		}
-	})
+	scrollTrigger: {
+		trigger: ".slide-in"
+	}
+})
 	.to(".slide-in .left", {x: 0, duration: 0.5})
 	.to(".slide-in .right", {x: 0, duration: 0.5})
 	.to(".slide-in p", {y: 0, opacity: 1, duration: 1});
@@ -144,182 +92,7 @@ pinSections.forEach((panel, i) => {
 	});
 });
 
-
-// 메인 비주얼 관련
-let mm = gsap.matchMedia()
-
-mm.add({
-	isMobile: "(max-width:767px)",
-	idDesktop: "(min-width:768px)",
-}, (context) => {
-	let {isMobile, isDesktop} = context.conditions;
-
-	gsap.to(".text-trans", {
-		scrollTrigger: {
-			trigger: ".text-trans",
-			start: "center center",
-			end: "+=800",
-			scrub: true,
-			pin: true,
-		},
-
-		scale: 50,
-		opacity: 0,
-		ease: "Power1.easeIn"
-	});
-
-	gsap.to(".top-image", {
-		opacity: 0,
-		ease: "Power1.easeIn",
-		scrollTrigger: {
-			trigger: ".gsap-img-container",
-			start: "center 60%",
-			end: "+=600",
-			scrub: true,
-			pin: true,
-			markers: false
-		}
-	});
-
-	gsap.fromTo(".gsap-text", {fontSize: "0", xPercent: -50, yPercent: 50},
-		{
-			fontSize: "13vw",
-			xPercent: -50,
-			yPercent: -500,
-			scrollTrigger: {
-				trigger: ".gsap-img-container",
-				start: "center 60%",
-				end: "+=600",
-				scrub: true,
-				markers: false
-			}
-		});
-})
-
-
-
-
-
-gsap.registerPlugin(SplitText)
-
-const titleList = gsap.utils.toArray('.title-effects li')
-const titlesTl = gsap.timeline({repeat: -1})
-
-gsap.registerEffect({
-	name: 'rotateIn',
-	extendTimeline: true,
-	defaults: {
-		duration: 1,
-		rotationY: 0,
-		rotationX: 0,
-		transformOrigin: '50% 50%',
-		ease: 'back',
-		parent: '.main-visual-wrap',
-	},
-
-	effect: (targets, config) => {
-		gsap.set(config.parent, {perspective: 800})
-
-		let tl = gsap.timeline()
-		tl.from(targets, {
-			duration: config.duration,
-			rotationY: config.rotationY,
-			rotationX: config.rotationX,
-			transformOrigin: config.transformOrigin,
-			ease: config.ease,
-			stagger: {
-				each: 0.06,
-			},
-		})
-
-		tl.from(
-			targets,
-			{
-				duration: 0.4,
-				autoAlpha: 0,
-				ease: 'none',
-				stagger: {
-					each: 0.05,
-				},
-			},
-			0,
-		)
-
-		return tl
-	},
-})
-
-gsap.registerEffect({
-	name: 'rotateOut',
-	extendTimeline: true,
-	defaults: {
-		duration: 0.5,
-		x: 0,
-		y: 0,
-		rotationY: 0,
-		rotationX: 0,
-		rotationZ: 0,
-		transformOrigin: '50% 50%',
-		ease: 'power1.in',
-		parent: '.main-visual-wrap',
-	},
-
-	effect: (targets, config) => {
-		gsap.set(config.parent, {perspective: 800})
-
-		let tl = gsap.timeline()
-		tl.to(targets, {
-			x: config.x,
-			y: config.y,
-			rotationY: config.rotationY,
-			rotationX: config.rotationX,
-			rotationZ: config.rotationZ,
-			transformOrigin: config.transformOrigin,
-			ease: config.ease,
-			stagger: {
-				each: 0.04,
-			},
-		})
-
-		tl.to(
-			targets,
-			{
-				duration: 0.45,
-				opacity: 0,
-				ease: 'none',
-				stagger: {
-					amount: 0.02,
-				},
-			},
-			0,
-		)
-
-		return tl
-	},
-})
-
-function splitElements() {
-	gsap.set(titleList, {autoAlpha: 1})
-	titleList.forEach((element, dex) => {
-		let split = new SplitText(element, {type: 'chars,words,lines'})
-
-		titlesTl
-			.rotateIn(split.words, {
-				rotationX: 90,
-				transformOrigin: '100% 0',
-				ease: 'back(2.3)'
-			}, dex > 0 ? '-=0.38' : 0,)
-			.rotateOut(split.words, {
-				y: 20,
-				rotationX: -100,
-				transformOrigin: '100% 100%'
-			})
-	})
-}
-
-splitElements()
-
-/* header GNB menu */
+/* ----------- 헤더 메뉴 ----------- */
 function headerTopPosi() {
 	let nav_UL_LI_A = document.querySelectorAll('.custom-nav ul li a');
 	let nav_UL_LI_A_NOT = document.querySelector('.custom-nav ul li a');
@@ -330,17 +103,17 @@ function headerTopPosi() {
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
 		document.querySelector('#cta').style.filter = 'unset';
-		document.querySelector('#client').style.cssText = `filter: blur(2px); background-color: rgb(39 38 38 / 70%);`;
+		document.querySelector('#client').style.cssText = `background-color: rgb(39 38 38 / 70%);`;
 	} else {
 		document.querySelector('#cta').style.filter = 'blur(2px)';
-		document.querySelector('#client').style.cssText = `filter: unset; background-color: rgb(39 38 38 / 100%);`;
+		document.querySelector('#client').style.cssText = `background-color: rgb(39 38 38 / 100%);`;
 	}
 }
 document.addEventListener('scroll', () => {
 	headerTopPosi();
 });
 
-let navLinks = gsap.utils.toArray('.custom-nav ul li a');
+let navLinks = gsap.utils.toArray('.custom-nav ul li .nav-link:not(.nav-link-not)');
 navLinks.forEach(link => {
 	let navLink_href = document.querySelector(link.getAttribute("href")),
 
@@ -367,7 +140,7 @@ function setActive(link) {
 	link.classList.add('active');
 }
 
-/* 텍스트 롤링 애니메이션 */
+/* ----------- 텍스트 롤링 애니메이션 ----------- */
 function initrllLst(listTag, listIdx) {
 	let hgtlst = 0
 	let boxlst = $(listTag).find('.text-rolling')
@@ -406,6 +179,116 @@ function initrllLst(listTag, listIdx) {
 	var rollingIntervalId = checkAnimationStatus()
 }
 
+/* ----------- 텍스트 애니메이션 효과 ----------- */
+let textWrapper = document.querySelector('.motion-effect-1 .motion-dummy');
+
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
+
+anime.timeline({
+	loop: false
+}).add({
+	targets: '.motion-effect-1 .motion-line',
+	scaleX: [0, 1],
+	opacity: [0.5, 1],
+	easing: "easeInOutExpo",
+	duration: 2000
+}).add({
+	targets: '.motion-effect-1 .dummy',
+	opacity: [0, 1],
+	translateX: [40, 0],
+	translateZ: 0,
+	scaleX: [0.3, 1],
+	easing: "easeOutExpo",
+	duration: 8000,
+	offset: '-=600',
+	delay: (el, i) => 150 + 25 * i
+}).add({
+	targets: '.motion-effect-1',
+	opacity: 1,
+	duration: 8000,
+	easing: "easeOutExpo",
+	delay: 8000,
+});
+
+setTimeout(() => {
+	anime.timeline({
+		loop: true
+	}).add({
+		targets: '.motion-effect-2 .motion-dummy-1',
+		opacity: [0, 1],
+		scale: [0.2, 1],
+		duration: 800
+	}).add({
+		targets: '.motion-effect-2 .motion-dummy-1',
+		opacity: 0,
+		scale: 3,
+		duration: 600,
+		easing: "easeInExpo",
+		delay: 500
+	}).add({
+		targets: '.motion-effect-2 .motion-dummy-2',
+		opacity: [0, 1],
+		scale: [0.2, 1],
+		duration: 800
+	}).add({
+		targets: '.motion-effect-2 .motion-dummy-2',
+		opacity: 0,
+		scale: 3,
+		duration: 600,
+		easing: "easeInExpo",
+		delay: 500
+	}).add({
+		targets: '.motion-effect-3 .motion-dummy',
+		scale: [14, 1],
+		opacity: [0, 1],
+		easing: "easeOutCirc",
+		duration: 800,
+		delay: (el, i) => 800 * i
+	}).add({
+		targets: '.motion-effect-3',
+		opacity: 0,
+		duration: 1000,
+		easing: "easeOutExpo",
+		delay: 1000
+	});
+}, 2800);
+
 $(document).ready(function () {
+	if ($('.storyList').length) {
+		$('.storyList').slick({
+			dots: false,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			draggable: false,
+			prevArrow: "#story .btnArea .prev",
+			nextArrow: "#story .btnArea .next",
+			asNavFor: '.storyTxt',
+			responsive: [
+				{
+					breakpoint: 961,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				},
+			]
+		});
+	}
+
+	if ($('.storyTxt').length) {
+		$('.storyTxt').slick({
+			dots: false,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			draggable: false,
+			fade: true,
+			asNavFor: '.storyList',
+			arrows: false
+		});
+	}
+	AOS.init();
 	initrllLst($('.text-rolling-wrap'),1);
 });
