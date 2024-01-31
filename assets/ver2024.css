@@ -366,6 +366,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     #cta .contents{
         height: 100%;
     }
+    #cta h3 + .quickbox {
+        bottom: -130px;
+        left: 50%;
+        transform: translate(-50%);
+    }
     #cta h3 + .quickbox a{
         display: block;
         width: 100%;
