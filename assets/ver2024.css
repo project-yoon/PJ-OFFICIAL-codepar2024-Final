@@ -183,8 +183,8 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 }
 
-/* cta */
-#cta {
+/* home */
+#home {
     position: relative;
     position: relative;
     display: flex;
@@ -207,7 +207,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     background-size: cover;
     background-position: center;
 }
-.cta .pin__item__img{
+.home .pin__item__img{
     background-image: url('/assets/img/main_visual.png');
     background-color: #272524;
     background-repeat: no-repeat;
@@ -216,7 +216,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	background-blend-mode: overlay;
     /* height: 580px; */
 }
-#cta .contents {
+#home .contents {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -226,7 +226,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     gap: 80px;
     padding-bottom: 200px;
 }
-#cta h2 {
+#home h2 {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0 !important;
     color: #fff;
@@ -234,34 +234,34 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     line-height: 1.5;
     animation: anim 1.5s infinite alternate ease-in-out;
 }
-#cta h2 .tit_sub {
+#home h2 .tit_sub {
     margin: 0 0 20px;
     display: block;
     font-weight: 300;
     color: rgba(255 255 255 / 50%);
     display: none;
 }
-#cta h2 .tit_main {
+#home h2 .tit_main {
     font-size : 1.4em;
     letter-spacing: -0.05em;
 }
-#cta h2 .tit_main.en {
+#home h2 .tit_main.en {
     color: #ff7f37;
     vertical-align: text-bottom;
     font-weight: 900;
     font-style: italic;
 }
-#cta h3 {
+#home h3 {
     position: relative;
     width: 100%;
 }
-#cta h3 + .quickbox{
+#home h3 + .quickbox{
     position: absolute;
     bottom: 160px;
     left: 50%;
     transform: translate(-50%);
 }
-#cta h3 + .quickbox a {
+#home h3 + .quickbox a {
     display: inline-block;
     text-align: center;
     width: 225px;
@@ -269,7 +269,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     line-height: 40px !important;
     font-size: 14px !important;
 }
-#cta h3 + .quickbox .btnWhite{
+#home h3 + .quickbox .btnWhite{
     background-color: rgb(255 255 255) !important;
 }
 .motion-effect-1 .motion-effect-text {
@@ -344,26 +344,26 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     font-weight : 900;
 }
 @media screen and (max-width: 960px) {
-    #cta {
+    #home {
         justify-content: flex-start;
     }
-    #cta .contents{
+    #home .contents {
         height: 100%;
     }
-    #cta h3 + .quickbox {
+    #home h3 + .quickbox {
         bottom: -130px;
         left: 50%;
         transform: translate(-50%);
     }
-    #cta h3 + .quickbox a{
+    #home h3 + .quickbox a {
         display: block;
         width: 100%;
         margin-top: 20px;
     }
-    .cta .pin__item__img{
+    .home .pin__item__img {
         height: 100%;
     }
-    #cta h2 .tit_main{
+    #home h2 .tit_main{
         font-size: 1.2em;
     }
     .text-rolling-wrap {
@@ -392,9 +392,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	width: 100%;
 	height: auto;
 	margin-top: 60px;
-}
-.client .clientList .tabMenu {
-	position: static;
 }
 .client .client-logo {
 	position: relative;
@@ -556,13 +553,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 }
 
-/* footer */
-.footer {}
-.footer .contents {
-	height: auto;
-}
-
-
 /* 문의하기 부분 */
 #quick-menu {
 	z-index:1000;
@@ -616,7 +606,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #quick-menu .btn-contact i {
 	font-size: 25px;
 }
-
 .btn-contact.active:after {
 	content:"\F156";
 	display: inline-block;
@@ -636,8 +625,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #quick-menu .btn-contact.active + .back_top {
 	display: none !important;
 }
-
-section.section#contact {z-index: unset;}
+section.section#contact {
+    z-index: unset;
+}
 #popupContact {
 	display: none;
 	z-index:1000;
@@ -650,7 +640,7 @@ section.section#contact {z-index: unset;}
 }
 
 /* pc */
-@media screen and (min-width:961px){
+@media screen and (min-width:961px) {
 	#popupContact {
 		bottom: 65px;
 		right: 20px;
@@ -661,7 +651,6 @@ section.section#contact {z-index: unset;}
 	#popupContact .tbl_formmail_sub {
 		margin: 0 0 20px;
 	}
-	
 
     /* 플립 카드 */
     .card-wrap li:hover .flip-card{
@@ -683,7 +672,6 @@ section.section#contact {z-index: unset;}
         border-radius: 24px;
         overflow: hidden;
     }
-
     .flip-card-side.front {
         display: block;
     }
@@ -702,7 +690,6 @@ section.section#contact {z-index: unset;}
         transform: rotateY(180deg);
         font-size: 24px;
     }
-
     .card-wrap span.tit,
     .card-wrap span.info {
         opacity: 1;
@@ -803,7 +790,7 @@ section.section#contact {z-index: unset;}
 }
 
 /* mobile 2 */
-@media screen and (max-width:560px){
+@media screen and (max-width:560px) {
 	/* work */
 	.work .workList li {
 		width: 100%;

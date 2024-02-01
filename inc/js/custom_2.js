@@ -5,7 +5,7 @@ let pinedList = document.querySelector('.pined-list');
 let pinedInner = document.querySelector('.pined-inner');
 let pinSections = gsap.utils.toArray(".pin__item");
 let pinSectionsTops = pinSections.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
-let cta = document.querySelector('#cta');
+let home = document.querySelector('#home');
 let client = document.querySelector('#client');
 let isActive;
 
@@ -36,7 +36,7 @@ btnContact.on('click', function(e) {
 		btnContact.addClass('active')
 		contactWrap.fadeIn(300)
 	}
-})
+});
 
 /* ----------- work 영역 우측 텍스트 고정 ----------- */
 gsap.to(".work .titArea", {
@@ -50,7 +50,7 @@ gsap.to(".work .titArea", {
 		end: "top -100%",
 		scrub: true
 	}
-})
+});
 
 /* ----------- 카드 모션 ----------- */
 gsap.to(pinedList, {
@@ -74,10 +74,10 @@ function headerTopPosi() {
 			el.classList.remove('active');
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
-		cta.style.filter = 'unset';
+		home.style.filter = 'unset';
 		client.style.cssText = `background-color: rgb(39 38 38 / 70%);`;
 	} else {
-		cta.style.filter = 'blur(2px)';
+		home.style.filter = 'blur(2px)';
 		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
 	}
 }

@@ -1,12 +1,3 @@
-/*-----------------------------------------------------------
-* Template Name    :Kerri | Responsive Bootstrap 4 Personal Template
-* Author           :SRBThemes
-* Version          :1.0.0
-* Created          :March 2018
-* File Description :Main css file of the template
-*------------------------------------------------------------
-*/
-
 /***********************
     1.BASIC
     2.HELPER
@@ -300,124 +291,9 @@ button:focus {
     color: #000 !important;
 }
 
-
 /*===========================
         4.HOME
 =============================*/
-.header-bg-img {
-    background-image: url(../images/header-bg3.jpg);
-    position: relative;
-    background-size: cover;
-    background-position: center center;
-}
-
-.header-content {
-    max-width: 800px;
-}
-
-.header-table-center {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.header-table {
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-
-.header-name {
-    font-size: 54px;
-}
-
-.header-desc {
-    max-width: 500px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.scroll_down {
-    position: absolute;
-    bottom: 5vh;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 13px;
-    z-index: 8;
-}
-
-.scroll_down i {
-    position: relative;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
-    height: 44px;
-    width: 28px;
-    line-height: 54px;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    display: inline-block;
-    color: #fff;
-    font-size: 10px;
-}
-
-.scroll_down i:after {
-    content: "";
-    position: absolute;
-    top: 22px;
-    left: 11px;
-    border-radius: 2px;
-    z-index: -1;
-    bottom: 0px;
-    transition: all .2s;
-    height: 10px;
-    width: 3px;
-    background: #fff;
-}
-
-/*HOME 4*/
-.curv-img {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    z-index: 1;
-}
-
-.curv-img svg {
-    display: block;
-}
-
-/*HOME 7*/
-.clip-home {
-    clip-path: polygon(0 0, 100% 0, 100% 83%, 50% 100%, 0 83%);
-    position: relative;
-}
-
-/*DEMO 16*/
-.wave_sec {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.wave_sec svg {
-    height: 180px;
-}
-
-/*===========================
-        5.ABOUT
-=============================*/
-.about-social li a {
-    color: #a0a0ac;
-    display: inline-block;
-    height: 42px;
-    width: 42px;
-    font-size: 20px;
-    border-radius: 50%;
-    border: 2px solid #6b6e6f;
-    line-height: 38px;
-    transition: all 0.5s;
-    text-align: center;
-}
 
 
 /*===========================
@@ -582,32 +458,6 @@ button:focus {
     color: #64d674;
     font-size: 22px;
 }
-
-
-/*======================
-        11.FOOTER
-========================*/
-.footer {
-    padding: 70px 0px;
-    background-color: #26282b !important;
-}
-
-.footer .footer-alt p {
-    font-size: 16px;
-}
-
-.footer .footer-alt ul li a {
-    border-radius: 50%;
-    transition: all 0.5s;
-    background-color: rgba(241, 241, 241, 0.08);
-    width: 42px;
-    height: 42px;
-    display: block;
-    font-size: 18px;
-    line-height: 42px;
-    text-align: center;
-}
-
 
 /*===========================
         12.RESPONSIVE
@@ -824,127 +674,6 @@ button:focus {
     }
 }
 
-
-/*  ====  Main Visual  ====  */
-/* #home {position:relative; height:100vh; background:url('/bizdemo122704/img/images/new/main_visual.png') no-repeat center top / cover;} */
-#home {
-    position: relative;
-    height: 100vh;
-    background: url('/assets/img/main_visual.png') no-repeat center top / cover;
-}
-
-
-.mainInfo, .mainInfo dt, .mainInfo dd {
-    margin: 0;
-    padding: 0;
-}
-
-.mainInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
-}
-
-.mainInfo dt {
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #E96A23;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.mainInfo dt span {
-    display: block;
-    font-weight: 400;
-    line-height: 1.3;
-    color: #040404;
-}
-
-.mainInfo dd span.element {
-    color: #040404;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-.mainInfo dd span.typed-cursor {
-    color: #040404;
-}
-
-.mainInfo dd a {
-    display: block;
-    text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
-    transition: 0.3s;
-}
-
-.mainInfo dd a:first-child {
-    margin-top: 0;
-}
-
-.mainInfo .btnblack:hover,
-.mainInfo .btnblack:focus {
-    background-color: #e96a23 !important;
-}
-
-.mainInfo .btnWhite:hover,
-.mainInfo .btnWhite:focus {
-    background-color: rgba(255 255 255 / 100%) !important;
-}
-
-
-/* pc */
-@media screen and (min-width: 961px) {
-    .mainInfo dt {
-        font-size: 20px;
-    }
-
-    .mainInfo dt span {
-        margin-top: 30px;
-        font-size: 48px;
-    }
-
-    .mainInfo dd:first-of-type {
-        margin: 100px 0 50px;
-    }
-
-    .mainInfo dd a {
-        margin: 18px auto 0;
-        padding: 0 20px;
-        line-height: 53px;
-    }
-}
-
-
-/* mobile */
-@media screen and (max-width: 960px) {
-    .mainInfo dt {
-        font-size: 16px;
-    }
-
-    .mainInfo dt span {
-        margin-top: 15px;
-        font-size: 24px;
-    }
-
-    .mainInfo dd {
-        margin: 30px 0 0;
-    }
-
-    .mainInfo dd a {
-        margin: 15px auto 0;
-        padding: 0 15px;
-        line-height: 40px;
-        font-size: 14px;
-    }
-}
-@media screen and (max-width: 450px) {
-    .mainInfo dt br {
-        display: none;
-    }
-}
-
 /* pc */
 @media screen and (min-width: 961px) {
     #about .titArea {
@@ -975,11 +704,10 @@ button:focus {
 
 /* pc */
 @media screen and (min-width: 961px) {
-    #cta h2 {
+    #home h2 {
         margin-bottom: 40px;
-        /* font-size: 32px; */
     }
-    #cta a {
+    #home a {
         padding: 0 20px;
         line-height: 53px;
     }
@@ -988,16 +716,14 @@ button:focus {
 
 /* mobile */
 @media screen and (max-width: 960px) {
-    #cta {
+    #home {
         padding: 6em 0 12em;
     }
-
-    #cta h2 {
+    #home h2 {
         margin-bottom: 20px;
         font-size: 28px;
     }
-
-    #cta a {
+    #home a {
         padding: 0 10px;
         line-height: 40px;
         font-size: 14px;
@@ -1015,8 +741,6 @@ button:focus {
 #client .titArea p {
     margin-top: 90px;
 }
-
-
 .clientList ul,
 .clientList li,
 .clientList a {
@@ -1024,31 +748,6 @@ button:focus {
     padding: 0;
     list-style: none;
 }
-
-.clientList .tabMenu {
-    display: flex;
-}
-
-.clientList .tabMenu li:first-child {
-    margin-left: 0;
-}
-
-.clientList .tabMenu a {
-    display: block;
-    color: rgba(255 255 255 / 50%);
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
-}
-
-.clientList .tabMenu a:hover {
-    color: #fff;
-}
-
-.clientList .tabMenu li.on a {
-    color: #E96A23;
-    border-bottom: 2px solid #E96A23;
-}
-
 .clientList .tabCon {
     height: 100%;
 }
@@ -1058,37 +757,17 @@ button:focus {
     #client {
         padding: 170px 0;
     }
-
     #client .contents {
         display: flex;
         justify-content: space-between;
     }
-
     #client .titArea {
         margin: 0;
     }
-
-
     .clientList {
         position: relative;
         width: 50%;
         height: 480px;
-    }
-
-    .clientList .tabMenu {
-        position: absolute;
-        right: 100%;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .clientList .tabMenu li {
-        margin-left: 45px;
-    }
-
-    .clientList .tabMenu a {
-        padding-bottom: 5px;
-        font-size: 18px;
     }
 }
 
@@ -1108,42 +787,22 @@ button:focus {
         height: 480px;
         margin-top: 40px;
     }
-
-    .clientList .tabMenu {
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .clientList .tabMenu li {
-        margin-left: 40px;
-    }
-
-    .clientList .tabMenu a {
-        padding-bottom: 5px;
-        font-size: 14px;
-    }
 }
-
 
 /*  ====  Works  ====  */
 #work {
     background-color: #2E3135;
 }
-
-
 .workList, .workList li, .workList a {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
 }
-
 .workList {
-    overflow: hidden;
     width: 65%;
-    /* margin-left: auto; */
+    overflow: hidden;
 }
-
 .workList a {
     position: relative;
     display: flex;
@@ -1158,22 +817,18 @@ button:focus {
     overflow: hidden;
     cursor: default;
 }
-
 .workList a > * {
     width: 100%;
 }
-
 .workList span.tit {
     opacity: 0;
     color: #E96A23;
     font-weight: 300;
 }
-
 .workList span.info {
     opacity: 0;
     color: rgba(255 255 255 / 50%);
 }
-
 .workList span.thumb {
     position: absolute;
     top: 0;
@@ -1183,7 +838,6 @@ button:focus {
     z-index: -1;
     transition: 0.6s;
 }
-
 .workList span.thumb:before {
     content: '';
     position: absolute;
@@ -1195,18 +849,15 @@ button:focus {
     transition: 0.6s;
     opacity: 0;
 }
-
 .workList span.thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .workList a:hover span.thumb,
 .workList a:focus span.thumb {
     transform: scale(1.05);
 }
-
 .workList a:hover span.thumb:before,
 .workList a:focus span.thumb:before,
 .workList a:hover span.tit,
@@ -1215,71 +866,56 @@ button:focus {
 .workList a:focus span.info  {
     opacity: 1;
 }
-
 .workList + .more {
     display: none;
 }
-
 
 /* pc */
 @media screen and (min-width: 961px) {
     #work {
         padding: 146px 0 140px;
     }
-
     #work .contents {
         padding-right: 390px;
     }
-
     #work .titArea {
         position: absolute;
         top: 0;
         right: 0;
         height: auto;
     }
-
-
     .workList li {
         width: calc(50% - 25px);
         height: 452px;
         margin: 50px 0 0 50px;
     }
-
     .workList li:nth-child(odd) {
         float: left;
     }
-
     .workList li:nth-child(even) {
         float: right;
     }
-
     .workList li:nth-child(2n + 1) {
         margin-left: 0;
     }
-
     .workList li:nth-child(1) {
         margin-top: 0;
     }
-
     .workList li:nth-child(2) {
         margin-top: 100px;
     }
-
     .workList a {
         padding: 30px;
         font-size: 0px;
     }
-
     .workList span.tit {
         margin-bottom: 5px;
         font-size: 16px;
     }
-
     .workList span.info {
         margin-top: 20px;
         font-size: 12px;
     }
-    
     .workList a:hover,
     .workList a:focus {
         font-size: 24px;
@@ -1693,8 +1329,9 @@ button:focus {
 
 /*  ====  footer  ====  */
 .footer {
-    background-color: #26282B;
     font-family: 'Noto Sans KR', sans-serif;
+    padding: 70px 0px;
+    background-color: #26282B;
     font-weight: 300;
     line-height: 1.7;
     color: rgba(255 255 255 / 80%);
@@ -1794,8 +1431,7 @@ button:focus {
 .custom-nav .navbar-nav li.active a,
 .custom-nav.stickyadd .navbar-nav li a:hover,
 .custom-nav.stickyadd .navbar-nav li a:active,
-.custom-nav.stickyadd .navbar-nav li.active a,
-.about-social li a:hover {
+.custom-nav.stickyadd .navbar-nav li.active a {
     color: #E96A23 !important;
 }
 
@@ -1804,8 +1440,7 @@ button:focus {
 }
 
 .btn-custom,
-.form-kerri .form-control:focus,
-.about-social li a:hover {
+.form-kerri .form-control:focus {
     border-color: #E96A23;
 }
 
@@ -1827,52 +1462,4 @@ button:focus {
 .open > .dropdown-toggle.btn-custom {
     background-color: #d8576f;
     border-color: #E96A23;
-}
-
-/* custom 2024.01.11 */
-@media screen and (min-width: 961px) {
-    .mainInfo dt {
-        font-size: 21px;
-    }
-    .mainInfo dd:first-of-type {
-        margin: 20px 0;
-    }
-    .mainInfo dd.sub-txt {
-        padding-bottom: 150px;
-    }
-    .mainInfo dd.sub-txt span {
-        font-family: 'Noto sans kr', sans-serif;
-        color: #333333;
-        font-size: 26px;
-        font-weight: 400;
-    }
-    .mainInfo dd .header-name span.element {
-        font-size: 92px;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .mainInfo dt {
-        font-size: 18px;
-    }
-    .mainInfo dd:first-of-type {
-        margin: 0;
-    }
-    .mainInfo dd.sub-txt {
-        padding-bottom: 65px;
-    }
-    .mainInfo dd.sub-txt span {
-        color: #333333;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: 'Noto sans kr', sans-serif;
-        text-shadow: none;
-        box-shadow: inset 0 -10px 0 rgb(229 180 152 / 18%);
-    }
-    .mainInfo dd .header-name span.element {
-        font-size: 52px;
-    }
-    .mainInfo dd:last-of-type {
-        opacity: 0;
-    }
 }
