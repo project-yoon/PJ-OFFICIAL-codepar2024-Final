@@ -1,13 +1,16 @@
-const btnContact = $('.btn-contact')
-const contactWrap = $('#popupContact')
+let btnContact = $('.btn-contact')
+let contactWrap = $('#popupContact')
+let pinedList = document.querySelector('.pined-list');
+let pinedInner = document.querySelector('.pined-inner');
 let isActive
 
+/* ----------- 우측 퀵 메뉴 ----------- */
 btnContact.on("click", function(e) {
 	e.preventDefault()
 
 	isActive = btnContact.hasClass('active')
 
-	if(isActive) {
+	if (isActive) {
 		btnContact.removeClass('active')
 		contactWrap.fadeOut(300)
 	} else {
@@ -16,40 +19,7 @@ btnContact.on("click", function(e) {
 	}
 })
 
-gsap.registerEffect({
-	name: "textAnimation",
-	defaults: {duration: 2},
-	effect: (targets, config) => {
-		return gsap
-			.timeline()
-			.from(
-				targets,
-				{
-					duration: 0.5,
-					opacity: 0,
-					scale: 0,
-					y: 80,
-					rotationX: 180,
-					transformOrigin: "0% 50% -50",
-					ease: "back",
-					stagger: 0.01,
-					delay: config.delay / 25
-				},
-				"+=0"
-			)
-			.to(".sub-title", {opacity: 1, y: 0, duration: 1, delay: 0.1});
-	}
-});
-
-gsap.timeline({
-	scrollTrigger: {
-		trigger: ".slide-in"
-	}
-})
-	.to(".slide-in .left", {x: 0, duration: 0.5})
-	.to(".slide-in .right", {x: 0, duration: 0.5})
-	.to(".slide-in p", {y: 0, opacity: 1, duration: 1});
-
+/* ----------- work 영역 우측 텍스트 fixed ----------- */
 gsap.to(".work .titArea", {
 	duration: 0.5,
 	//scale: 0.8,
@@ -62,9 +32,6 @@ gsap.to(".work .titArea", {
 		scrub: true
 	}
 })
-
-const pinedList = document.querySelector('.pined-list');
-const pinedInner = document.querySelector('.pined-inner');
 
 gsap.to(pinedList, {
 	x: -pinedList.clientWidth + pinedInner.clientWidth,
@@ -177,34 +144,60 @@ function initrllLst(listTag, listIdx) {
 }
 
 /* ----------- 텍스트 애니메이션 효과 ----------- */
-let textWrapper = document.querySelector('.motion-effect-1 .motion-dummy');
+// let motionEffect_1 = document.querySelector('.motion-effect-1 .motion-dummy');
+// motionEffect_1.innerHTML = motionEffect_1.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
+//
+// anime.timeline({
+// 	loop: false
+// }).add({
+// 	targets: '.motion-effect-1 .motion-line',
+// 	scaleX: [0, 1],
+// 	opacity: [0.5, 1],
+// 	easing: "easeInOutExpo",
+// 	duration: 2000
+// }).add({
+// 	targets: '.motion-effect-1 .dummy',
+// 	opacity: [0, 1],
+// 	translateX: [40, 0],
+// 	translateZ: 0,
+// 	scaleX: [0.3, 1],
+// 	easing: "easeOutExpo",
+// 	duration: 8000,
+// 	offset: '-=600',
+// 	delay: (el, i) => 150 + 25 * i
+// }).add({
+// 	targets: '.motion-effect-1',
+// 	opacity: 1,
+// 	duration: 8000,
+// 	easing: "easeOutExpo",
+// 	delay: 8000,
+// });
 
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
+let motionEffect_2 = document.querySelector('.motion-effect-4 .motion-dummy');
+motionEffect_2.innerHTML = motionEffect_2.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
 
 anime.timeline({
 	loop: false
 }).add({
-	targets: '.motion-effect-1 .motion-line',
+	targets: '.motion-effect-4 .motion-line',
 	scaleX: [0, 1],
 	opacity: [0.5, 1],
 	easing: "easeInOutExpo",
-	duration: 2000
+	duration: 1500
 }).add({
-	targets: '.motion-effect-1 .dummy',
+	targets: '.motion-effect-4 .motion-dummy .dummy',
+	scale: [4, 1],
 	opacity: [0, 1],
-	translateX: [40, 0],
 	translateZ: 0,
-	scaleX: [0.3, 1],
 	easing: "easeOutExpo",
-	duration: 8000,
-	offset: '-=600',
-	delay: (el, i) => 150 + 25 * i
+	duration: 950,
+	delay: (el, i) => 70 * i
 }).add({
-	targets: '.motion-effect-1',
+	targets: '.motion-effect-4 .motion-dummy',
 	opacity: 1,
-	duration: 8000,
+	duration: 1000,
 	easing: "easeOutExpo",
-	delay: 8000,
+	delay: 1000
 });
 
 setTimeout(() => {
@@ -248,7 +241,7 @@ setTimeout(() => {
 		easing: "easeOutExpo",
 		delay: 1000
 	});
-}, 2800);
+}, 3200);
 
 $(document).ready(function () {
 	if ($('.storyList').length) {

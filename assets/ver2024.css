@@ -272,6 +272,20 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #cta h3 + .quickbox .btnWhite{
     background-color: rgb(255 255 255) !important;
 }
+.motion-effect-1 .motion-effect-text {
+    position: relative;
+    display: inline-block;
+}
+.motion-effect-1 .motion-line {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    background-color: #ff7f37;
+    transform-origin: 100% 100%;
+}
 .motion-effect-2,
 .motion-effect-3 {
     font-size: 2.6em;
@@ -290,11 +304,13 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     display: inline-block;
     opacity: 0;
 }
-.motion-effect-1 .motion-effect-text {
+.motion-effect-4 {
     position: relative;
+}
+.motion-effect-4 .motion-dummy .dummy {
     display: inline-block;
 }
-.motion-effect-1 .motion-line {
+.motion-effect-4 .motion-line {
     position: absolute;
     left: 0;
     bottom: 5px;
