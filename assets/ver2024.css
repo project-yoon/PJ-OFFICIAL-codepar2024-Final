@@ -357,6 +357,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         padding: 30px 0 30px 0;
         font-size: 0.8em;
     }
+    .motion-effect-2,
+    .motion-effect-3 {
+        font-size: 1.6em;
+    }
 }
 
 /* client */

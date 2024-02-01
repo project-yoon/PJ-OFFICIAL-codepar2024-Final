@@ -997,11 +997,6 @@ button:focus {
         font-size: 28px;
     }
 
-    #cta h2 span {
-        font-size: 16px;
-        margin-top: 10px;
-    }
-
     #cta a {
         padding: 0 10px;
         line-height: 40px;
