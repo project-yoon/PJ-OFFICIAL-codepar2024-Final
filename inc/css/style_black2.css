@@ -292,11 +292,6 @@ button:focus {
 }
 
 /*===========================
-        4.HOME
-=============================*/
-
-
-/*===========================
         6.SERVICES
 =============================*/
 .service-box {
@@ -527,31 +522,6 @@ button:focus {
 
 
 /* ========================================== ReNew ========================================== */
-/*  ====  버튼 색상  ====  */
-/* 오렌지 */
-.btnDef {
-    background-color: #E96A23 !important;
-    color: #fff !important;
-    border-radius: 4px !important;
-}
-/* 검정 */
-.btnblack {
-    background-color: #040404 !important;
-    color: #fff !important;
-    border-radius: 4px !important;
-}
-/* 흰색 */
-.btnWhite {
-    background-color: rgba(255 255 255 / 75%) !important;
-    color: #040404 !important;
-    border-radius: 4px !important;
-}
-/* border + 오렌지 */
-.btnBdDef {
-    border: 1px solid #E96A23 !important;
-    color: #E96A23 !important;
-    border-radius: 4px !important;
-}
 /*  ====  컨텐츠  ====  */
 .contents {
     position: relative;
@@ -674,62 +644,12 @@ button:focus {
     }
 }
 
-/* pc */
-@media screen and (min-width: 961px) {
-    #about .titArea {
-        text-align: center;
-        margin: 0 auto;
-    }
-}
-
-/* mobile */
-@media screen and (max-width: 960px) {
-    #about {
-        padding: 85px 0;
-    }
-}
-@media screen and (max-width: 400px) {
-    #about br {
-        display: none;
-    }
-
-}
-
 /* mobile */
 @media screen and (max-width: 960px) {
     #services {
         padding: 85px 0;
     }
 }
-
-/* pc */
-@media screen and (min-width: 961px) {
-    #home h2 {
-        margin-bottom: 40px;
-    }
-    #home a {
-        padding: 0 20px;
-        line-height: 53px;
-    }
-}
-
-
-/* mobile */
-@media screen and (max-width: 960px) {
-    #home {
-        padding: 6em 0 12em;
-    }
-    #home h2 {
-        margin-bottom: 20px;
-        font-size: 28px;
-    }
-    #home a {
-        padding: 0 10px;
-        line-height: 40px;
-        font-size: 14px;
-    }
-}
-
 
 /*  ====  Client  ====  */
 #client {
