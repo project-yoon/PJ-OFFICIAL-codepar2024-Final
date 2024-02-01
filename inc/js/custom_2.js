@@ -41,10 +41,6 @@ gsap.registerEffect({
 	}
 });
 
-document.querySelectorAll('.word').forEach(function (box, index) {
-	gsap.effects.textAnimation(box, {delay: index});
-});
-
 gsap.timeline({
 	scrollTrigger: {
 		trigger: ".slide-in"
@@ -77,7 +73,7 @@ gsap.to(pinedList, {
 		start: "top top",
 		end: `+=${pinedList.clientWidth}`,
 		pin: true,
-		scrub: 0.1
+		scrub: 0.1,
 	}
 });
 // yyxxmm
@@ -126,6 +122,7 @@ navLinks.forEach(link => {
 		trigger: navLink_href,
 		start: "top center",
 		end: "bottom center",
+		refreshPriority: -1,
 		onToggle: self => setActive(link)
 	});
 
