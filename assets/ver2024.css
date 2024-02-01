@@ -486,24 +486,28 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 /* work */
 #work {
     position: relative;
+    width: 100vw;
     background-color: #26282B;
 }
 #work .contents {
 	padding-right: 0 !important;
-	overflow: unset;
+    overflow: unset;
 }
 #work .titArea {
-	position: sticky !important;
-	top: 232px !important;
-	right: 0;
-	float: right;
-}
-.work {
-    width: 100vw;
-}
-.work .titArea {
     position: sticky;
-    top: 300px;
+    top: 232px;
+    right: 0;
+    float: right;
+    overflow: hidden;
+}
+.workList, .workList li, .workList a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.workList {
+    width: 65%;
     overflow: hidden;
 }
 .work .workList li {
@@ -513,8 +517,239 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .work .workList li:nth-child(2) {
 	margin-top: 301px;
 }
-.work .workList a {
-	border-radius: 24px;
+.flip-card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: end;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    overflow: hidden;
+    cursor: default;
+    border-radius: 24px;
+}
+.flip-card:hover {
+    color: #fff;
+}
+.flip-card > * {
+    width: 100%;
+}
+.workList span.tit {
+    color: #E96A23;
+    font-weight: 300;
+}
+.workList span.info {
+    color: rgba(255 255 255 / 50%);
+}
+.workList span.thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.6s;
+}
+.workList span.thumb:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+    transition: 0.6s;
+}
+.workList span.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.workList + .more {
+    display: none;
+}
+
+/* pc */
+@media screen and (min-width: 961px) {
+    #work {
+        padding: 146px 0 140px;
+    }
+    #work .contents {
+        padding-right: 390px;
+    }
+    #work .titArea {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: auto;
+    }
+    .workList li {
+        width: calc(50% - 25px);
+        height: 452px;
+        margin: 50px 0 0 50px;
+    }
+    .workList li:nth-child(odd) {
+        float: left;
+    }
+    .workList li:nth-child(even) {
+        float: right;
+    }
+    .workList li:nth-child(2n + 1) {
+        margin-left: 0;
+    }
+    .workList li:nth-child(1) {
+        margin-top: 0;
+    }
+    .workList li:nth-child(2) {
+        margin-top: 100px;
+    }
+    .workList li:hover .flip-card{
+        transform: rotateY(180deg);
+    }
+    .flip-card {
+        padding: 30px;
+        font-size: 24px;
+        position: relative;
+        transition: transform 1.5s;
+        transform-style: preserve-3d;
+        overflow: unset;
+    }
+    .flip-card-side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+    .flip-card-side.front {
+        display: block;
+    }
+    .flip-card-side.front img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .flip-card-side.back {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+        background-color: #26282b;
+        transform: rotateY(180deg);
+        font-size: 24px;
+    }
+    .workList span.tit {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .workList span.info {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
+
+
+/* mobile */
+@media screen and (max-width: 960px) {
+    #work {
+        padding: 50px 0;
+    }
+    #work .contents {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-right: 30px !important;
+    }
+    #work .titArea {
+        position: static;
+        float: unset;
+    }
+    .workList {
+        width: unset;
+        margin-top: 40px;
+        padding-right: 0;
+    }
+    .workList li {
+        width: calc(50% - 15px);
+        height: 456px;
+		margin: 120px 0 0 30px;
+    }
+    .workList li:nth-child(odd) {
+        float: left;
+    }
+    .workList li:nth-child(even) {
+        float: right;
+    }
+    .workList li:nth-child(2n + 1) {
+        margin-left: 0;
+    }
+    .workList li:nth-child(1) {
+        margin-top: 0;
+    }
+    .workList li:nth-child(2) {
+        margin-top: 70px;
+    }
+    .flip-card {
+        display: block;
+        font-size: 24px;
+    }
+    .flip-card-side.front {
+        display: none;
+    }
+    .flip-card-side.back {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+		height: 100%;
+        padding: 30px;
+        font-size: 24px;
+    }
+    .workList span.tit {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .workList span.info {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
+
+
+/* mobile 2 */
+@media screen and (max-width: 560px) {
+    .workList {
+        /* height: 2480px; */
+    }
+
+    .work .workList li {
+        float: none !important;
+        width: 100%;
+        margin: 40px 0 0 0;
+    }
+	.work .workList li:nth-child(2) {
+		margin-top: 40px;
+	}
+    .workList + .more {
+        display: block;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .workList + .more a {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 18px;
+        line-height: 30px;
+        color: #fff;
+        text-align: center;
+    }
 }
 
 /* Our Story */
@@ -727,48 +962,7 @@ section.section#contact {
 		margin: 0 0 20px;
 	}
 
-    /* 플립 카드 */
-    .card-wrap li:hover .flip-card{
-        transform: rotateY(180deg);
-    }
-    .card-wrap .flip-card {
-        position: relative;
-        transition: transform 1.5s;
-        transform-style: preserve-3d;
-        overflow: unset;
-    }
-    .flip-card-side {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 24px;
-        overflow: hidden;
-    }
-    .flip-card-side.front {
-        display: block;
-    }
-    .flip-card-side.front img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .flip-card-side.back {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 30px;
-        background-color: #26282b;
-        transform: rotateY(180deg);
-        font-size: 24px;
-    }
-    .card-wrap span.tit,
-    .card-wrap span.info {
-        opacity: 1;
-    }
+    
 }
 
 /* mobile */
@@ -792,46 +986,6 @@ section.section#contact {
 	.client .client-logo .client-logo-list li img {
 		width: 98px;
 	}
-	/* work */
-	#work .contents {
-		flex-direction: column;
-		gap: 0;
-		padding-right: 30px !important;
-	}
-	#work .titArea {
-		position: static !important;
-		float: unset;
-	}
-	.work .workList {
-		padding-right: 0;
-	}
-	.work .workList li {
-		width: calc(50% - 15px);
-		margin: 120px 0 0 30px;
-	}
-    /* 카드 플립 */
-	.card-wrap .flip-card {
-		display: block;
-		padding: 0;
-	}
-    .flip-card-side.front {
-        display: block;
-    }
-    .flip-card-side.front img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .flip-card-side.back {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-		height: 100%;
-        padding: 30px;
-        font-size: 24px;
-    }
-
     /* Our Story */
     .story .contents {
 		padding: 0;
@@ -871,17 +1025,5 @@ section.section#contact {
 	}
 	#popupContact .tbl_formmail_sub {
 		margin: 0 0 20px;
-	}
-}
-
-/* mobile 2 */
-@media screen and (max-width:560px) {
-	/* work */
-	.work .workList li {
-		width: 100%;
-		margin: 40px 0 0 0;
-	}
-	.work .workList li:nth-child(2) {
-		margin-top: 40px;
 	}
 }
