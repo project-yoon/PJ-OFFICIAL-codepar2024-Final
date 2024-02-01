@@ -1,11 +1,30 @@
-let btnContact = $('.btn-contact')
-let contactWrap = $('#popupContact')
+let navLinks = gsap.utils.toArray('.custom-nav ul li .nav-link:not(.nav-link-not)');
+let btnContact = $('.btn-contact');
+let contactWrap = $('#popupContact');
 let pinedList = document.querySelector('.pined-list');
 let pinedInner = document.querySelector('.pined-inner');
-let isActive
+let pinSections = gsap.utils.toArray(".pin__item");
+let pinSectionsTops = pinSections.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
+let cta = document.querySelector('#cta');
+let client = document.querySelector('#client');
+let isActive;
+
+document.addEventListener('scroll', () => {
+	headerTopPosi();
+});
+
+/* ----------- 영역들 scroll parallax ----------- */
+pinSections.forEach((panel, i) => {
+	ScrollTrigger.create({
+		trigger: panel,
+		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+		pin: true,
+		pinSpacing: false,
+	});
+});
 
 /* ----------- 우측 퀵 메뉴 ----------- */
-btnContact.on("click", function(e) {
+btnContact.on('click', function(e) {
 	e.preventDefault()
 
 	isActive = btnContact.hasClass('active')
@@ -19,7 +38,7 @@ btnContact.on("click", function(e) {
 	}
 })
 
-/* ----------- work 영역 우측 텍스트 fixed ----------- */
+/* ----------- work 영역 우측 텍스트 고정 ----------- */
 gsap.to(".work .titArea", {
 	duration: 0.5,
 	//scale: 0.8,
@@ -33,6 +52,7 @@ gsap.to(".work .titArea", {
 	}
 })
 
+/* ----------- 카드 모션 ----------- */
 gsap.to(pinedList, {
 	x: -pinedList.clientWidth + pinedInner.clientWidth,
 	scrollTrigger: {
@@ -42,17 +62,6 @@ gsap.to(pinedList, {
 		pin: true,
 		scrub: 0.1,
 	}
-});
-// yyxxmm
-let pinSections = gsap.utils.toArray(".pin__item");
-let tops = pinSections.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
-pinSections.forEach((panel, i) => {
-	ScrollTrigger.create({
-		trigger: panel,
-		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-		pin: true,
-		pinSpacing: false,
-	});
 });
 
 /* ----------- 헤더 메뉴 ----------- */
@@ -65,18 +74,15 @@ function headerTopPosi() {
 			el.classList.remove('active');
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
-		document.querySelector('#cta').style.filter = 'unset';
-		document.querySelector('#client').style.cssText = `background-color: rgb(39 38 38 / 70%);`;
+		cta.style.filter = 'unset';
+		client.style.cssText = `background-color: rgb(39 38 38 / 70%);`;
 	} else {
-		document.querySelector('#cta').style.filter = 'blur(2px)';
-		document.querySelector('#client').style.cssText = `background-color: rgb(39 38 38 / 100%);`;
+		cta.style.filter = 'blur(2px)';
+		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
 	}
 }
-document.addEventListener('scroll', () => {
-	headerTopPosi();
-});
 
-let navLinks = gsap.utils.toArray('.custom-nav ul li .nav-link:not(.nav-link-not)');
+/* ----------- 헤더 메뉴 해당 영역으로 링크 이동 ----------- */
 navLinks.forEach(link => {
 	let navLink_href = document.querySelector(link.getAttribute("href")),
 
@@ -104,7 +110,7 @@ function setActive(link) {
 	link.classList.add('active');
 }
 
-/* ----------- 텍스트 롤링 애니메이션 ----------- */
+/* ----------- 텍스트 롤링 모션 ----------- */
 function initrllLst(listTag, listIdx) {
 	let hgtlst = 0
 	let boxlst = $(listTag).find('.text-rolling')
@@ -143,10 +149,9 @@ function initrllLst(listTag, listIdx) {
 	var rollingIntervalId = checkAnimationStatus()
 }
 
-/* ----------- 텍스트 애니메이션 효과 ----------- */
+/* ----------- 텍스트 타입별 모션 ----------- */
 // let motionEffect_1 = document.querySelector('.motion-effect-1 .motion-dummy');
 // motionEffect_1.innerHTML = motionEffect_1.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
-//
 // anime.timeline({
 // 	loop: false
 // }).add({
@@ -175,7 +180,6 @@ function initrllLst(listTag, listIdx) {
 
 let motionEffect_2 = document.querySelector('.motion-effect-4 .motion-dummy');
 motionEffect_2.innerHTML = motionEffect_2.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
-
 anime.timeline({
 	loop: false
 }).add({
@@ -183,21 +187,21 @@ anime.timeline({
 	scaleX: [0, 1],
 	opacity: [0.5, 1],
 	easing: "easeInOutExpo",
-	duration: 1500
+	duration: 2000
 }).add({
 	targets: '.motion-effect-4 .motion-dummy .dummy',
 	scale: [4, 1],
 	opacity: [0, 1],
 	translateZ: 0,
 	easing: "easeOutExpo",
-	duration: 950,
+	duration: 2000,
 	delay: (el, i) => 70 * i
 }).add({
 	targets: '.motion-effect-4 .motion-dummy',
 	opacity: 1,
 	duration: 1000,
 	easing: "easeOutExpo",
-	delay: 1000
+	delay: 1500
 });
 
 setTimeout(() => {
@@ -228,6 +232,18 @@ setTimeout(() => {
 		easing: "easeInExpo",
 		delay: 500
 	}).add({
+		targets: '.motion-effect-2 .motion-dummy-2-same',
+		opacity: [0, 1],
+		scale: [0.2, 1],
+		duration: 800
+	}).add({
+		targets: '.motion-effect-2 .motion-dummy-2-same',
+		opacity: 0,
+		scale: 3,
+		duration: 600,
+		easing: "easeInExpo",
+		delay: 500
+	}).add({
 		targets: '.motion-effect-3 .motion-dummy',
 		scale: [14, 1],
 		opacity: [0, 1],
@@ -241,9 +257,10 @@ setTimeout(() => {
 		easing: "easeOutExpo",
 		delay: 1000
 	});
-}, 3200);
+}, 4000);
 
 $(document).ready(function () {
+	/* ----------- story 영역 ----------- */
 	if ($('.storyList').length) {
 		$('.storyList').slick({
 			dots: false,
@@ -252,8 +269,8 @@ $(document).ready(function () {
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			draggable: false,
-			prevArrow: "#story .btnArea .prev",
-			nextArrow: "#story .btnArea .next",
+			prevArrow: '#story .btnArea .prev',
+			nextArrow: '#story .btnArea .next',
 			asNavFor: '.storyTxt',
 			responsive: [
 				{
@@ -266,7 +283,6 @@ $(document).ready(function () {
 			]
 		});
 	}
-
 	if ($('.storyTxt').length) {
 		$('.storyTxt').slick({
 			dots: false,
@@ -279,6 +295,7 @@ $(document).ready(function () {
 			arrows: false
 		});
 	}
+
 	AOS.init();
 	initrllLst($('.text-rolling-wrap'),1);
 });

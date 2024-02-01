@@ -590,7 +590,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 	background-color: #e96a23;
 	animation: tada 2s infinite;
 }
-.formmail_btn .btn-custom:hover{background-color: #bf5113 !important;}
+.formmail_btn {
+    text-align: center;
+}
+.formmail_btn .btn-custom:hover {
+    background-color: #bf5113 !important;
+}
 .btn-contact.active {
 	animation: unset;
 }
