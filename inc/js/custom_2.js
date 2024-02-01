@@ -1,5 +1,6 @@
 let navLinks = gsap.utils.toArray('.custom-nav ul li .nav-link:not(.nav-link-not)');
 let btnContact = $('.btn-contact');
+let btnContactTrigger = $('.btn-contact-trigger');
 let contactWrap = $('#popupContact');
 let pinedList = document.querySelector('.pined-list');
 let pinedInner = document.querySelector('.pined-inner');
@@ -23,7 +24,7 @@ pinSections.forEach((panel, i) => {
 	});
 });
 
-/* ----------- 우측 퀵 메뉴 ----------- */
+/* ----------- 우측 퀵 메뉴 (견적문의 메일 폼) ----------- */
 btnContact.on('click', function(e) {
 	e.preventDefault()
 
@@ -36,6 +37,9 @@ btnContact.on('click', function(e) {
 		btnContact.addClass('active')
 		contactWrap.fadeIn(300)
 	}
+});
+btnContactTrigger.on('click', function() {
+	btnContact.trigger('click');
 });
 
 /* ----------- work 영역 우측 텍스트 고정 ----------- */
