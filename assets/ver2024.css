@@ -581,12 +581,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     #work .contents {
         padding-right: 390px;
     }
-    #work .titArea {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: auto;
-    }
     .workList li {
         width: calc(50% - 25px);
         height: 452px;
