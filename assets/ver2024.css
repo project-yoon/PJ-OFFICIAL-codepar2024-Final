@@ -1,7 +1,26 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 /* ==== 초기화 ==== */
 *{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{overflow-x:auto;line-height:1;background-color:#fff;word-break:break-all;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
+
+/* 폰트 선언 */
+body {
+    font-family: 'Nunito', 'Noto Sans KR', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
+button,input,optgroup,select,textarea {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+}
 
 /* ==== 메일 폼 ==== */
 .tbl_formmail_sub {position:relative;width:100%;margin-top:50px;margin-bottom:40px}
