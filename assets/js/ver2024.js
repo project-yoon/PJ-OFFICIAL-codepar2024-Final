@@ -15,13 +15,14 @@ document.addEventListener('scroll', () => {
 	headerTopPosi();
 });
 
-/* ----------- 영역들 scroll parallax ----------- */
+/* ----------- scroll parallax ----------- */
 pinSections.forEach((panel, i) => {
 	ScrollTrigger.create({
 		trigger: panel,
 		start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
 		pin: true,
 		pinSpacing: false,
+		// refreshPriority: -1,
 	});
 });
 
@@ -44,18 +45,18 @@ btnContactTrigger.on('click', function() {
 });
 
 /* ----------- work 영역 우측 텍스트 고정 ----------- */
-gsap.to(".work .titArea", {
-	duration: 0.5,
-	//scale: 0.8,
-	transformOrigin: "top left",
-	ease: "none",
-	scrollTrigger: {
-		trigger: ".work",
-		start: "top top",
-		end: "top -100%",
-		scrub: true
-	}
-});
+// gsap.to(".work .titArea", {
+// 	duration: 0.5,
+// 	//scale: 0.8,
+// 	transformOrigin: "top left",
+// 	ease: "none",
+// 	scrollTrigger: {
+// 		trigger: ".work",
+// 		start: "top top",
+// 		end: "top -100%",
+// 		scrub: true
+// 	}
+// });
 
 /* ----------- 카드 모션 ----------- */
 gsap.to(pinedList, {
@@ -80,12 +81,14 @@ function headerTopPosi() {
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
 		gnb.classList.remove('stickyadd');
-		home.style.filter = 'unset';
+		home.style.transform = 'translate(0px, 0px)';
+		// home.style.filter = 'unset';
 		client.style.cssText = `background-color: rgb(39 38 38 / 70%);`;
 	} else {
-		home.style.filter = 'blur(2px)';
-		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
 		gnb.classList.add('stickyadd');
+		home.style.transform = 'unset';
+		// home.style.filter = 'blur(2px)';
+		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
 	}
 }
 
@@ -102,7 +105,7 @@ navLinks.forEach(link => {
 		trigger: navLink_href,
 		start: "top center",
 		end: "bottom center",
-		refreshPriority: -1,
+		refreshPriority: -1, // 해당 영역에서 새로고침하면 pin 위치 못잡는 현상 대안
 		onToggle: self => setActive(link)
 	});
 
