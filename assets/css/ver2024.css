@@ -387,6 +387,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .services-card dt{
     font-size: 34px;
     font-weight: 600;
+    letter-spacing: -0.5px;
 }
 .services-card dd{
     font-size: 18px;
