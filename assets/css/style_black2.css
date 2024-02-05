@@ -183,6 +183,20 @@ button:focus {
     display: block;
 }
 
+/* ======== 마우스 커서 효과 ======== */
+.cursor {
+    position: fixed;
+    z-index: 9999;
+    width: 14px;
+    height: 14px;
+    background: #E96A23;
+    /*border-radius: 100%;*/
+    transform: scale(1);
+    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, .2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+    user-select: none;
+    pointer-events: none;
+}
+
 /* ======== 메일 폼 ======== */
 .tbl_formmail_sub {position:relative;width:100%;margin-top:50px;margin-bottom:40px}
 .tbl_formmail_sub input[type=file] {width:100%}

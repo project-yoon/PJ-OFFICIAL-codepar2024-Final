@@ -270,6 +270,24 @@ setTimeout(() => {
 }, 4000);
 
 $(document).ready(function () {
+	/* ----------- 마우스 커서 효과 ----------- */
+	let cursor = $('.cursor');
+	let cursorRadius = cursor.width() / 2
+	let mouseX = 0;
+	let	mouseY = 0;
+
+	$(window).on('mousemove', function (e) {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+
+		TweenMax.to(cursor, 0.4, {
+			css: {
+				left: mouseX - cursorRadius,
+				top: mouseY - cursorRadius
+			}
+		});
+	})
+
 	/* ----------- story 영역 ----------- */
 	if ($('.storyList').length) {
 		$('.storyList').slick({
