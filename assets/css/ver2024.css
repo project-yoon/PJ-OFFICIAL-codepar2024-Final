@@ -3,10 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-/* ==== 초기화 ==== */
-*{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{overflow-x:auto;line-height:1;background-color:#fff;word-break:break-all;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
+/* ======== 초기화 ======== */
+*{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
+body{
+    overflow-x: hidden;
+    background: #2e3135;
+    line-height:1;
+    color: #fbfbfb;
+    word-break:break-all;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+}
 
-/* 폰트 선언 */
+/* ======== 폰트 선언 ======== */
 body {
     font-family: 'Nunito', 'Noto Sans KR', sans-serif;
 }
@@ -22,7 +31,208 @@ button,input,optgroup,select,textarea {
     font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
 }
 
-/* ==== 메일 폼 ==== */
+a,
+a:hover,
+a:focus,
+button,
+button:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+::selection {
+    background: rgba(166, 175, 189, 0.3);
+}
+::-moz-selection {
+    background: rgba(166, 175, 189, 0.3);
+}
+
+/* ======== 로딩바 ======== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #26282b;
+    z-index: 9999999;
+}
+#status {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+}
+.spinner {
+    margin: 0 auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 5px solid #2e3135;
+    border-right: 5px solid #2e3135;
+    border-bottom: 5px solid #2e3135;
+    border-left: 5px solid #6b6e6f;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+.spinner,
+.spinner:after {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* ======== 탑 버튼 ======== */
+.back_top {
+    text-align: center;
+    position: fixed;
+    bottom: 15px;
+    height: 35px;
+    width: 35px;
+    display: none;
+    z-index: 10000;
+    border-radius: 3px;
+    right: 20px;
+    transition: all 0.5s;
+}
+.back_top i {
+    color: #fff;
+    line-height: 35px;
+    font-size: 32px;
+    display: block;
+}
+
+/* ======== 공통 ======== */
+.section {
+    position: relative;
+    background-color: #26282B;
+}
+.text-muted {
+    color: #a0a0ac !important;
+}
+.section-subtitle {
+    max-width: 500px;
+    line-height: 1.5;
+    font-size: 18px;
+}
+.btn {
+    padding: 15px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.5s;
+    letter-spacing: 0.6px;
+    color: #fff;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    outline: none !important;
+}
+.btn-custom {
+    border: 1px solid;
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active,
+.btn-custom.focus,
+.btn-custom:active,
+.btn-custom:focus,
+.btn-custom:hover,
+.open > .dropdown-toggle.btn-custom {
+    color: #f3f3f3;
+}
+
+/* ======== GNB ======== */
+.custom-nav {
+    background-color: transparent;
+    padding: 20px 0px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    transition: all 0.5s ease-in-out;
+}
+.custom-nav .navbar-nav li a {
+    color: #fff !important;
+    font-size: 15px;
+    background-color: transparent !important;
+    margin: 0 7px;
+    letter-spacing: 0.05em;
+    line-height: 24px;
+    transition: all 0.5s;
+    font-weight: 500;
+}
+.custom-nav .navbar-brand .logo-light,
+.custom-nav .navbar-brand .logo-dark {
+    height: 40px;
+}
+.logo .logo-light {
+    display: inline-block;
+}
+.stickyadd .logo .logo-dark {
+    display: inline-block;
+}
+.stickyadd .logo .logo-light {
+    display: none;
+}
+.logo .logo-dark {
+    display: none;
+}
+.custom-nav .navbar-brand {
+    color: #fff !important;
+    text-transform: uppercase;
+}
+.custom-nav .navbar-toggler {
+    color: #fff;
+    font-size: 35px;
+    padding: 0px;
+}
+.custom-nav.stickyadd {
+    background-color: #fff !important;
+    box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.051);
+    padding: 15px 0px;
+}
+.custom-nav.stickyadd .navbar-nav li a {
+    color: #000 !important;
+}
+.text-custom,
+.custom-nav .navbar-nav li a:hover,
+.custom-nav .navbar-nav li a:active,
+.custom-nav .navbar-nav li.active a,
+.custom-nav.stickyadd .navbar-nav li a:hover,
+.custom-nav.stickyadd .navbar-nav li a:active,
+.custom-nav.stickyadd .navbar-nav li.active a {
+    color: #E96A23 !important;
+}
+.custom-nav .navbar-nav li a.active {
+    color: #E96A23 !important;
+}
+
+/* ======== 메일 폼 ======== */
 .tbl_formmail_sub {position:relative;width:100%;margin-top:50px;margin-bottom:40px}
 .tbl_formmail_sub input[type=file] {width:100%}
 .tbl_formmail_sub input[name^=phone] {width:80px !important}
@@ -40,7 +250,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .formmail_cell_bgcolor > table td.input-item textarea {margin-top:0px;}
 .formmail_cell_bgcolor > table td.input-item input {width:auto !important;position:relative;top:3px;display:inline-block;}
 
-/* ==== 버튼 색상 ==== */
+/* ======== 버튼 색상 ======== */
 /* 오렌지 */
 .btnDef {
     background-color: #E96A23 !important;
