@@ -692,8 +692,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     position: sticky;
     top: 232px;
     right: 0;
-    float: right;
     overflow: hidden;
+}
+.work .titArea .desc {
+    margin: 30px 0 5px;
+    font-size: 20px;
+}
+.work .titArea .desc span {
+    color: var(--orange);
 }
 .workList, .workList li, .workList a {
     margin: 0;
@@ -703,6 +709,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .workList {
     width: 65%;
+    margin-left: auto;
     overflow: hidden;
 }
 .work .workList li {
@@ -775,6 +782,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .services .contents {
     height: auto;
+}
+.services .titArea {
+    text-align: center;
 }
 .services-card {
     font-family: 'Noto Sans KR', sans-serif;
@@ -1325,9 +1335,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         position: static;
         float: unset;
     }
+    .work .titArea .desc {
+        margin: 25px 0 0;
+        font-size: 16px;
+    }
     .workList {
         width: unset;
         margin-top: 40px;
+        margin-left: unset;
         padding-right: 0;
     }
     .workList li {
