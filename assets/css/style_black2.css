@@ -412,6 +412,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    max-width: unset;
     height: 100vh;
     gap: 80px;
     padding-bottom: 200px;
