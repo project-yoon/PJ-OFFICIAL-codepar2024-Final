@@ -1,3 +1,4 @@
+let gnb = document.querySelector('.navbar');
 let navLinks = gsap.utils.toArray('.custom-nav ul li .nav-link:not(.nav-link-not)');
 let btnContact = $('.btn-contact');
 let btnContactTrigger = $('.btn-contact-trigger');
@@ -78,11 +79,13 @@ function headerTopPosi() {
 			el.classList.remove('active');
 		});
 		nav_UL_LI_A_NOT.classList.add('active');
+		gnb.classList.remove('stickyadd');
 		home.style.filter = 'unset';
 		client.style.cssText = `background-color: rgb(39 38 38 / 70%);`;
 	} else {
 		home.style.filter = 'blur(2px)';
 		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
+		gnb.classList.add('stickyadd');
 	}
 }
 
