@@ -271,7 +271,6 @@ setTimeout(() => {
 
 $(document).ready(function () {
 	let mousemoveTimer;
-	let isCheck = true; // 여러번 호출 방지를 위한 체크
 
 	/* ----------- 마우스 커서 효과 ----------- */
 	document.addEventListener('mousemove',(e) => {
@@ -300,15 +299,16 @@ $(document).ready(function () {
 
 		$('#'+dataTarget).fadeIn().siblings('.contact-tab-info').hide();
 
-		if (isCheck) {
+		if ($('#'+dataTarget).css('display') === 'block') {
 			kakaoMapCall();
-			isCheck = false;
 		}
 
 		return false;
 	});
 
 	function kakaoMapCall() {
+		$('.wrap_map:nth-child(odd), .wrap_controllers').remove();
+
 		new daum.roughmap.Lander({
 			"timestamp" : "1707197836419",
 			"key" : "2izmh",
