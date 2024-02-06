@@ -271,6 +271,7 @@ setTimeout(() => {
 
 $(document).ready(function () {
 	let mousemoveTimer;
+	let isCheck = true; // 여러번 호출 방지를 위한 체크
 
 	/* ----------- 마우스 커서 효과 ----------- */
 	document.addEventListener('mousemove',(e) => {
@@ -292,6 +293,27 @@ $(document).ready(function () {
 			cursor.classList.add('stopped')
 		}, 1500);
 	});
+
+	/* ----------- 문의하기 탭 ----------- */
+	$('.contact-tab button').on('click', function() {
+		let dataTarget = $(this).attr('data-rel');
+
+		$('#'+dataTarget).fadeIn().siblings('.contact-tab-info').hide();
+
+		if (isCheck) {
+			kakaoMapCall();
+			isCheck = false;
+		}
+
+		return false;
+	});
+
+	function kakaoMapCall() {
+		new daum.roughmap.Lander({
+			"timestamp" : "1707197836419",
+			"key" : "2izmh",
+		}).render();
+	}
 
 	/* ----------- story 영역 ----------- */
 	if ($('.storyList').length) {

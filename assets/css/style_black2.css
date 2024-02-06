@@ -20,6 +20,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 button, input, optgroup, select, textarea {
     font-family: 'Montserrat', 'Pretendard', sans-serif;
+    background: none;
+    border: none;
 }
 a,
 a:hover,
@@ -189,8 +191,8 @@ button:focus {
     top: -6.5px;
     left: -6.5px;
     z-index: 9999;
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     pointer-events: none;
     background-color: #E96A23;
 }
@@ -213,7 +215,7 @@ button:focus {
 }
 
 /* ======== 메일 폼 ======== */
-.tbl_formmail_sub {position:relative;width:100%;margin-top:50px;margin-bottom:40px}
+.tbl_formmail_sub {position:relative;width:100%;margin-bottom:40px}
 .tbl_formmail_sub input[type=file] {width:100%}
 .tbl_formmail_sub input[name^=phone] {width:80px !important}
 .tbl_formmail_sub select {height:40px; line-height:38px; padding:0 10px; border:1px solid #e0e0e0; cursor:pointer}
@@ -513,8 +515,8 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .motion-effect-3 {
     font-size: 2.6em;
     text-align: center;
-    letter-spacing: -0.025em;
-    font-weight: 900;
+    letter-spacing: -0.05em;
+    font-weight: 700;
 }
 .motion-effect-2 .motion-dummy {
     position: absolute;
@@ -964,6 +966,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .contact_detail-title {
     font-size: 18px;
     line-height: 2.5;
+    color: #fbfbfb;
 }
 .formmail_btn {
     text-align: center;
@@ -980,6 +983,19 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #popupContact.row {
     margin-top: unset;
     margin-right: unset;
+}
+.contacts .contact-tab {
+    text-align: center;
+}
+.contacts .contact-tab-info {
+    display: none;
+}
+.contacts .map .root_daum_roughmap {
+    width: 100%;
+    height: 100%;
+}
+.contacts .map .root_daum_roughmap .wrap_map {
+    height: 500px;
 }
 
 /* ======== footer ======== */
@@ -1195,9 +1211,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         padding: 30px;
         width: 30%;
         border-radius: 20px;
-    }
-    #popupContact .tbl_formmail_sub {
-        margin: 0 0 20px;
     }
 
     /* ======== footer ======== */
@@ -1510,9 +1523,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         height: 100vh;
         border-radius: 10px;
         box-sizing: border-box;
-    }
-    #popupContact .tbl_formmail_sub {
-        margin: 0 0 20px;
     }
 
     /* ======== footer ======== */

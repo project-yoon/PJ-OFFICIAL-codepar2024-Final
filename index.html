@@ -666,40 +666,128 @@
 					</div>
 				</div>
 				<div class="row mt-5">
-					<div class="col-lg-4">
-						<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="300">
-							<div>
-								<i class="mbri-mobile2 text-custom h1"></i>
+					<div class="col-lg-4 contact-tab">
+						<button type="button" data-rel="callUsOn">
+							<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="300">
+								<div>
+									<i class="mbri-mobile2 text-custom h1"></i>
+								</div>
+								<div class="mt-3">
+									<h5 class="mb-0 contact_detail-title font-weight-bold">Call Us On</h5>
+									<p class="text-muted">문의사항은 메일로 주세요.</p>
+								</div>
 							</div>
-							<div class="mt-3">
-								<h5 class="mb-0 contact_detail-title font-weight-bold">Call Us On</h5>
-								<p class="text-muted">문의사항은 메일로 주세요.</p>
-							</div>
-						</div>
+						</button>
 					</div>
-					<div class="col-lg-4">
-						<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="400">
-							<div>
-								<i class="mbri-letter text-custom h1"></i>
+					<div class="col-lg-4 contact-tab">
+						<button type="button" data-rel="viewContact">
+							<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="400">
+								<div>
+									<i class="mbri-letter text-custom h1"></i>
+								</div>
+								<div class="mt-3">
+									<h5 class="mb-0 contact_detail-title font-weight-bold">Email Us At</h5>
+									<p class="text-muted">support@codepartners.co.kr</p>
+								</div>
 							</div>
-							<div class="mt-3">
-								<h5 class="mb-0 contact_detail-title font-weight-bold">Email Us At</h5>
-								<p class="text-muted">support@codepartners.co.kr</p>
-							</div>
-						</div>
+						</button>
 					</div>
-					<div class="col-lg-4">
-						<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="500">
-							<div>
-								<i class="mbri-pin text-custom h1"></i>
+					<div class="col-lg-4 contact-tab">
+						<button type="button" data-rel="kakaoMap">
+							<div class="text-center aos-init" data-aos="fade-up" data-aos-delay="500">
+								<div>
+									<i class="mbri-pin text-custom h1"></i>
+								</div>
+								<div class="mt-3">
+									<h5 class="mb-0 contact_detail-title font-weight-bold">Visit Office</h5>
+									<p class="text-muted">서울시 중구 퇴계로 235, 남산센트럴자이 317호</p>
+								</div>
 							</div>
-							<div class="mt-3">
-								<h5 class="mb-0 contact_detail-title font-weight-bold">Visit Office</h5>
-								<p class="text-muted">서울시 중구 퇴계로 235, 남산센트럴자이 317호</p>
-							</div>
+						</button>
+					</div>
+				</div>
+
+				<!-- Call Us On -->
+				<div id="callUsOn" class="contact-tab-info row mt-5">
+					<div class="col-lg-12">
+						<div>내용</div>
+					</div>
+				</div>
+
+				<!-- 콘텐츠안에 폼메일 -->
+				<div id="viewContact" class="contact-tab-info row mt-5">
+					<div class="col-lg-12">
+						<div class="form-kerri">
+							<!-- 폼메일 시작 -->
+							<link rel="StyleSheet" href="/bizdemo122704/inc/formmail/formmail_1.css" type="text/css">
+							<script language="javascript" src="/cjs/formmail.js?1705309955&amp;com_formmail_id=1&amp;template=bizdemo122704"></script>
+
+							<table border="0" cellspacing="0" cellpadding="0" width="100%" action="/default/index.php?ip=121.160.51.222" class="scrollreveal">
+								<form id="contact-form-2" name="com_formmail" method="post" action="http://codepartners.co.kr/default/index.php?ip=121.160.51.222" enctype="multipart/form-data" onsubmit="return false;"></form>
+								<input type="hidden" name="com_formmail1_basic" value="send">
+								<input type="hidden" name="template" value="bizdemo122704">
+								<tbody>
+								<tr>
+									<td>
+										<table cellpadding="0" cellspacing="0" class="tbl_formmail_sub form-content">
+											<tbody>
+											<tr height="30">
+												<td width="20%" align="center" class="formmail_title_bgcolor">
+													<font>성명</font>
+												</td>
+												<td width="80%" style="padding-left:10px;" class="mt-0 formmail_cell_bgcolor">
+													<input type="text" class="form-control" name="name" maxlength="100" size="50" value="" placeholder="고객사명/담당자 성함">
+													&nbsp;&nbsp;
+												</td>
+											</tr>
+											<tr height="30">
+												<td width="20%" align="center" class="formmail_title_bgcolor">
+													<font>전화번호</font>
+												</td>
+												<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+													<input type="text" class="form-control" name="add1" maxlength="20" size="20" value="" placeholder="전화번호">
+													&nbsp;&nbsp;
+													<input type="hidden" name="add1_attr" value="1">
+												</td>
+											</tr>
+											<tr height="30">
+												<td width="20%" align="center" class="formmail_title_bgcolor">
+													<font>이메일</font>
+												</td>
+												<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+													<input type="text" class="form-control" name="receiver_email" size="70" value="" placeholder="이메일">
+													<br>
+												</td>
+											</tr>
+											<tr height="30">
+												<td width="20%" align="center" class="formmail_title_bgcolor">
+													<font>설명</font>
+												</td>
+												<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+													<textarea class="form-control" cols="52" name="description1" style="height:300px;" placeholder="문의내용"></textarea>
+													<br>
+												</td>
+											</tr>
+											</tbody>
+										</table>
+										<div class="formmail_btn">
+											<button id="contact-us-button-2" type="submit" onclick="com_formmail_formCheck(); return false;" class="btn btn-custom">Send Message</button>
+										</div>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+							<!-- //폼메일 끝 -->
 						</div>
 					</div>
 				</div>
+
+				<!-- 카카오맵 -->
+				<div id="kakaoMap" class="map contact-tab-info row mt-5">
+					<div id="daumRoughmapContainer1707197836419" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+				</div>
+
+				<!-- 퀵메뉴안에 폼메일 -->
 				<div id="popupContact" class="row mt-5">
 					<div class="col-lg-12">
 						<div class="form-kerri">
@@ -869,6 +957,7 @@
 		<script src="/assets/js/ScrollTrigger.min.js"></script>
 		<script src="/assets/js/ScrollToPlugin.min.js"></script>
 		<script src="/assets/js/anime.min.js"></script>
+		<script src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js" class="daum_roughmap_loader_script"></script>
 		<script src="/assets/js/ver2024.js"></script>
 		<script language="javascript" type="text/javascript" src="/cjs/javascript.lib.js?date=1647911599"></script>
 		<script type="text/javascript">
