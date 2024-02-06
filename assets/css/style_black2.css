@@ -6,7 +6,7 @@
 /* ======== 초기화 ======== */
 *{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
 body {
-    font-family: 'Nunito', 'Pretendard', sans-serif;
+    font-family: 'Pretendard', sans-serif;
     overflow-x: hidden;
     background: #2e3135;
     line-height:1;
@@ -336,6 +336,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     z-index: 999;
     margin-bottom: 0px;
     transition: all 0.5s ease-in-out;
+    font-family: 'Nunito', 'Pretendard', sans-serif;
 }
 .custom-nav .navbar-nav li a {
     color: #fff !important;
@@ -567,6 +568,125 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     text-align: center;
     font-size : 2.025em;
     font-weight : 900;
+}
+/* ======== history ======== */
+.history {
+    padding: 170px 0;
+}
+.history-wrap {
+    position: relative;
+    z-index: 1;
+}
+.history-wrap::before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    content:'';
+}
+.history-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background-color: var(--orange);
+}
+.year-dummy {
+    position: relative;
+    width: 50%;
+    margin: 100px 0 20px auto;
+    padding-left: 30px;
+    color: var(--orange);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 10px;
+    box-sizing: border-box;
+}
+.year-dummy:first-of-type {
+    margin-top: 0;
+}
+.year-dummy::before {
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    content: '';
+}
+.year-dummy::after {
+    position: absolute;
+    top: -4px;
+    left: -8px;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    content: '';
+}
+.history-list, .history-list li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.history-list li {
+    position: relative;
+    width: 50%;
+    padding-top: 65px;
+}
+.history-list li:nth-child(odd) {
+    padding-right: 60px;
+    text-align: right;
+}
+.history-list li:nth-child(even) {
+    margin-left: auto;
+    padding-left: 60px;
+}
+.history-list li::before {
+    position: absolute;
+    top: 75px;
+    width: 45px;
+    height: 1px;
+    background-color: #fff;
+    content: '';
+}
+.history-list li:nth-child(odd)::before {
+    right: 0;
+}
+.history-list li:nth-child(even)::before {
+    left: 0;
+}
+.history-list li.on::before {
+    background-color: var(--orange);
+}
+.history-list .year {
+    margin: 0 0 35px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.history-list .history-cont {
+    display: flex;
+    gap: 15px;
+    font-size: 21px;
+    line-height: 35px;
+}
+.history-list li:nth-child(odd) .history-cont {
+    justify-self: flex-end;
+    flex-direction: row-reverse;
+}
+.history-list .history-cont + .history-cont {
+    margin-top: 15px;
+}
+.history-list .history-cont .month {
+    font-weight: 500;
+    font-size: 23px;
 }
 
 /* ======== client ======== */
@@ -1331,6 +1451,58 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .motion-effect-2,
     .motion-effect-3 {
         font-size: 1.6em;
+    }
+    /* ======== history ======== */
+    .history {
+        padding: 75px 0;
+    }
+    .history-wrap::before,
+    .history-line {
+        top: 14px;
+    }
+    .year-dummy {
+        margin: 60px 0 10px auto;
+        font-size: 30px;
+        line-height: 1.5;
+    }
+    .year-dummy::before {
+        top: 14px;
+    }
+    .year-dummy::after {
+        top: 10px;
+    }
+    .history-list li {
+        padding-top: 37px;
+    }
+    .history-list li:nth-child(odd) {
+        padding-right: 35px;
+    }
+    .history-list li:nth-child(even) {
+        padding-left: 35px;
+    }
+    .history-list li::before {
+        position: absolute;
+        top: 50px;
+        width: 30px;
+        height: 1px;
+        background-color: #fff;
+        content: '';
+    }
+    .history-list .year {
+        margin: 0 0 20px;
+        font-size: 25px;
+    }
+    .history-list .history-cont {
+        display: flex;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .history-list .history-cont + .history-cont {
+        margin-top: 10px;
+    }
+    .history-list .history-cont .month {
+        font-size: 18px;
     }
 
     /* ======== client ======== */
