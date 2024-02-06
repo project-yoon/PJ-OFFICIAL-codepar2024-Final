@@ -186,15 +186,30 @@ button:focus {
 /* ======== 마우스 커서 효과 ======== */
 .cursor {
     position: fixed;
+    top: -6.5px;
+    left: -6.5px;
     z-index: 9999;
     width: 14px;
     height: 14px;
-    background: #E96A23;
-    /*border-radius: 100%;*/
-    transform: scale(1);
-    transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, .2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
-    user-select: none;
     pointer-events: none;
+    background-color: #E96A23;
+}
+.cursor.stopped {
+    animation: customCursorStopped 3s linear 0s 1 normal both;
+}
+@keyframes customCursorStopped {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ======== 메일 폼 ======== */

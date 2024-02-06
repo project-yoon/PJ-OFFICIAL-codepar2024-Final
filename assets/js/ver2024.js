@@ -270,23 +270,28 @@ setTimeout(() => {
 }, 4000);
 
 $(document).ready(function () {
+	let mousemoveTimer;
+
 	/* ----------- 마우스 커서 효과 ----------- */
-	let cursor = $('.cursor');
-	let cursorRadius = cursor.width() / 2
-	let mouseX = 0;
-	let	mouseY = 0;
+	document.addEventListener('mousemove',(e) => {
+		let cursor = document.querySelector('.cursor');
 
-	$(window).on('mousemove', function (e) {
-		mouseX = e.clientX;
-		mouseY = e.clientY;
+		if (cursor.classList.contains('stopped')) {
+			cursor.classList.remove('stopped');
+		}
 
-		TweenMax.to(cursor, 0.4, {
-			css: {
-				left: mouseX - cursorRadius,
-				top: mouseY - cursorRadius
-			}
+		TweenMax.to('.cursor', 0.5, {
+			'transform': 'translate('+ e.clientX +'px,'+ e.clientY +'px)',
+			ease: "Power.easeOut",
 		});
-	})
+
+		if (mousemoveTimer !== undefined) {
+			clearTimeout(mousemoveTimer);
+		}
+		mousemoveTimer = setTimeout(() => {
+			cursor.classList.add('stopped')
+		}, 1500);
+	});
 
 	/* ----------- story 영역 ----------- */
 	if ($('.storyList').length) {
