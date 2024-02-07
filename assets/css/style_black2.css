@@ -1101,25 +1101,26 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .request-wrap p {
     margin-bottom: 80px;
     text-align: center;
-    font-size: 55px;
+    font-size: 70px;
     font-weight: 700;
 }
 .requset-info, .requset-info li {margin: 0;padding: 0;list-style: none;}
 .requset-info {
+    width: 60%;
     margin-left: 50%;
     transform: translateX(-50%);
 }
 .requset-info li {
     display: flex;
     gap: 20px;
-    margin-top: 35px;
-    font-size: 30px;
+    margin-top: 55px;
+    font-size: 42px;
 }
 .requset-info a {
     color: #f8f8f8;
 }
 .requset-info i {
-    font-size: 33px;
+    font-size: 44px;
 }
 .formmail_btn {
     text-align: center;
