@@ -1740,21 +1740,23 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .request-wrap p {
         margin-bottom: 60px;
-        font-size: 45px;
+        font-size: 50px;
         line-height: 1.5;
     }
     .requset-info {
+        width: unset;
         margin-left: unset;
         transform: unset;
     }
     .requset-info li {
         display: flex;
-        gap: 15px;
+        gap: 10px;
         margin-top: 20px;
-        font-size: 20px;
+        font-size: 22px;
+        letter-spacing: -0.2px;
     }
     .requset-info i {
-        font-size: 22px;
+        font-size: 24px;
     }
     #popupContact {
         bottom: 0;
