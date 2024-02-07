@@ -44,6 +44,36 @@ btnContactTrigger.on('click', function() {
 	btnContact.trigger('click');
 });
 
+/* ----------- history line ani ----------- */
+function historyAni () {
+	const hisCon = $('.history-list li');
+	let hisConHeight;
+	const hisLine = $('.history-line');
+	hisCon.each(function (i, item) {
+		gsap.to(hisLine, {
+			scrollTrigger: {
+				trigger: item,
+				start: "top 40%",
+				scrub: true,
+				//markers: true, 
+				onEnter: function (progress, direction, isActive) {
+					$(item).addClass("on");
+					hisConHeight = hisCon.eq(i).outerHeight(true)
+					hisLine.css("height", hisCon.eq(i).position().top + hisConHeight + "px");
+				},
+				onLeaveBack: function () {
+					$(item).removeClass("on");
+					hisConHeight = hisCon.eq(i).outerHeight(true)
+					if (i) {
+						hisLine.css("height", hisCon.eq(i-1).position().top + hisConHeight + "px");
+					} else {
+						hisLine.css("height", "0px");
+					}
+				}
+			},
+		});
+	})
+}
 /* ----------- work 영역 우측 텍스트 고정 ----------- */
 // gsap.to(".work .titArea", {
 // 	duration: 0.5,
@@ -352,5 +382,11 @@ $(document).ready(function () {
 	}
 
 	AOS.init();
+	historyAni();
 	initrllLst($('.text-rolling-wrap'),1);
+});
+
+
+$(document).on('resize', function() {
+	historyAni();
 });

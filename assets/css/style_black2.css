@@ -477,7 +477,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .home h3 {
     position: relative;
     width: 100%;
-    font-weight: 900;
 }
 .home h3 + .quickbox{
     position: absolute;
@@ -593,13 +592,15 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     top: 0;
     left: 50%;
     width: 2px;
+    max-height: 100%;
     transform: translateX(-50%);
     background-color: var(--orange);
+    transition: height .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .year-dummy {
     position: relative;
     width: 50%;
-    margin: 100px 0 20px auto;
+    margin: 0 0 20px auto;
     padding-left: 30px;
     color: var(--orange);
     font-weight: 800;
@@ -648,6 +649,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .history-list li:nth-child(even) {
     margin-left: auto;
     padding-left: 60px;
+}
+.history-list li:last-child {
+    padding-bottom: 100px;
+}
+.history-list:last-of-type li:last-child {
+    padding-bottom: 0;
 }
 .history-list li::before {
     position: absolute;
@@ -1084,9 +1091,35 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     font-weight: 300;
 }
 .contact_detail-title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 2.5;
     color: #fbfbfb;
+}
+.request-wrap {
+    padding: 80px 0 60px;
+}
+.request-wrap p {
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 700;
+}
+.requset-info, .requset-info li {margin: 0;padding: 0;list-style: none;}
+.requset-info {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.requset-info li {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+    font-size: 30px;
+}
+.requset-info a {
+    color: #f8f8f8;
+}
+.requset-info i {
+    font-size: 33px;
 }
 .formmail_btn {
     text-align: center;
@@ -1383,6 +1416,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .mobileOnly {
         display: block !important;
     }
+    .cursor {
+        display: none;
+    }
     .contents {
         padding: 0 30px;
     }
@@ -1431,6 +1467,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         width: 100%;
         margin-top: 20px;
     }
+    .home h3 + .quickbox button {
+        margin-top: 20px;
+    } 
     .home .pin-area {
         height: 100%;
     }
@@ -1461,7 +1500,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         top: 14px;
     }
     .year-dummy {
-        margin: 60px 0 10px auto;
+        margin: 0 0 10px auto;
         font-size: 30px;
         line-height: 1.5;
     }
@@ -1480,6 +1519,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .history-list li:nth-child(even) {
         padding-left: 35px;
     }
+    .history-list li:last-child {
+        padding-bottom: 60px;
+    }
     .history-list li::before {
         position: absolute;
         top: 50px;
@@ -1493,16 +1535,18 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         font-size: 25px;
     }
     .history-list .history-cont {
-        display: flex;
-        gap: 8px;
-        font-size: 16px;
+        display: block;
+        font-size: 14px;
         line-height: 1.5;
+        word-break: keep-all;
     }
     .history-list .history-cont + .history-cont {
         margin-top: 10px;
     }
     .history-list .history-cont .month {
-        font-size: 18px;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
     }
 
     /* ======== client ======== */
@@ -1686,6 +1730,30 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .contacts .btnArea button {
         padding: 10px 46px;
         font-size: 14px;
+    }
+    .contact_detail-title {
+        font-size: 18px;
+    }
+    .request-wrap {
+        padding: 60px 15px 40px;
+    }
+    .request-wrap p {
+        margin-bottom: 60px;
+        font-size: 45px;
+        line-height: 1.5;
+    }
+    .requset-info {
+        margin-left: unset;
+        transform: unset;
+    }
+    .requset-info li {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .requset-info i {
+        font-size: 22px;
     }
     #popupContact {
         bottom: 0;
