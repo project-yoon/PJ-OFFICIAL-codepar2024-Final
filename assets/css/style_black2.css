@@ -1187,7 +1187,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     color: rgba(255 255 255 / 80%) !important;
 }
 
-@media (min-width: 200px) and (max-width: 768px) {
+@media (min-width: 200px) and (max-width: 991px) {
     /* ======== GNB ======== */
     .custom-nav {
         background-color: #fff !important;
