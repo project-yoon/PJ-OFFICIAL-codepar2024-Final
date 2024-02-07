@@ -325,6 +325,9 @@ $(document).ready(function () {
 
 	/* ----------- 문의하기 탭 ----------- */
 	$('.contact-tab button').on('click', function() {
+		$('.contact-tab button').removeClass('active');
+		$(this).addClass('active');
+		
 		let dataTarget = $(this).attr('data-rel');
 
 		$('#'+dataTarget).fadeIn().siblings('.contact-tab-info').hide();
