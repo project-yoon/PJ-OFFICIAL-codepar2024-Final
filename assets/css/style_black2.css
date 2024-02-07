@@ -1835,4 +1835,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         font-weight: 100;
         letter-spacing: -0.025em;
     }
+
+    /* ======== contact ======== */
+    .contacts .map .root_daum_roughmap {
+        width: 100vw;
+    }
+    .contacts .map .root_daum_roughmap .wrap_map {
+        height: 350px;
+    }
 }
