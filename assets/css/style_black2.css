@@ -721,6 +721,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 
 /* ======== client ======== */
 .client {
+    background-image: url(/assets/img/client_bg.png);
+    background-position: center top;
+    background-repeat: no-repeat;
     background-color: rgb(39 38 38 / 70%);
 }
 .clientList ul,
