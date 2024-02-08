@@ -637,6 +637,29 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     padding: 0;
     list-style: none;
 }
+.history-list:last-of-type::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translateX(-50%);
+    background-color: var(--orange);
+    border-radius: 50%;
+    content: '';
+}
+.history-list:last-of-type::after {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    content: '';
+}
 .history-list li {
     position: relative;
     width: 50%;
@@ -1541,6 +1564,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .history-wrap::before,
     .history-line {
         top: 14px;
+    }
+    .history-wrap::before {
+        height: calc(100% - 14px);
+    }
+    .history-line {
+        max-height: calc(100% - 14px);
     }
     .year-dummy {
         margin: 0 0 10px auto;
