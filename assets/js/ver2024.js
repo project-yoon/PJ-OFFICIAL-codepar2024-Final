@@ -64,7 +64,7 @@ function historyAni () {
 				},
 				onLeaveBack: function () {
 					$(item).removeClass("on");
-					hisConHeight = hisCon.eq(i).outerHeight(true)
+					hisConHeight = hisCon.eq(i-1).outerHeight(true)
 					if (i) {
 						hisLine.css("height", hisCon.eq(i-1).position().top + hisConHeight + "px");
 					} else {
