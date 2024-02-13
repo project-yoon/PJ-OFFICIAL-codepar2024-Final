@@ -751,9 +751,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     padding: 0;
     list-style: none;
 }
-.clientList .tabCon {
-    height: 100%;
-}
 .client .contents {
     flex-direction: column;
     height: auto;
@@ -765,9 +762,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     margin-top: 35px;
 }
 .client .clientList {
-    overflow: hidden;
+    position: relative;
     width: 100%;
     height: auto;
+    overflow: hidden;
     margin-top: 60px;
 }
 .client .client-logo {
@@ -794,6 +792,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .client .client-logo .client-logo-list li img {
     width: 175px;
+}
+.client .clientList .tabCon {
+    height: 100%;
 }
 @media (prefers-reduced-motion: reduce) {
     .marquee-group {
@@ -1329,11 +1330,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .client .titArea {
         margin: 0;
     }
-    .clientList {
-        position: relative;
-        width: 50%;
-        height: 480px;
-    }
 
     /* ======== about ======== */
     .about .contents {
@@ -1484,13 +1480,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 }
 
-@media screen and (max-width: 760px) {
-    /* ======== story ======== */
-    .story .storyList li {
-        margin-right: 30px;
-    }
-}
-
 @media screen and (max-width:960px) {
     /* ======== 공통 ======== */
     .mobileOnly {
@@ -1549,7 +1538,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .home h3 + .quickbox button {
         margin-top: 20px;
-    } 
+    }
     .home .pin-area {
         height: 100%;
     }
@@ -1642,8 +1631,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .client .titArea p {
         margin-top: 20px;
     }
-    .clientList {
-        position: relative;
+    .client .clientList {
         height: 480px;
         margin-top: 40px;
     }
@@ -1869,10 +1857,40 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 }
 
+@media screen and (max-width: 760px) {
+    /* ======== story ======== */
+    .story .storyList li {
+        margin-right: 30px;
+    }
+}
+
 @media screen and (max-width: 560px) {
     /* ======== home ======== */
     .motion-effect-2 .motion-dummy {
         word-break: auto-phrase;
+    }
+
+    /* ======== client ======== */
+    .client .clientList {
+        height: 560px;
+        overflow-y: scroll;
+    }
+    .client .client-logo .client-logo-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .client .client-logo {
+        height: 100%;
+    }
+    .marquee-group {
+        -webkit-animation: unset;
+        animation: unset;
+    }
+    .marquee--reverse .marquee-group {
+        animation-direction: unset;
+    }
+    .client .clientList .tabCon {
+        height: auto;
     }
 
     /* ======== works ======== */
