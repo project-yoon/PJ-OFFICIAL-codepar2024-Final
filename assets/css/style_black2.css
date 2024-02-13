@@ -708,7 +708,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .history-list li::after {
     width: 0px;
-    transition: width .8s .5s;
+    transition: 1s ease-in-out;
 }
 .history-list li.on::after {
     width: 45px;
