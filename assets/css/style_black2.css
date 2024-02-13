@@ -101,8 +101,9 @@ button:focus {
 
 /* ======== 퀵 메뉴 (탑 버튼, 문의하기 버튼) ======== */
 .quick-menu {
-    z-index:1000;
+    display: none;
     position: fixed;
+    z-index:1000;
     bottom: 15px;
     right: 20px;
     transition:all 0.5s;
@@ -1162,10 +1163,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .contact-tab button.active [class^="mbri-"] {
     color: var(--orange);
 }
-
-.request-wrap {
-    padding: 80px 0 60px;
-}
 .request-wrap p {
     margin-bottom: 80px;
     text-align: center;
@@ -1211,6 +1208,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .contacts .contact-tab-info {
     display: none;
+    margin-top: 90px;
 }
 .contacts .map .root_daum_roughmap {
     width: 100%;
@@ -1743,17 +1741,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .story {
         padding: 85px 0;
     }
-    .story .titArea {
-        margin-bottom: 70px;
-        text-align: center;
-    }
     .story .contents {
         padding: 0;
     }
     .story .storyTxt {
-        top: 160px;
+        top: 130px;
         left: 24px;
-        margin-top: 20px;
         padding: 0;
         transform: unset;
     }
@@ -1765,11 +1758,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         font-size: 16px;
     }
     .story .slideArea {
-        margin-top: 160px;
+        margin-top: 120px;
     }
     .story .btnArea {
         position: absolute;
-        top: 215px;
+        top: 140px;
         right: 0;
         bottom: unset;
         right: 24px !important;
@@ -1779,8 +1772,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         padding: 0;
     }
     .story .btnArea a {
-        width: 20px;
-        height: 20px;
         margin-left: 10px;
     }
     .story .btnArea a img {
@@ -1808,9 +1799,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .contact_detail-title {
         font-size: 18px;
-    }
-    .request-wrap {
-        padding: 60px 15px 40px;
     }
     .request-wrap p {
         margin-bottom: 60px;
@@ -1869,6 +1857,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 
 @media screen and (max-width: 560px) {
+    /* ======== home ======== */
+    .motion-effect-2 .motion-dummy {
+        word-break: auto-phrase;
+    }
+
     /* ======== works ======== */
     .work .workList li {
         float: none !important;

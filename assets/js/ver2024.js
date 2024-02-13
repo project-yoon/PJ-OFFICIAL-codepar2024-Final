@@ -5,10 +5,11 @@ let btnContactTrigger = $('.btn-contact-trigger');
 let contactWrap = $('#popupContact');
 let pinedList = document.querySelector('.pined-list');
 let pinedInner = document.querySelector('.pined-inner');
-let pinSections = gsap.utils.toArray(".pin__item");
+let pinSections = gsap.utils.toArray('.pin__item');
 let pinSectionsTops = pinSections.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
 let home = document.querySelector('#home');
 let client = document.querySelector('#client');
+let quickMenu = document.querySelector('.quick-menu');
 let isActive;
 
 document.addEventListener('scroll', () => {
@@ -74,19 +75,6 @@ function historyAni () {
 		});
 	})
 }
-/* ----------- work 영역 우측 텍스트 고정 ----------- */
-// gsap.to(".work .titArea", {
-// 	duration: 0.5,
-// 	//scale: 0.8,
-// 	transformOrigin: "top left",
-// 	ease: "none",
-// 	scrollTrigger: {
-// 		trigger: ".work",
-// 		start: "top top",
-// 		end: "top -100%",
-// 		scrub: true
-// 	}
-// });
 
 /* ----------- 카드 모션 ----------- */
 gsap.to(pinedList, {
@@ -114,11 +102,13 @@ function headerTopPosi() {
 		home.style.transform = 'translate(0px, 0px)';
 		// home.style.filter = 'unset';
 		client.style.cssText = `background-color: rgb(39 38 38 / 70%);`;
+		quickMenu.style.display = 'none';
 	} else {
 		gnb.classList.add('stickyadd');
 		home.style.transform = 'unset';
 		// home.style.filter = 'blur(2px)';
 		client.style.cssText = `background-color: rgb(39 38 38 / 100%);`;
+		quickMenu.style.display = 'block';
 	}
 }
 
@@ -218,6 +208,7 @@ function initrllLst(listTag, listIdx) {
 // 	delay: 8000,
 // });
 
+/* ----------- 텍스트 타입별 모션 ----------- */
 let motionEffect_2 = document.querySelector('.motion-effect-4 .motion-dummy');
 motionEffect_2.innerHTML = motionEffect_2.textContent.replace(/\S/g, '<span class="dummy">$&</span>');
 anime.timeline({
