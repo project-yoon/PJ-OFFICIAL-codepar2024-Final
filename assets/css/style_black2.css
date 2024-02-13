@@ -1589,13 +1589,17 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .history-list li:last-child {
         padding-bottom: 60px;
     }
-    .history-list li::before {
+    .history-list li::before,
+    .history-list li::after {
         position: absolute;
         top: 50px;
         width: 30px;
         height: 1px;
         background-color: #fff;
         content: '';
+    }
+    .history-list li.on::after {
+        width: 30px;
     }
     .history-list .year {
         margin: 0 0 20px;
