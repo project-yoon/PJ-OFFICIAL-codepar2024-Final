@@ -478,6 +478,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .home h3 {
     position: relative;
     width: 100%;
+    word-break: keep-all;
 }
 .home h3 + .quickbox{
     position: absolute;
@@ -596,7 +597,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     max-height: 100%;
     transform: translateX(-50%);
     background-color: var(--orange);
-    transition: height .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: height 1s ease-in-out;
 }
 .year-dummy {
     position: relative;
@@ -688,17 +689,33 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     background-color: #fff;
     content: '';
 }
-.history-list li:nth-child(odd)::before {
+.history-list li::before,
+.history-list li::after {
+    position: absolute;
+    top: 75px;
+    width: 45px;
+    height: 1px;
+    background-color: #fff;
+    content: '';
+}
+.history-list li:nth-child(odd)::before,
+.history-list li:nth-child(odd)::after {
     right: 0;
 }
-.history-list li:nth-child(even)::before {
+.history-list li:nth-child(even)::before,
+.history-list li:nth-child(even)::after {
     left: 0;
 }
-.history-list li.on::before {
+.history-list li::after {
+    width: 0px;
+    transition: width .8s .5s;
+}
+.history-list li.on::after {
+    width: 45px;
     background-color: var(--orange);
 }
 .history-list .year {
-    margin: 0 0 35px;
+    margin: -5px 0 35px;
     font-size: 30px;
     font-weight: 700;
 }
@@ -1125,7 +1142,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     border-radius: 13px;
     border: 1px solid #4b4132; */
 }
-.contact-tab button::before,
+/* .contact-tab button::before,
 .contact-tab button::after {
     position: absolute;
     top: 100%;
@@ -1146,22 +1163,15 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .contact-tab button.active::after {
     transform: scale(1);
     background-color: var(--orange);
-}
+} */
 .contact-tab button [class^="mbri-"] {
     line-height: 2;
-    color: #fbfbfb;
+    color: var(--orange);
 }
 .contact_detail-title {
     font-size: 20px;
     line-height: 2.5;
     color: #fbfbfb;
-}
-.contact-tab button.active {
-    transform: scale(1);
-    border-color: var(--orange);
-}
-.contact-tab button.active [class^="mbri-"] {
-    color: var(--orange);
 }
 .request-wrap p {
     margin-bottom: 80px;
@@ -1396,23 +1406,26 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         border-radius: 24px;
         overflow: hidden;
     }
-    .flip-card-side.front {
+    .flip-card-side.img {
         display: block;
     }
-    .flip-card-side.front img {
+    .flip-card-side.img img {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .flip-card-side.back {
+    .flip-card-side.info {
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         padding: 30px;
         background-color: #26282b;
-        transform: rotateY(180deg);
         font-size: 24px;
+    }
+    .flip-card-side.back {
+        transform: rotateY(180deg);
     }
 
     /* ======== contact ======== */
