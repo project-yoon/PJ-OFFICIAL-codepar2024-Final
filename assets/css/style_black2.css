@@ -1875,6 +1875,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         flex-wrap: wrap;
         justify-content: center;
     }
+    .client .client-logo .client-logo-list li {
+        width: 170px;
+        height: 95px;
+    }
     .client .client-logo {
         height: 100%;
     }
