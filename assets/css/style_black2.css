@@ -1100,11 +1100,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     margin-top: 150px;
     margin-left: 0px;
 }
-.story .slideArea .storyList li {
+.story .storyList li {
     width: 100%;
     height: 500px;
 }
-.story .slideArea .storyList li img {
+.story .storyList li img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1850,13 +1850,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .footer a {
         text-decoration: underline;
-    }
-}
-
-@media screen and (max-width: 760px) {
-    /* ======== story ======== */
-    .story .storyList li {
-        margin-right: 30px;
     }
 }
 
