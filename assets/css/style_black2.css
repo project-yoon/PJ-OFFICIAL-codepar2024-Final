@@ -1211,7 +1211,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .contacts .contact-tab-info {
     display: none;
-    margin-top: 90px;
+    margin-top: 16px;
 }
 .contacts .map .root_daum_roughmap {
     width: 100%;
