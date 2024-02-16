@@ -1116,6 +1116,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     z-index: unset;
     background-color: #2E3135;
 }
+.contact-title h2 {
+    font-size: 48px;
+}
 .contacts .titArea {
     text-align: center;
 }
@@ -1130,7 +1133,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .contact-tab button {
     position: relative;
     width: 50%;
-    /* transition: all 0.5s ease;
+    /*transition: all 0.5s ease;
     transform: scale(0.95);
     border-radius: 13px;
     border: 1px solid #4b4132; */
@@ -1214,8 +1217,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     margin-top: 16px;
 }
 .contacts .map .root_daum_roughmap {
-    width: 100%;
+    width: 965px;
     height: 100%;
+    margin: 0 auto;
 }
 .contacts .map .root_daum_roughmap .wrap_map {
     height: 500px;
@@ -1432,6 +1436,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         padding: 30px;
         width: 30%;
         border-radius: 20px;
+    }
+    .career-wrap a {
+        cursor: none;
+        pointer-events: none;
+    }
+    .career-wrap img {
+        display: block;
+        margin: 0 auto;
     }
 
     /* ======== footer ======== */
@@ -1825,6 +1837,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         height: 100vh;
         border-radius: 10px;
         box-sizing: border-box;
+    }
+    .career-wrap img {
+        width: 100%;
     }
 
     /* ======== footer ======== */
