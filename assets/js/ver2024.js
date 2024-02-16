@@ -16,6 +16,11 @@ document.addEventListener('scroll', () => {
 	headerTopPosi();
 });
 
+/* ----------- gsap 환경설정 셋팅 ----------- */
+gsap.config({
+	trialWarn: false, // 경고 비활성화
+});
+
 /* ----------- scroll parallax ----------- */
 pinSections.forEach((panel, i) => {
 	ScrollTrigger.create({
@@ -379,7 +384,6 @@ $(document).ready(function () {
 	historyAni();
 	initrllLst($('.text-rolling-wrap'),1);
 });
-
 
 $(document).on('resize', function() {
 	historyAni();
