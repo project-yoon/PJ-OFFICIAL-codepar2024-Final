@@ -1131,7 +1131,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .contact-tab button {
     position: relative;
-    width: 50%;
     /*transition: all 0.5s ease;
     transform: scale(0.95);
     border-radius: 13px;
@@ -1207,6 +1206,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 #popupContact.row {
     margin-top: unset;
     margin-right: unset;
+}
+.contacts .contact-tab-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .contacts .contact-tab {
     text-align: center;
@@ -1813,6 +1816,9 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .contacts .btnArea button {
         padding: 10px 46px;
         font-size: 14px;
+    }
+    .contacts .map .root_daum_roughmap {
+        width: 100%;
     }
     .contact_detail-title {
         font-size: 18px;
