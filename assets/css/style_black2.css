@@ -4,7 +4,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
 
 /* ======== 초기화 ======== */
-*{box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
+*{box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}html,body{scroll-behavior:smooth;}html *{outline:none !important;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body,div,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,label,button,textarea,select,table,caption,thead,tfoot,tbody,tr,th,td,address,img,span,em,strong,pre{margin:0;padding:0;}ul,li{list-style:none;}
 body {
     font-family: 'Pretendard', sans-serif;
     overflow-x: hidden;
@@ -877,7 +877,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 /* ======== works ======== */
 .work {
     position: relative;
-    width: 100vw;
     background-color: #26282B;
 }
 .work .contents {
@@ -1485,6 +1484,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 
 @media screen and (max-width:960px) {
+    /* ======== 초기화 ======== */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
     /* ======== 공통 ======== */
     .mobileOnly {
         display: block !important;
