@@ -1439,11 +1439,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         width: 30%;
         border-radius: 20px;
     }
-    .career-wrap a {
+    .career-wrap {
+        text-align:center;
+    }
+    .career-wrap a{
         cursor: none;
         pointer-events: none;
     }
-    .career-wrap img {
+    .career-wrap img{
         display: block;
         margin: 0 auto;
     }
