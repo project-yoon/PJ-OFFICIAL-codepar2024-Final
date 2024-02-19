@@ -1738,6 +1738,10 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .services .pined-inner {
         height: 450px;
         padding-top: 50px;
+        margin: 0 30px;
+    }
+    .services .pined-list {
+        gap: 45px;
     }
     .services-card {
         min-width: calc(100% - 100px);
@@ -1877,18 +1881,27 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     /* ======== client ======== */
     .client .clientList {
         height: 560px;
+        padding: 0 30px;
         overflow-y: scroll;
     }
     .client .client-logo .client-logo-list {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .client .client-logo .client-logo-list li {
-        width: 150px;
-        height: 95px;
+        width: unset;
+        height: unset;
+        aspect-ratio: 2 / 1.5;
+        padding: 0 10px;
+    }
+    .client .client-logo .client-logo-list li img {
+        width: 100%;
     }
     .client .client-logo {
         height: 100%;
+    }
+    .marquee-wrap {
+        gap: 15px;
     }
     .marquee-group {
         -webkit-animation: unset;
@@ -1951,5 +1964,15 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .contacts .map .root_daum_roughmap .wrap_map {
         height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* ======== client ======== */
+    .client .client-logo .client-logo-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .client .client-logo .client-logo-list li img {
+        width: 109px;
     }
 }
