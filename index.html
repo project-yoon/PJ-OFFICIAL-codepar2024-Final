@@ -74,7 +74,7 @@
 		<!-- End Navbar -->
 
 		<!-- START HOME -->
-		<section id="home" class="section home pin__item">
+		<section id="home" class="home pin__item">
 			<div class="pin-area"></div>
 			<div class="contents">
 				<h2>
@@ -301,13 +301,13 @@
 		<!-- END ABOUT -->
 
 		<!--START WORK -->
-		<section id="work" class="work">
+		<section id="work" class="section work">
 			<div class="contents">
 				<div class="titArea">
 					<h2 data-aos="fade-up" data-aos-delay="50">Our Works</h2>
 					<p data-aos="fade-up" data-aos-delay="100" class="desc"><span>C</span>lient E<span>x</span>perience <span>C</span>onvergence</p>
 					<h3 data-aos="fade-up" data-aos-delay="100">고객의 경험을<br>융합한다.</h3>
-					<p data-aos="fade-up" data-aos-delay="150">예측 가능성과 책임감 있는<br>프로젝트 수행</p>
+					<p data-aos="fade-up" data-aos-delay="150">예측 가능성과 책임감 있는 프로젝트 수행</p>
 				</div>
 				<ul class="workList">
 					<li data-aos="fade-up" data-aos-easing="ease-in-out-cubic">
@@ -613,7 +613,7 @@
 		</section>
 		<!--END WORK -->
 
-		<section id="services" class="services">
+		<section id="services" class="gsap-pd services">
 			<div class="contents">
 				<div class="titArea">
 					<h2 data-aos="fade-up">Our Services</h2>
@@ -730,18 +730,14 @@
 		<!-- START CONTACT -->
 		<section id="contact" class="section contacts">
 			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-12">
-						<div class="text-center contact-title">
-							<h2 data-aos="fade-up" data-aos-delay="100"><span class="font-weight-bold">Contact</span> Us</h2>
-							<!-- <p data-aos="fade-up" data-aos-delay="200" class="text-muted mx-auto section-subtitle mt-3 text-custom">
-								예측 가능한 사람들이 일하는 회사<br>
-								코드파트너즈와 함께 하세요.
-							</p> -->
-						</div>
-					</div>
+				<div class="text-center contact-title">
+					<h2 data-aos="fade-up" data-aos-delay="100"><span class="font-weight-bold">Contact</span> Us</h2>
+					<!-- <p data-aos="fade-up" data-aos-delay="200" class="text-muted mx-auto section-subtitle mt-3 text-custom">
+						예측 가능한 사람들이 일하는 회사<br>
+						코드파트너즈와 함께 하세요.
+					</p> -->
 				</div>
-				<div class="mt-5 contact-tab-wrap">
+				<div class="contact-tab-wrap">
 					<div class="contact-tab">
 						<button type="button" data-rel="callUsOn">
 							<div class="text-center aos-init" data-aos="fade-up">
@@ -784,104 +780,98 @@
 				</div>
 
 				<!-- Call Us On -->
-				<div id="callUsOn" class="contact-tab-info row">
-					<div class="col-lg-12">
-						<div class="request-wrap mt-5">
-							<p>프로젝트에 대한 의뢰</p>
-							<ul class="requset-info">
-								<li><i class="mdi mdi-email-variant"></i><a href="mailto:support@codepartners.co.kr">support@codepartners.co.kr</a></li>
-								<li><i class="mdi mdi-phone"></i>02-2274-5113</li>
-								<li><i class="mdi mdi-cellphone"></i>010-4505-7174</li>
-							</ul>
-						</div>
+				<div id="callUsOn" class="contact-tab-info">
+					<div class="request-wrap">
+						<p>프로젝트에 대한 의뢰</p>
+						<ul class="requset-info">
+							<li><i class="mdi mdi-email-variant"></i><a href="mailto:support@codepartners.co.kr">support@codepartners.co.kr</a></li>
+							<li><i class="mdi mdi-phone"></i><a href="tel:02-2274-5113">02-2274-5113</a></li>
+							<li><i class="mdi mdi-cellphone"></i><a href="tel:010-4505-7174">010-4505-7174</a></li>
+						</ul>
 					</div>
 				</div>
 
 				<!-- 채용문의 컨컨텐츠 -->
-				<div id="viewContact" class="contact-tab-info row">
-					<div class="col-lg-12">
-						<div class="career-wrap">
-							<picture>
-								<source srcset="{{$template}}/img/images/new/career_content_mo.png 960w" media="(max-width:960px)">
-								<img src="{{$template}}/img/images/new/career_content_pc.png" alt="코드파트너즈에서 함께 성장할 여러분의 지원을 기다립니다">
-							</picture>
-							<!--<a href="/assets/img/career_content.png">
-								<img src="/assets/img/career_content.png" alt="">
-							</a>-->
-						</div>
+				<div id="viewContact" class="contact-tab-info">
+					<div class="career-wrap">
+						<picture>
+							<source srcset="{{$template}}/img/images/new/career_content_mo.png 960w" media="(max-width:960px)">
+							<img src="{{$template}}/img/images/new/career_content_pc.png" alt="코드파트너즈에서 함께 성장할 여러분의 지원을 기다립니다">
+						</picture>
+						<!--<a href="/assets/img/career_content.png">
+							<img src="/assets/img/career_content.png" alt="">
+						</a>-->
 					</div>
 				</div>
 
 				<!-- 카카오맵 -->
-				<div id="kakaoMap" class="map contact-tab-info row">
+				<div id="kakaoMap" class="map contact-tab-info">
 					<div id="daumRoughmapContainer1707197836419" class="root_daum_roughmap root_daum_roughmap_landing"></div>
 				</div>
 
 				<!-- 퀵메뉴안에 폼메일 -->
-				<div id="popupContact" class="row mt-5">
-					<div class="col-lg-12">
-						<div class="form-kerri">
-							<!-- 폼메일 시작 -->
-							<link rel="StyleSheet" href="/bizdemo122704/inc/formmail/formmail_1.css" type="text/css">
-							<script language="javascript" src="/cjs/formmail.js?1705309955&amp;com_formmail_id=1&amp;template=bizdemo122704"></script>
+				<div id="popupContact">
+					<div class="form-kerri">
+						<!-- 폼메일 시작 -->
+						<link rel="StyleSheet" href="/bizdemo122704/inc/formmail/formmail_1.css" type="text/css">
+						<script language="javascript" src="/cjs/formmail.js?1705309955&amp;com_formmail_id=1&amp;template=bizdemo122704"></script>
 
-							<table border="0" cellspacing="0" cellpadding="0" width="100%" action="/default/index.php?ip=121.160.51.222" class="scrollreveal">
-								<form id="contact-form-2" name="com_formmail" method="post" action="http://codepartners.co.kr/default/index.php?ip=121.160.51.222" enctype="multipart/form-data" onsubmit="return false;"></form>
-								<input type="hidden" name="com_formmail1_basic" value="send">
-								<input type="hidden" name="template" value="bizdemo122704">
-								<tbody>
-									<tr>
-										<td>
-											<table cellpadding="0" cellspacing="0" class="tbl_formmail_sub form-content">
-												<tbody>
-													<tr height="30">
-														<td width="20%" align="center" class="formmail_title_bgcolor">
-															<font>성명</font>
-														</td>
-														<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
-															<input type="text" class="form-control" name="name" maxlength="100" size="50" value="" placeholder="고객사명/담당자 성함">
-															&nbsp;&nbsp;
-														</td>
-													</tr>
-													<tr height="30">
-														<td width="20%" align="center" class="formmail_title_bgcolor">
-															<font>전화번호</font>
-														</td>
-														<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
-															<input type="text" class="form-control" name="add1" maxlength="20" size="20" value="" placeholder="전화번호">
-															&nbsp;&nbsp;
-															<input type="hidden" name="add1_attr" value="1">
-														</td>
-													</tr>
-													<tr height="30">
-														<td width="20%" align="center" class="formmail_title_bgcolor">
-															<font>이메일</font>
-														</td>
-														<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
-															<input type="text" class="form-control" name="receiver_email" size="70" value="" placeholder="이메일">
-															<br>
-														</td>
-													</tr>
-													<tr height="30">
-														<td width="20%" align="center" class="formmail_title_bgcolor">
-															<font>설명</font>
-														</td>
-														<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
-															<textarea class="form-control" cols="52" name="description1" style="height:300px;" placeholder="문의내용"></textarea>
-															<br>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-											<div class="formmail_btn">
-												<button type="submit" onclick="com_formmail_formCheck(); return false;" class="btn btn-custom">Send Message</button>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<!-- //폼메일 끝 -->
-						</div>
+						<table border="0" cellspacing="0" cellpadding="0" width="100%" action="/default/index.php?ip=121.160.51.222" class="scrollreveal">
+							<form id="contact-form-2" name="com_formmail" method="post" action="http://codepartners.co.kr/default/index.php?ip=121.160.51.222" enctype="multipart/form-data" onsubmit="return false;"></form>
+							<input type="hidden" name="com_formmail1_basic" value="send">
+							<input type="hidden" name="template" value="bizdemo122704">
+							<tbody>
+								<tr>
+									<td>
+										<table cellpadding="0" cellspacing="0" class="tbl_formmail_sub form-content">
+											<tbody>
+												<tr height="30">
+													<td width="20%" align="center" class="formmail_title_bgcolor">
+														<font>성명</font>
+													</td>
+													<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+														<input type="text" class="form-control" name="name" maxlength="100" size="50" value="" placeholder="고객사명/담당자 성함">
+														&nbsp;&nbsp;
+													</td>
+												</tr>
+												<tr height="30">
+													<td width="20%" align="center" class="formmail_title_bgcolor">
+														<font>전화번호</font>
+													</td>
+													<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+														<input type="text" class="form-control" name="add1" maxlength="20" size="20" value="" placeholder="전화번호">
+														&nbsp;&nbsp;
+														<input type="hidden" name="add1_attr" value="1">
+													</td>
+												</tr>
+												<tr height="30">
+													<td width="20%" align="center" class="formmail_title_bgcolor">
+														<font>이메일</font>
+													</td>
+													<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+														<input type="text" class="form-control" name="receiver_email" size="70" value="" placeholder="이메일">
+														<br>
+													</td>
+												</tr>
+												<tr height="30">
+													<td width="20%" align="center" class="formmail_title_bgcolor">
+														<font>설명</font>
+													</td>
+													<td width="80%" style="padding-left:10px;" class="formmail_cell_bgcolor">
+														<textarea class="form-control" cols="52" name="description1" style="height:300px;" placeholder="문의내용"></textarea>
+														<br>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="formmail_btn">
+											<button type="submit" onclick="com_formmail_formCheck(); return false;" class="btn btn-custom">Send Message</button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //폼메일 끝 -->
 					</div>
 				</div>
 			</div>
@@ -892,7 +882,7 @@
 		<footer class="footer">
 			<div class="contents">
 				<ul>
-					<li>Tel. 02-2274-5113</li>
+					<li>Tel. <a href="tel:02-2274-5113">02-2274-5113</a></li>
 					<li>Fax. 0505-299-6866</li>
 					<li>Email. <a href="mailto:support@codepartners.co.kr">support@codepartners.co.kr</a></li>
 				</ul>

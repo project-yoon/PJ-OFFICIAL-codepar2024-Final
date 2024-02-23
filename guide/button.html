@@ -17,7 +17,7 @@
 	/* 페이지 전용 스타일 선언 */
 	body{
 		color: #222;
-		font-family: 'Montserrat','NotoKr',sans-serif;
+        font-family: 'Montserrat', 'Pretendard', sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 1;
@@ -63,6 +63,7 @@
 				<div class="CPguide_header">
 					<h3 class="body_title">Buttons</h3>
 				</div>
+				<!--
 				<div class="CPguide_header">
 					<h4 class="titmain">Line (Light)</h4>
 				</div>
@@ -75,6 +76,8 @@
 						<button type="button" class="btn selected"><span>Selected</span></button>
 					</div>
 				</div>
+				-->
+				<!--
 				<div class="CPguide_header">
 					<h4 class="titmain">Line (Dark) </h4>
 				</div>
@@ -87,34 +90,37 @@
 						<button type="button" class="btn btn_ghost selected"><span>Selected</span></button>
 					</div>
 				</div>
+				-->
 				<div class="CPguide_header">
 					<h4 class="titmain">primary</h4>
 				</div>
 				<div class="CPguide_body grid">
 					<div class="item item--1" style="padding-left:20px;">
-						<button type="button" class="btn btn_primary"><span>Basic</span></button>
-						<button type="button" class="btn btn_primary hover"><span>Hover</span></button>
-						<button type="button" class="btn btn_primary active"><span>active</span></button>
-						<button type="button" class="btn btn_primary disabled" disabled><span>disabled</span></button>
-						<button type="button" class="btn btn_primary selected"><span>Selected</span></button>
+						<button type="button" class="btn btnDef"><span>Basic</span></button>
+						<button type="button" class="btn btnblack"><span>Basic</span></button>
+<!--						<button type="button" class="btn btn_primary hover"><span>Hover</span></button>-->
+<!--						<button type="button" class="btn btn_primary active"><span>active</span></button>-->
+<!--						<button type="button" class="btn btn_primary disabled" disabled><span>disabled</span></button>-->
+<!--						<button type="button" class="btn btn_primary selected"><span>Selected</span></button>-->
 					</div>
 				</div>
 				<div class="CPguide_header">
-					<h4 class="titmain">full White</h4>
+					<h4 class="titmain">white</h4>
 				</div>
 				<div class="CPguide_body grid ghost" style="background-color: #353535;">
 					<div class="item item--1" style="padding-left:20px;">
-						<button type="button" class="btn btn_w"><span>Basic</span></button>
-						<button type="button" class="btn btn_w hover"><span>Hover</span></button>
-						<button type="button" class="btn btn_w active"><span>active</span></button>
-						<button type="button" class="btn btn_w disabled" disabled><span>disabled</span></button>
-						<button type="button" class="btn btn_w selected"><span>Selected</span></button>
+						<button type="button" class="btn btnWhite"><span>Basic</span></button>
+<!--						<button type="button" class="btn btn_w"><span>Basic</span></button>-->
+<!--						<button type="button" class="btn btn_w hover"><span>Hover</span></button>-->
+<!--						<button type="button" class="btn btn_w active"><span>active</span></button>-->
+<!--						<button type="button" class="btn btn_w disabled" disabled><span>disabled</span></button>-->
+<!--						<button type="button" class="btn btn_w selected"><span>Selected</span></button>-->
 					</div>
 				</div>
 			</div>
 
+			<!--
 			<hr class="line">
-
 			<div class="content_inner">
 				<div class="CPguide_header">
 					<h3 class="body_title">Text Links</h3>
@@ -136,9 +142,10 @@
 					</div>
 				</div>
 			</div>
+			-->
 
+			<!--
 			<hr class="line">
-
 			<div class="content_inner">
 				<div class="CPguide_header">
 					<h3 class="body_title">Size</h3>
@@ -241,111 +248,113 @@
 					</div>
 				</div>
 			</div>
+			-->
 
+			<!--
 			<hr class="line">
-
 			<div class="content_inner">
 				<div class="CPguide_header">
 					<h3 class="body_title">Ico type</h3>
 				</div>
 				<div class="CPguide_body" style="display: block;">
-						<p class="txt_caption">※ 투명도 확인을 위해 테이블의 배경에 색상이 있습니다. </p>
+					<p class="txt_caption">※ 투명도 확인을 위해 테이블의 배경에 색상이 있습니다. </p>
 
-						<div class="table-scroll">
-							<div class="table-wrap responsive_table ico">
-								<table class="main-table" style="background: #EEEEEE;">
-									<caption>아이콘을 사용한 버튼에 관한 표</caption>
-									<colgroup>
-										<col width="15%">
-										<col width="25%">
-										<col width="auto">
-									</colgroup>
-									<thead>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">종류</th>
-											<th>사용 규칙</th>
-											<th>미리보기</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">새 창으로 이동</th>
-											<td><code>.move_btn &gt; .inquire_btn</code></td>
-											<td>
-												<div class="move_btn">
-													<a href="https://gsrm.samsungsdi.com/" class="inquire_btn txt_info" target="_blank" title="새창열기">새 창으로 열기</a>
+					<div class="table-scroll">
+						<div class="table-wrap responsive_table ico">
+							<table class="main-table" style="background: #EEEEEE;">
+								<caption>아이콘을 사용한 버튼에 관한 표</caption>
+								<colgroup>
+									<col width="15%">
+									<col width="25%">
+									<col width="auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">종류</th>
+										<th>사용 규칙</th>
+										<th>미리보기</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">새 창으로 이동</th>
+										<td><code>.move_btn &gt; .inquire_btn</code></td>
+										<td>
+											<div class="move_btn">
+												<a href="https://gsrm.samsungsdi.com/" class="inquire_btn txt_info" target="_blank" title="새창열기">새 창으로 열기</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">Board SNS Link</th>
+										<td>특수 클래스 없이 아이콘 이미지 추가</td>
+										<td>
+											<a href="#" title="페이스북으로 공유하기 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_facebook_w.svg" alt="Facebook"></a>
+											<a href="#" title="트위터로 공유하기 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_twitter_w.svg" alt="Twitter"></a>
+											<a href="#" title="URL 복사하기"><img src="../front/KR/assets/images/layout/ico_sns_link_w.svg" alt="URL"></a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">Footer SNS Link</th>
+										<td>특수 클래스 없이 아이콘 이미지 추가</td>
+										<td>
+											<a href="https://www.facebook.com/samsungsdi" title="페이스북 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_facebook.svg" alt="Facebook"></a>
+											<a href="https://www.youtube.com/user/SDISamsung" title="유투브 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_utube.svg" alt="YouTube"></a>
+											<a href="https://blog.naver.com/sdibattery" title="네이버 블로그 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_blog.svg" alt="Naver Blog"></a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">Move Top</th>
+										<td><code>.footer_wrap &gt; .quick &gt; .btn_top</code></td>
+										<td>
+											<button type="button" class="btn_top" title="최상단으로 이동하기"><img src="../front/KR/assets/images/layout/btn_top.png" alt="최상단 이동"></button>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">Sub Nav - Home</th>
+										<td><code>.sub_nav1 &gt; .sub_nav1_inner &gt; .home</code></td>
+										<td>
+											<div class="sub_nav1">
+												<div class="sub_nav1_inner">
+													<div class="home"><a href="../main/index.html">Home</a></div>
 												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">Board SNS Link</th>
-											<td>특수 클래스 없이 아이콘 이미지 추가</td>
-											<td>
-												<a href="#" title="페이스북으로 공유하기 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_facebook_w.svg" alt="Facebook"></a>
-												<a href="#" title="트위터로 공유하기 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_twitter_w.svg" alt="Twitter"></a>
-												<a href="#" title="URL 복사하기"><img src="../front/KR/assets/images/layout/ico_sns_link_w.svg" alt="URL"></a>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">Footer SNS Link</th>
-											<td>특수 클래스 없이 아이콘 이미지 추가</td>
-											<td>
-												<a href="https://www.facebook.com/samsungsdi" title="페이스북 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_facebook.svg" alt="Facebook"></a>
-												<a href="https://www.youtube.com/user/SDISamsung" title="유투브 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_utube.svg" alt="YouTube"></a>
-												<a href="https://blog.naver.com/sdibattery" title="네이버 블로그 새창열기" target="_blank"><img src="../front/KR/assets/images/layout/ico_sns_blog.svg" alt="Naver Blog"></a>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">Move Top</th>
-											<td><code>.footer_wrap &gt; .quick &gt; .btn_top</code></td>
-											<td>
-												<button type="button" class="btn_top" title="최상단으로 이동하기"><img src="../front/KR/assets/images/layout/btn_top.png" alt="최상단 이동"></button>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">Sub Nav - Home</th>
-											<td><code>.sub_nav1 &gt; .sub_nav1_inner &gt; .home</code></td>
-											<td>
-												<div class="sub_nav1">
-													<div class="sub_nav1_inner">
-														<div class="home"><a href="../main/index.html">Home</a></div>
-													</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">download</th>
+										<td><code> .btn_ti_download </code></td>
+										<td>
+											<a href="../front/KR/assets/document/" class="btn btn_ti_download" download=""><span class="btn_name"> 다운로드</span></a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">disabled<br>download</th>
+										<td><code> .btn_download </code></td>
+										<td>
+											<a href="../front/KR/assets/document/" class="btn btn_download" download="" disabled="disabled"><span class="btn_name"> 다운로드</span></a>
+											<br>
+											<p class="txt_caption">※ .btn_download 의 경우, <br>아이콘의 line-height가 중앙정렬인 타입으로 구축에는 사용하지 않으나 제거하지 않은 상태</p>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="fixed-side bg-line">Popup Close</th>
+										<td><code>.popup &gt; .pop_head &gt; .btn_close</code></td>
+										<td>
+											<div class="popup" style="display:block;">
+												<div class="pop_head">
+													<button type="button" class="btn_close" title="FAQ 팝업창 닫기"></button>
 												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">download</th>
-											<td><code> .btn_ti_download </code></td>
-											<td>
-												<a href="../front/KR/assets/document/" class="btn btn_ti_download" download=""><span class="btn_name"> 다운로드</span></a>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">disabled<br>download</th>
-											<td><code> .btn_download </code></td>
-											<td>
-												<a href="../front/KR/assets/document/" class="btn btn_download" download="" disabled="disabled"><span class="btn_name"> 다운로드</span></a>
-												<br>
-												<p class="txt_caption">※ .btn_download 의 경우, <br>아이콘의 line-height가 중앙정렬인 타입으로 구축에는 사용하지 않으나 제거하지 않은 상태</p>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row" class="fixed-side bg-line">Popup Close</th>
-											<td><code>.popup &gt; .pop_head &gt; .btn_close</code></td>
-											<td>
-												<div class="popup" style="display:block;">
-													<div class="pop_head">
-														<button type="button" class="btn_close" title="FAQ 팝업창 닫기"></button>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
+					</div>
 				</div>
-            </div>			
+            </div>
+			-->
         </section> 
     </div>
 </div>

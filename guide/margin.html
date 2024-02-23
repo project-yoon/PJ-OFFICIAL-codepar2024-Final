@@ -17,10 +17,10 @@
 	/* 페이지 전용 스타일 선언 */
 	body{
 		color: #222;
-		font-family: 'Montserrat','NotoKr',sans-serif;
+        font-family: 'Montserrat', 'Pretendard', sans-serif;
 		font-size: 18px;
 		font-weight: 400;
-		line-height: 1;
+		line-height: 1.2;
 		margin: 0;
 		padding: 0;
 	}
@@ -55,48 +55,31 @@
 
 <hr>
 
-<div id="container" class="CPguide wides">
+<div id="container" class="CPguide">
 	<div class="wrap">
         <section class="content" style="padding-top:0;">
-
-
-			<div class="content_inner " style="padding-bottom: 0;">
+			<div class="contents" style="padding-bottom: 0;">
 				<div class="CPguide_header">
-					<h3 class="titmain">Wide</h3>
-					<h4 class="titmain">wide the frame</h4>
-					<p class="txt_info"> 컨텐츠 작성 시, <code> .wide</code> 클래스로 영역을 확장</p>
+					<h3 class="titmain">Wrapper</h3>
+					<h4 class="titmain">컨텐츠 영역 제어</h4>
+					<p class="txt_info">컨텐츠 전체 영역 감싸는 부분 padding px값, <code> .section</code> class 사용</p>
+					<p class="txt_info">컨텐츠 작성 시, max-width 1110px값, <code> .contents</code> class 사용</p>
+					<p class="txt_info">타이틀간 간격 .titArea h2, h3, p / wrap 영역, <code> .titArea</code> class 사용</p>
+					<p class="txt_info">서브타이틀 <-> 본문타이틀 사이 간격, margin-bottom px값, <code> h2</code> 태그 사용</p>
 				</div>
 			</div>
-			<div class="content_inner " style="width: 100%;">
-				<div class="CPguide_body ">
-
-
-					<!-- Start Of Contents -->
-					<section class="content">
-						<div class="content_inner" style="background-color: #F5F5F5;padding: 20px 0;">
-							<p>&gt; content_inner</p><br>
-							<div class="cont_body" style="background-color: #F5F5F5;padding: 20px 0;">
-								<p>&gt; Cont_body</p><br>
-								
-								<div class="wide" style="background-color:#ff5b5b;text-align: center;height: 150px;line-height: 150px;">
-									<p class="titsub1B">.content_inner 안에서 .wide</p>
-								</div>
-
-							</div>
-							
-						</div>
-						
-						<div class="wide" style="background-color: #ff5b5b;text-align: center;height: 150px;line-height: 150px;">
-							<p class="titsub1B">.content_inner 밖에서 .wide</p>
-						</div>
-						
-					</section>
-					<!-- End Of Contents -->
-
-
-				</div>
+			<div class="CPguide_body">
+				<!-- Start Of Section -->
+				<section class="section">
+					<div class="contents titArea" style="display: flex; flex-direction: column; align-items: center; background-color: #F5F5F5;padding: 20px 0;">
+						<div>contents</div>
+						<h2 class="titsub1B">&gt; 서브타이틀</h2>
+						<h3 class="titmain">&gt; 본문타이틀</h3>
+						<p class="txt_infoB">&gt; 설명글</p>
+					</div>
+				</section>
+				<!-- End Of Section -->
 			</div>
-
 		</section> 
     </div>
 </div>

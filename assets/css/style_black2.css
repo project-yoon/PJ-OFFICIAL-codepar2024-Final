@@ -249,7 +249,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 /* ======== 공통 ======== */
 .section {
     position: relative;
+    padding: 170px 0;
     background-color: #26282B;
+}
+.gsap-pd {
+    padding: 170px 0;
 }
 .contents {
     position: relative;
@@ -571,9 +575,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     font-weight : 900;
 }
 /* ======== history ======== */
-.history {
-    padding: 170px 0;
-}
 .history-wrap {
     position: relative;
     z-index: 1;
@@ -750,9 +751,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .client .titArea {
     text-align: right;
 }
-.client .titArea p {
-    margin-top: 35px;
-}
 .client .clientList {
     position: relative;
     width: 100%;
@@ -810,22 +808,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         transform: translateX(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
     }
 }
-@-webkit-keyframes scroll-y {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
-    }
-}
-@keyframes scroll-y {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(calc(-100% - calc(clamp(10rem, 1rem + 40vmin, 30rem) / 14)));
-    }
-}
 .marquee-wrap {
     display: flex;
     flex-direction: column;
@@ -868,7 +850,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     display: inline-block;
     background: rgb(235 104 40 / 45%);
     position: absolute;
-    bottom:0;
+    bottom: 4px;
     left:0;
     z-index:-1;
     transition: 0.2s all;
@@ -890,7 +872,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     overflow: hidden;
 }
 .work .titArea .desc {
-    margin: 30px 0 5px;
+    margin: 0 0 35px 0;
     font-size: 20px;
 }
 .work .titArea .desc span {
@@ -902,7 +884,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     list-style: none;
     text-decoration: none;
 }
-.workList {
+.work .workList {
     width: 65%;
     margin-left: auto;
     overflow: hidden;
@@ -913,6 +895,40 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .work .workList li:nth-child(2) {
     margin-top: 301px;
+}
+.work .workList span.tit {
+    color: #E96A23;
+    font-weight: 300;
+}
+.work .workList span.info {
+    color: rgba(255 255 255 / 50%);
+}
+.work .workList span.thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.6s;
+}
+.work .workList span.thumb:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+    transition: 0.6s;
+}
+.work .workList span.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.work .workList + .more {
+    display: none;
 }
 .flip-card {
     font-family: 'Pretendard', sans-serif;
@@ -935,46 +951,8 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .flip-card > * {
     width: 100%;
 }
-.workList span.tit {
-    color: #E96A23;
-    font-weight: 300;
-}
-.workList span.info {
-    color: rgba(255 255 255 / 50%);
-}
-.workList span.thumb {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transition: 0.6s;
-}
-.workList span.thumb:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0 0 0 / 50%);
-    transition: 0.6s;
-}
-.workList span.thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.workList + .more {
-    display: none;
-}
 
 /* ======== services ======== */
-.services {
-    padding-top: 125px !important;
-    padding-bottom: 200px !important;
-}
 .services .contents {
     height: auto;
 }
@@ -1030,9 +1008,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 
 /* ======== story ======== */
-.story {
-    padding: 110px 0;
-}
 .story .contents {
     max-width: unset;
     height: auto;
@@ -1073,20 +1048,13 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     max-width: 1100px;
     padding: 0 50px;
 }
-.story .storyTxt .slick-slide {
+.story .storyTxt li {
     font-family: 'Pretendard', sans-serif;
-    position: relative;
-    top: 0px;
-    z-index: 998;
-    width: 265px;
-    opacity: 0;
-    color: #fff;
+    font-size: 20px;
     text-align: left;
-    line-height: 1.3;
     font-weight: 300;
-    font-size: 18px;
 }
-.story .storyTxt .slick-slide span {
+.story .storyTxt li span {
     display: block;
     margin-top: 5px;
     color: rgba(255 255 255 / 50%);
@@ -1112,7 +1080,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 
 /* ======== contact ======== */
 .contacts {
-    z-index: unset;
     background-color: #2E3135;
 }
 .contact-title h2 {
@@ -1164,13 +1131,12 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .contact_detail-title {
     font-size: 20px;
-    line-height: 2.5;
     color: #fbfbfb;
 }
 .request-wrap p {
-    margin-bottom: 80px;
+    margin-bottom: 35px;
     text-align: center;
-    font-size: 70px;
+    font-size: 34px;
     font-weight: 700;
 }
 .requset-info, .requset-info li {margin: 0;padding: 0;list-style: none;}
@@ -1181,15 +1147,19 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 .requset-info li {
     display: flex;
+    align-items: center;
     gap: 20px;
     margin-top: 55px;
-    font-size: 42px;
+    font-size: 26px;
+}
+.requset-info li:first-child {
+    margin-top: 0;
 }
 .requset-info a {
     color: #f8f8f8;
 }
 .requset-info i {
-    font-size: 44px;
+    font-size: 38px;
 }
 .formmail_btn {
     text-align: center;
@@ -1210,13 +1180,14 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 .contacts .contact-tab-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 35px;
 }
 .contacts .contact-tab {
     text-align: center;
 }
 .contacts .contact-tab-info {
     display: none;
-    margin-top: 16px;
+    margin-top: 50px;
 }
 .contacts .map .root_daum_roughmap {
     width: 965px;
@@ -1318,9 +1289,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 
     /* ======== client ======== */
-    .client {
-        padding: 170px 0;
-    }
     .client .contents {
         display: flex;
         justify-content: space-between;
@@ -1340,45 +1308,39 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         text-align: center;
         margin: 0 auto;
     }
-    .about .titArea p {
-        font-size: 17px;
-    }
 
     /* ======== works ======== */
-    .work {
-        padding: 146px 0 140px;
-    }
     .work .contents {
         padding-right: 390px;
     }
-    .workList li {
+    .work .workList li {
         width: calc(50% - 25px);
         height: 452px;
         margin: 50px 0 0 50px;
     }
-    .workList li:nth-child(odd) {
+    .work .workList li:nth-child(odd) {
         float: left;
     }
-    .workList li:nth-child(even) {
+    .work .workList li:nth-child(even) {
         float: right;
     }
-    .workList li:nth-child(2n + 1) {
+    .work .workList li:nth-child(2n + 1) {
         margin-left: 0;
     }
-    .workList li:nth-child(1) {
+    .work .workList li:nth-child(1) {
         margin-top: 0;
     }
-    .workList li:nth-child(2) {
+    .work .workList li:nth-child(2) {
         margin-top: 100px;
     }
-    .workList li:hover .flip-card{
+    .work .workList li:hover .flip-card{
         transform: rotateY(180deg);
     }
-    .workList span.tit {
+    .work .workList span.tit {
         margin-bottom: 5px;
         font-size: 16px;
     }
-    .workList span.info {
+    .work .workList span.info {
         margin-top: 20px;
         font-size: 12px;
     }
@@ -1423,9 +1385,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 
     /* ======== contact ======== */
-    .contacts {
-        padding: 120px 0 160px;
-    }
     .contacts .btnArea {
         margin-top: 20px;
     }
@@ -1495,7 +1454,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         max-width: 100%;
         overflow-x: hidden;
     }
+
     /* ======== 공통 ======== */
+    .section, .gsap-pd {
+        padding: 100px 0;
+    }
     .mobileOnly {
         display: block !important;
     }
@@ -1508,23 +1471,20 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .contacts .row.mt-5 {
         gap: 50px;
     }
-    .contacts .contact_detail-title {
-        padding-bottom: 10px;
-        line-height: 1;
-    }
     .titArea {
         text-align: center;
     }
     .titArea h2 {
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
     .titArea h3 {
         font-size: 28px;
     }
     .titArea p {
         margin: 30px 0 0;
-        font-size: 15px;
+        font-size: 16px;
+        word-break: auto-phrase;
     }
 
     /* ======== home ======== */
@@ -1575,9 +1535,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         font-size: 1.6em;
     }
     /* ======== history ======== */
-    .history {
-        padding: 75px 0;
-    }
     .history-wrap::before,
     .history-line {
         top: 14px;
@@ -1643,12 +1600,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 
     /* ======== client ======== */
-    .client {
-        padding: 85px 0 105px;
-    }
-    .client .titArea p {
-        margin-top: 20px;
-    }
     .client .clientList {
         height: 480px;
         margin-top: 40px;
@@ -1666,16 +1617,13 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 
     /* ======== about ======== */
     .about {
-        padding: 85px 0;
+        padding: 80px 0;
     }
     .about .contents {
         padding: 0;
     }
 
     /* ======== works ======== */
-    .work {
-        padding: 50px 0;
-    }
     .work .contents {
         display: flex;
         flex-direction: column;
@@ -1686,35 +1634,45 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         position: static;
         float: unset;
     }
+    .work .titArea h2 {
+        margin-bottom: 0;
+    }
     .work .titArea .desc {
-        margin: 25px 0 0;
+        margin: 0 0 10px 0;
         font-size: 16px;
     }
-    .workList {
-        width: unset;
-        margin-top: 40px;
+    .work .workList {
+        width: 100%;
+        margin-top: 50px;
         margin-left: unset;
-        padding-right: 0;
     }
-    .workList li {
+    .work .workList li {
         width: calc(50% - 15px);
         height: 456px;
         margin: 120px 0 0 30px;
     }
-    .workList li:nth-child(odd) {
+    .work .workList li:nth-child(odd) {
         float: left;
     }
-    .workList li:nth-child(even) {
+    .work .workList li:nth-child(even) {
         float: right;
     }
-    .workList li:nth-child(2n + 1) {
+    .work .workList li:nth-child(2n + 1) {
         margin-left: 0;
     }
-    .workList li:nth-child(1) {
+    .work .workList li:nth-child(1) {
         margin-top: 0;
     }
-    .workList li:nth-child(2) {
+    .work .workList li:nth-child(2) {
         margin-top: 70px;
+    }
+    .work .workList span.tit {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .work .workList span.info {
+        margin-top: 20px;
+        font-size: 12px;
     }
     .flip-card {
         display: block;
@@ -1731,20 +1689,8 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         padding: 30px;
         font-size: 24px;
     }
-    .workList span.tit {
-        margin-bottom: 5px;
-        font-size: 16px;
-    }
-    .workList span.info {
-        margin-top: 20px;
-        font-size: 12px;
-    }
 
     /* ======== services ======== */
-    .services {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
     .services .pined-inner {
         height: 450px;
         padding-top: 50px;
@@ -1761,9 +1707,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 
     /* ======== story ======== */
-    .story {
-        padding: 85px 0;
-    }
     .story .contents {
         padding: 0;
     }
@@ -1774,7 +1717,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         transform: unset;
     }
     .story .storyTxt li {
-        font-size: 18px;
+        font-size: 16px;
     }
     .story .storyTxt span {
         margin-top: 10px;
@@ -1807,9 +1750,6 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
 
     /* ======== contact ======== */
-    .contacts {
-        padding: 75px 0 70px;
-    }
     .contacts .titArea p {
         margin-top: 20px;
     }
@@ -1823,13 +1763,21 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     .contacts .map .root_daum_roughmap {
         width: 100%;
     }
+    .contacts .contact-tab-info {
+        margin-top: 50px;
+    }
+    .contacts .contact-tab-wrap {
+        margin-top: 30px;
+    }
     .contact_detail-title {
-        font-size: 18px;
+        font-size: 16px;
+    }
+    .contact-title h2 {
+        font-size: 28px;
     }
     .request-wrap p {
-        margin-bottom: 60px;
-        font-size: 50px;
-        line-height: 1.5;
+        margin-bottom: 25px;
+        font-size: 22px;
     }
     .requset-info {
         width: unset;
@@ -1840,7 +1788,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         display: flex;
         gap: 10px;
         margin-top: 20px;
-        font-size: 22px;
+        font-size: 16px;
         letter-spacing: -0.2px;
     }
     .requset-info i {
@@ -1886,6 +1834,11 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
 }
 
 @media screen and (max-width: 560px) {
+    /* ======== 공통 ======== */
+    .titArea h3 {
+        font-size: 26px;
+    }
+
     /* ======== home ======== */
     .motion-effect-2 .motion-dummy {
         word-break: auto-phrase;
