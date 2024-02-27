@@ -1781,7 +1781,7 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
     }
     .requset-info {
         width: unset;
-        margin-left: unset;
+        margin: 0 10px;
         transform: unset;
     }
     .requset-info li {
