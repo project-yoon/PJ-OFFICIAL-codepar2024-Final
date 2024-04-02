@@ -1939,3 +1939,17 @@ td:first-child.formmail_cell_bgcolor {border:solid 1px #f1f1f1}
         width: 109px;
     }
 }
+
+h2 .tit_main{
+    background:#333 -webkit-radial-gradient(circle,rgba(255,255,255,1),rgba(255,255,255,0),rgba(255,255,255,0)) no-repeat -280px -94px;
+    -webkit-background-clip:text;
+    -webkit-background-size:388px;
+    color:rgba(255,255,255,0.1);
+    /*-webkit-text-fill-color:transparent;*/
+    
+    -webkit-animation:ani 6s linear infinite;
+  }
+@keyframes ani{
+    from{background-position:-280px -94px;}
+    to{background-position:680px -94px;}
+}
